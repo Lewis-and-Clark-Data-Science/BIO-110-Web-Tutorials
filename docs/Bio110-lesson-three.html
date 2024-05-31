@@ -271,7 +271,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"read-only":"false","dpi":72,"fig-height":5,"out-height":"","editor-font-scale":1,"editor-max-height":"","context":"setup","comment":"","label":"unnamed-chunk-1","output":"true","message":"true","results":"markup","classes":"","autorun":"true","out-width":"700px","fig-cap":"","editor-quick-suggestions":"false","fig-width":7,"warning":"true"},"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website. unclear if this is also necessary in the header of THIS document\n\ndata<- read.csv(\"physiology_data.csv\")","id":1},{"options":{"read-only":"false","dpi":72,"fig-height":5,"out-height":"","editor-font-scale":1,"editor-max-height":"","context":"interactive","comment":"","label":"unnamed-chunk-2","output":"true","message":"true","results":"markup","classes":"","autorun":"false","out-width":"700px","fig-cap":"","editor-quick-suggestions":"false","fig-width":7,"warning":"true"},"code":"##| context: output\nlibrary(\"plotrix\")\nlibrary(\"stats\")\nlibrary(\"base64enc\")","id":2}];
+globalThis.qwebrCellDetails = [{"options":{"comment":"","read-only":"false","editor-max-height":"","label":"unnamed-chunk-1","out-width":"700px","fig-cap":"","context":"setup","warning":"true","output":"true","editor-font-scale":1,"fig-width":7,"results":"markup","autorun":"true","message":"true","classes":"","fig-height":5,"dpi":72,"editor-quick-suggestions":"false","out-height":""},"id":1,"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website. unclear if this is also necessary in the header of THIS document\n\ndata<- read.csv(\"physiology_data.csv\")"},{"options":{"comment":"","read-only":"false","editor-max-height":"","label":"unnamed-chunk-2","out-width":"700px","fig-cap":"","context":"interactive","warning":"true","output":"true","editor-font-scale":1,"fig-width":7,"results":"markup","autorun":"false","message":"true","classes":"","fig-height":5,"dpi":72,"editor-quick-suggestions":"false","out-height":""},"id":2,"code":"##| context: output\nlibrary(\"plotrix\")\nlibrary(\"stats\")\nlibrary(\"base64enc\")"}];
 
 </script>
 <script type="module">
@@ -1135,6 +1135,8 @@ globalThis.qwebrExecuteCode = async function (
   </li>  
   <li class="dropdown-header">
  <span class="menu-text">Bio110_lesson_two.qmd</span></li>
+  <li class="dropdown-header">
+ <span class="menu-text">Bio110_lesson_three.qmd</span></li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
