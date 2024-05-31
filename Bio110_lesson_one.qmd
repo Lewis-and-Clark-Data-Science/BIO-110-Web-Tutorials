@@ -11,6 +11,9 @@ resources:
 ```{webr-r}
 # #| context: setup
 
+url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
+download.file(url, "physiology_data.csv")
+
 data<- read.csv("physiology_data.csv")
 
 ```
@@ -86,3 +89,18 @@ In an R data table, each column represents a different variable. Each observatio
 
 A table with this format has been created for you and imported into this tutorial. It has been given the creative name of `data`.
 
+##### Exercise 3
+
+Type a command that will show you a display of the data table called "data".
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+To see an object in R, type its name. No quotes are required.
+:::

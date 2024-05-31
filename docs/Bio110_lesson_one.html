@@ -305,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"out-height":"","output":"true","out-width":"700px","editor-quick-suggestions":"false","fig-width":7,"dpi":72,"editor-font-scale":1,"context":"interactive","warning":"true","comment":"","message":"true","autorun":"false","fig-height":5,"classes":"","results":"markup","editor-max-height":"","read-only":"false","fig-cap":"","label":"unnamed-chunk-1"},"code":"# #| context: setup\n\ndata<- read.csv(\"physiology_data.csv\")"},{"id":2,"options":{"out-height":"","output":"true","out-width":"700px","editor-quick-suggestions":"false","fig-width":7,"dpi":72,"editor-font-scale":1,"context":"interactive","warning":"true","comment":"","message":"true","autorun":"false","fig-height":5,"classes":"","results":"markup","editor-max-height":"","read-only":"false","fig-cap":"","label":"unnamed-chunk-2"},"code":"#Type your code here\n"},{"id":3,"options":{"out-height":"","output":"true","out-width":"700px","editor-quick-suggestions":"false","fig-width":7,"dpi":72,"editor-font-scale":1,"context":"interactive","warning":"true","comment":"","message":"true","autorun":"false","fig-height":5,"classes":"","results":"markup","editor-max-height":"","read-only":"false","fig-cap":"","label":"unnamed-chunk-3"},"code":"#Type your code here\n"}];
+globalThis.qwebrCellDetails = [{"options":{"context":"interactive","read-only":"false","editor-font-scale":1,"classes":"","comment":"","fig-cap":"","editor-quick-suggestions":"false","results":"markup","fig-height":5,"out-width":"700px","out-height":"","fig-width":7,"warning":"true","label":"unnamed-chunk-1","autorun":"false","output":"true","dpi":72,"message":"true","editor-max-height":""},"id":1,"code":"# #| context: setup\n\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n\ndata<- read.csv(\"physiology_data.csv\")"},{"options":{"context":"interactive","read-only":"false","editor-font-scale":1,"classes":"","comment":"","fig-cap":"","editor-quick-suggestions":"false","results":"markup","fig-height":5,"out-width":"700px","out-height":"","fig-width":7,"warning":"true","label":"unnamed-chunk-2","autorun":"false","output":"true","dpi":72,"message":"true","editor-max-height":""},"id":2,"code":"#Type your code here\n"},{"options":{"context":"interactive","read-only":"false","editor-font-scale":1,"classes":"","comment":"","fig-cap":"","editor-quick-suggestions":"false","results":"markup","fig-height":5,"out-width":"700px","out-height":"","fig-width":7,"warning":"true","label":"unnamed-chunk-3","autorun":"false","output":"true","dpi":72,"message":"true","editor-max-height":""},"id":3,"code":"#Type your code here\n"},{"options":{"context":"interactive","read-only":"false","editor-font-scale":1,"classes":"","comment":"","fig-cap":"","editor-quick-suggestions":"false","results":"markup","fig-height":5,"out-width":"700px","out-height":"","fig-width":7,"warning":"true","label":"unnamed-chunk-4","autorun":"false","output":"true","dpi":72,"message":"true","editor-max-height":""},"id":4,"code":"#Type your code here\n"}];
 
 </script>
 <script type="module">
@@ -1522,8 +1522,30 @@ Hint
 <h4 class="anchored" data-anchor-id="using-data-tables">Using data tables</h4>
 <p>In an R data table, each column represents a different variable. Each observational unit is represented by a separate row in the table. The first row of the table is used for the names of the different variables. In R, variable names must not contain any spaces.</p>
 <p>A table with this format has been created for you and imported into this tutorial. It has been given the creative name of <code>data</code>.</p>
+<section id="exercise-3" class="level5">
+<h5 class="anchored" data-anchor-id="exercise-3">Exercise 3</h5>
+<p>Type a command that will show you a display of the data table called “data”.</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To see an object in R, type its name. No quotes are required.</p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 </section>
