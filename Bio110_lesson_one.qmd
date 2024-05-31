@@ -14,7 +14,7 @@ title: "Lesson 1"
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
 download.file(url, "physiology_data.csv")
 #Pulls data that has been loaded into the Bio 110 github repo. 
-#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website
+#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website. unclear if this is also necessary in the header of THIS document
 
 data<- read.csv("physiology_data.csv")
 
@@ -28,19 +28,17 @@ R is a program for dealing with data. In Biology courses, most of the time your 
 
 Later on, you will learn how to import your own data table into R in order to work with it. For now, we will work with a very simple set of data: data for a single variable.
 
-### Working with data
+## Working with data
 
 For example, suppose you have measured the diameters of a sample of 8 bacterial colonies. The data values (in mm) are: 4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, and 4.6.
 
-#### Assigning values to a variable name
+### Assigning values to a variable name
 
 In R, you 'assign' these values to a variable name using an 'arrow' formed by the 'less than' symbol and the dash, like this: `<-`. 
 
 On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces. On the right of the arrow, type your data values, separated by commas. The data values should be enclosed in parentheses, and preceded by the letter c, which stands for 'concatenate' or 'combine' all the values into a single vector of values. 
 
 This command creates a variable called 'diam' that contains our example data values: `diam<-c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)`
-
-##### Exercise 1
 
 Now you should try creating the diam variable using these same data. In the code chunk below, type in a command to create `diam`. 
 
@@ -69,8 +67,6 @@ diam<- c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)
 
 If you are interested in knowing what a variable contains, you can just type its name. R is case-sensitive, so be careful about whether you type in upper or lower case.
 
-##### Exercise 2
-
 Try typing diam and see what you get.
 
 ```{webr-r}
@@ -85,13 +81,11 @@ Try typing diam and see what you get.
 Just type the word `diam`. 
 :::
 
-#### Using data tables
+### Using data tables
 
 In an R data table, each column represents a different variable. Each observational unit is represented by a separate row in the table. The first row of the table is used for the names of the different variables. In R, variable names must not contain any spaces.
 
 A table with this format has been created for you and imported into this tutorial. It has been given the creative name of `data`.
-
-##### Exercise 3
 
 Type a command that will show you a display of the data table called "data".
 
@@ -106,3 +100,91 @@ Type a command that will show you a display of the data table called "data".
 
 To see an object in R, type its name. No quotes are required.
 :::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+data
+```
+:::
+
+You can see that this data table contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.) 
+
+These data are from a physiological study. Each individual's respiratory quotient (RQ) was measured, either after exercise (1), or during rest (2). Their heart rates in beats per minute were also measured. NA stands for 'not available,' meaning that the data for these combinations of individual and variable were lost or not recorded.
+
+#### Specifying Variables
+
+You might wish to see just one of the variables in this data file. The way to specify an individual variable is to use the name of the data file, followed by the dollar sign, `$`, followed by the name of the variable -- with no spaces.
+
+What would you type to see a list of the heart_rate data values in this file?
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+data$heart_rate
+```
+:::
+
+### Data Structure
+
+In R, each variable is encoded as either numeric (a number), integer (a whole number), a factor (a category, expressed either as a word or a number), or character (a string of letters). There are other less common variable properties as well. A variable's property is important because some operations can only be carried out on variables with certain properties.
+
+A data file's 'structure' refers to the properties of its variables. To find out the properties of all the variables in a data set, you would use the command `str(dataname)`, using the name of your data file in place of the placeholder here.
+
+Write a command that will allow you to see the structure of 'data.'
+
+```{webr-r}
+# Type your code here
+
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+str(data)
+```
+:::
+
+#### Changing a variable's property
+
+You can see that the variable `data$Condition` is currently encoded as an integer. But it is actually a category variable. You can change this variable's property with the assignment arrow, in the following way: `data$Condition <-as.factor(data$Condition)`.
+
+Try changing the variable named `Individual` to a factor variable. You will notice that a little prompt box shows up. You can save yourself some typing by choosing the rest of the expression from among the choices in the prompt box.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Remember to use the dollar sign notation, and that R is case-sensitive.
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+data$Individual<-as.factor(data$Individual)
+```
+:::
+
+
+Congratulations! You have finished the first R tutorial. You have learned how to create a variable in R, how data files in R are organized, and how to examine and change the properties of different variables.
