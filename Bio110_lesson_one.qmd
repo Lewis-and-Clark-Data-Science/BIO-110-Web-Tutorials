@@ -4,15 +4,17 @@ editor: visual
 filters: 
   - webr
 title: "Lesson 1"
-resources: 
-    - physiology_data.csv
+#resources: 
+    #- physiology_data.csv
 ---
 
 ```{webr-r}
-# #| context: setup
+#| context: setup
 
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
 download.file(url, "physiology_data.csv")
+#Pulls data that has been loaded into the Bio 110 github repo. 
+#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website
 
 data<- read.csv("physiology_data.csv")
 
