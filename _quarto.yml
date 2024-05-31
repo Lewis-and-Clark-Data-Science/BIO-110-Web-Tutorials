@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+  resources: 
+    - physiology_data.csv
+  
+website:
+  title: "BIO 110 Web Tutorials"
+  navbar: 
+    left: 
+      - Bio110_lesson_one.qmd
+  
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    

@@ -1,0 +1,88 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+title: "Lesson 1"
+resources: 
+    - physiology_data.csv
+---
+
+```{webr-r}
+# #| context: setup
+
+data<- read.csv("physiology_data.csv")
+
+```
+
+## Introduction
+
+Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations. 
+
+R is a program for dealing with data. In Biology courses, most of the time your data will be in the form of a table with columns and rows.
+
+Later on, you will learn how to import your own data table into R in order to work with it. For now, we will work with a very simple set of data: data for a single variable.
+
+### Working with data
+
+For example, suppose you have measured the diameters of a sample of 8 bacterial colonies. The data values (in mm) are: 4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, and 4.6.
+
+#### Assigning values to a variable name
+
+In R, you 'assign' these values to a variable name using an 'arrow' formed by the 'less than' symbol and the dash, like this: `<-`. 
+
+On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces. On the right of the arrow, type your data values, separated by commas. The data values should be enclosed in parentheses, and preceded by the letter c, which stands for 'concatenate' or 'combine' all the values into a single vector of values. 
+
+This command creates a variable called 'diam' that contains our example data values: `diam<-c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)`
+
+##### Exercise 1
+
+Now you should try creating the diam variable using these same data. In the code chunk below, type in a command to create `diam`. 
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Don't forget the parentheses.
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+diam<- c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)
+```
+
+:::
+
+If you are interested in knowing what a variable contains, you can just type its name. R is case-sensitive, so be careful about whether you type in upper or lower case.
+
+##### Exercise 2
+
+Try typing diam and see what you get.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Just type the word `diam`. 
+:::
+
+#### Using data tables
+
+In an R data table, each column represents a different variable. Each observational unit is represented by a separate row in the table. The first row of the table is used for the names of the different variables. In R, variable names must not contain any spaces.
+
+A table with this format has been created for you and imported into this tutorial. It has been given the creative name of `data`.
+
