@@ -3,12 +3,16 @@ project:
   output-dir: docs
   resources: 
     - physiology_data.csv
+
+webr: 
+  packages: ['plotrix', 'base64enc', 'stats']
   
 website:
   title: "BIO 110 Web Tutorials"
   navbar: 
     left: 
       - Bio110_lesson_one.qmd
+      - Bio110_lesson_two.qmd
   
 
 format:
