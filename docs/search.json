@@ -18,7 +18,14 @@
     "href": "Bio110-lesson-three.html",
     "title": "Lesson 3",
     "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Welcome! In this lesson you will learn about measures of variability. But first, notice in the code chunk above that R has just told you that it has loaded certain packages. An R package is a group of functions that perform special operations. R has loaded these packages to permit you to use these functions in this tutorial. When you start working on your own data outside of these tutorials, you will sometimes need to tell R to load certain packages. We’ll walk you through this step when it is needed."
+  },
+  {
+    "objectID": "Bio110-lesson-three.html#variation-around-a-central-tendency",
+    "href": "Bio110-lesson-three.html#variation-around-a-central-tendency",
+    "title": "Lesson 3",
+    "section": "Variation Around a Central Tendency",
+    "text": "Variation Around a Central Tendency\nYou have already learned that one important way to summarize a set of data values is with a measure of central tendency, the mean or the median.\nAnother important summary statistic is the amount of variation around that central tendency.\n\nDataset\nThis lesson contains a dataset that you will work with, named data. You have already worked with these data, in lesson one.\nType the word data to recall what it contains.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHint\n\n\n\n\n\nDid you spell data correctly? No quotation marks are needed.\n\n\n\nThe dataset contains physiological data for a sample of individuals.\n\nHow many different individuals are in the sample?\n\n\n\n\n ✗9\n\n\n ✓14\n\n\n ✗18"
   },
   {
     "objectID": "Bio110-lesson-two.html#introduction",

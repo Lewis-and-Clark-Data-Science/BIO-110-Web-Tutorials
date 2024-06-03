@@ -3,7 +3,9 @@ format: html
 editor: visual
 filters: 
   - webr
+  - naquiz
 title: "Lesson 3"
+
 #resources: 
     #- physiology_data.csv
 ---
@@ -21,9 +23,59 @@ data<- read.csv("physiology_data.csv")
 ```
 
 ```{webr-r}
-##| context: output
+#| context: interactive
+#| autorun: true
+
 library("plotrix")
 library("stats")
 library("base64enc")
 ```
 
+
+Welcome! In this lesson you will learn about measures of variability. But first, notice in the code chunk above that R has just told you that it has loaded certain packages. An R package is a group of functions that perform special operations. R has loaded these packages to permit you to use these functions in this tutorial. When you start working on your own data outside of these tutorials, you will sometimes need to tell R to load certain packages. We'll walk you through this step when it is needed.
+
+## Variation Around a Central Tendency 
+
+You have already learned that one important way to summarize a set of data values is with a measure of central tendency, the mean or the median.
+
+Another important summary statistic is the amount of variation around that central tendency.
+
+### Dataset
+
+This lesson contains a dataset that you will work with, named data. You have already worked with these data, in lesson one.
+
+Type the word data to recall what it contains.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Did you spell data correctly? No quotation marks are needed.
+:::
+
+The dataset contains physiological data for a sample of individuals.
+
+:::::{.question}
+How many different individuals are in the sample? 
+
+::::{.choices}
+
+:::{.choice}
+9
+:::  
+
+:::{.choice .correct-choice}
+14
+:::
+
+:::{.choice}
+18  
+:::
+
+::::
+:::::
