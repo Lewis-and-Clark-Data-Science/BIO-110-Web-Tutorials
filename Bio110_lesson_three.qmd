@@ -4,7 +4,7 @@ editor: visual
 filters: 
   - webr
   - naquiz
-title: "Lesson 3"
+title: "Lesson 3: Variability"
 ---
 
 ```{webr-r}

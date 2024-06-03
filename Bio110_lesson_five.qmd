@@ -4,7 +4,7 @@ editor: visual
 filters: 
   - webr
   - naquiz
-title: "Lesson 5"
+title: "Lesson 5: Scatterplots"
 ---
 
 ```{webr-r}

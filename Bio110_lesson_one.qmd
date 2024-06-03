@@ -3,7 +3,7 @@ format: html
 editor: visual
 filters: 
   - webr
-title: "Lesson 1"
+title: "Lesson 1: Basic Operations"
 #resources: 
   #  - physiology_data.csv
 ---

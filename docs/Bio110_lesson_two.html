@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BIO 110 Web Tutorials - Lesson 2</title>
+<title>BIO 110 Web Tutorials - Lesson 2: Central Tendency</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -305,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website. unclear if this is also necessary in the header of THIS document\n\ndata<- read.csv(\"physiology_data.csv\")","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"true","message":"true","fig-cap":"","output":"true","context":"setup","label":"unnamed-chunk-1","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":1},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-2","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":2},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-3","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":3},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-4","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":4},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-5","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":5},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-6","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":6},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-7","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":7},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-8","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":8},{"code":"#Type your code here\n","options":{"editor-quick-suggestions":"false","read-only":"false","out-width":"700px","fig-width":7,"editor-font-scale":1,"fig-height":5,"classes":"","autorun":"false","message":"true","fig-cap":"","output":"true","context":"interactive","label":"unnamed-chunk-9","comment":"","results":"markup","warning":"true","out-height":"","dpi":72,"editor-max-height":""},"id":9}];
+globalThis.qwebrCellDetails = [{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"setup","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"true","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-1","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":1,"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website. unclear if this is also necessary in the header of THIS document\n\ndata<- read.csv(\"physiology_data.csv\")"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-2","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":2,"code":"#Type your code here\n"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-3","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":3,"code":"#Type your code here\n"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-4","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":4,"code":"#Type your code here\n"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-5","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":5,"code":"#Type your code here\n"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-6","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":6,"code":"#Type your code here\n"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-7","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":7,"code":"#Type your code here\n"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-8","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":8,"code":"#Type your code here\n"},{"options":{"message":"true","out-height":"","read-only":"false","classes":"","context":"interactive","fig-cap":"","comment":"","warning":"true","out-width":"700px","autorun":"false","dpi":72,"output":"true","editor-quick-suggestions":"false","editor-font-scale":1,"label":"unnamed-chunk-9","results":"markup","editor-max-height":"","fig-height":5,"fig-width":7},"id":9,"code":"#Type your code here\n"}];
 
 </script>
 <script type="module">
@@ -1165,23 +1165,23 @@ globalThis.qwebrExecuteCode = async function (
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_one.html"> 
-<span class="menu-text">Lesson 1</span></a>
+<span class="menu-text">Lesson 1: Basic Operations</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./Bio110_lesson_two.html" aria-current="page"> 
-<span class="menu-text">Lesson 2</span></a>
+<span class="menu-text">Lesson 2: Central Tendency</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_three.html"> 
-<span class="menu-text">Lesson 3</span></a>
+<span class="menu-text">Lesson 3: Variability</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_four.html"> 
-<span class="menu-text">Lesson 4</span></a>
+<span class="menu-text">Lesson 4: Box Plots</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_five.html"> 
-<span class="menu-text">Lesson 5</span></a>
+<span class="menu-text">Lesson 5: Scatterplots</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -1438,7 +1438,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesson 2</h1>
+<h1 class="title">Lesson 2: Central Tendency</h1>
 </div>
 
 

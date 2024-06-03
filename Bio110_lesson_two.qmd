@@ -3,7 +3,7 @@ format: html
 editor: visual
 filters: 
   - webr
-title: "Lesson 2"
+title: "Lesson 2: Central Tendency"
 ---
 
 ```{webr-r}

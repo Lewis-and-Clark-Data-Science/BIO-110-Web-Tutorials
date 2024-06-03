@@ -4,7 +4,7 @@ editor: visual
 filters: 
   - webr
   - naquiz
-title: "Lesson 4"
+title: "Lesson 4: Box Plots"
 ---
 
 ```{webr-r}
