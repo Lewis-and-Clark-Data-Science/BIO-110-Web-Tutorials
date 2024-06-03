@@ -5,9 +5,6 @@ filters:
   - webr
   - naquiz
 title: "Lesson 3"
-
-#resources: 
-    #- physiology_data.csv
 ---
 
 ```{webr-r}
@@ -25,16 +22,16 @@ data<- read.csv("physiology_data.csv")
 ```{webr-r}
 #| context: interactive
 #| autorun: true
+#| read-only:true
 
 library("plotrix")
 library("stats")
 library("base64enc")
 ```
 
+Welcome! In this lesson you will learn about measures of variability. But first, notice in the code chunk above that R has just told you that it has downloaded certain packages. An R package is a group of functions that perform special operations. R has loaded these packages to permit you to use these functions in this tutorial. When you start working on your own data outside of these tutorials, you will sometimes need to tell R to load certain packages. We'll walk you through this step when it is needed.
 
-Welcome! In this lesson you will learn about measures of variability. But first, notice in the code chunk above that R has just told you that it has loaded certain packages. An R package is a group of functions that perform special operations. R has loaded these packages to permit you to use these functions in this tutorial. When you start working on your own data outside of these tutorials, you will sometimes need to tell R to load certain packages. We'll walk you through this step when it is needed.
-
-## Variation Around a Central Tendency 
+## Variation Around a Central Tendency
 
 You have already learned that one important way to summarize a set of data values is with a measure of central tendency, the mean or the median.
 
@@ -60,22 +57,272 @@ Did you spell data correctly? No quotation marks are needed.
 
 The dataset contains physiological data for a sample of individuals.
 
-:::::{.question}
-How many different individuals are in the sample? 
+::: question
+**How many different individuals are in the sample?**
 
-::::{.choices}
-
-:::{.choice}
+::: choices
+::: choice
 9
-:::  
+:::
 
-:::{.choice .correct-choice}
+::: {.choice .correct-choice}
 14
 :::
 
-:::{.choice}
-18  
+::: choice
+18
+:::
+:::
 :::
 
-::::
-:::::
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Each individual has a unique number.
+:::
+
+### Compute central tendency values for specific groups
+
+The Condition variable specifies whether the measurements were made under *exercise (1)* or *resting (2)* conditions.
+
+Suppose we want to compute the mean and the variability of RQ (respiratory quotient) for the individuals in our sample, but we want separate values for the exercise and resting conditions.
+
+We can do this with the `tapply()` function, which allows us to compute the value of some function, such as the mean, for a numeric variable that has been subdivided into groups according to the values of another, category variable, such as Condition.
+
+The syntax for this command is: `tapply(datafilename$numeric_variable, datafilename$grouping_variable, function_name)`.
+
+Find the mean RQ for the two conditions, exercise and at rest. Be sure to substitute the actual names of your variables and function for the placeholders shown in the sample command above.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+The grouping variable is data\$Condition. Remember that R is case-sensitive.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+
+tapply(data$RQ,data$Condition,mean)
+```
+:::
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+::: question
+**What is the mean of the RQ column?**
+
+::: choices
+::: choice
+0.45
+:::
+
+::: choice
+0.99
+:::
+
+::: {.choice .correct-choice}
+0.876
+:::
+:::
+:::
+:::
+
+### Variance
+
+One common measure of variability is the variance. The variance is the square of the average difference between each data value and the mean.
+
+You can compute the variance of a variable with the `var()` function.
+
+Use `var()` to compute the variance of the RQ for the two conditions.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the `tapply()` function.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+
+tapply(data$RQ,data$Condition,var)
+```
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+::: question
+**What is the variance of the Condition column?**
+
+::: choices
+::: choice
+1.80123
+:::
+
+::: {.choice .correct-choice}
+0.001757
+:::
+
+::: choice
+0.001995
+:::
+:::
+:::
+:::
+
+Another common measure of variance is the standard deviation, which is simply the square root of the variance. The function for standard deviation is `sd()`.
+
+Compute the standard deviation of RQ for each of the two conditions.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Did you remember that R is case-sensitive?
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+
+tapply(data$RQ,data$Condition,sd)
+```
+:::
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+::: question
+**What is the standard deviation of the Condition column?**
+
+::: choices
+::: {.choice .correct-choice}
+0.0419
+:::
+
+::: choice
+0.0447
+:::
+
+::: choice
+0.0223
+:::
+:::
+:::
+:::
+
+### Standard error and confidence intervals
+
+One reason to compute the variability in a data set is to get an idea of how accurately our sample has estimated the mean of a population. Two additional measures of variability, standard error and confidence intervals, do this more usefully than variance or standard deviation.
+
+This is because both standard error and confidence intervals become smaller as the sample size, or number of data values, gets larger -- which reflects our increased certainty that our sample mean represents the true population mean.
+
+To compute the standard error of a set of data in R, a package called `plotrix` is required. In this tutorial, `plotrix` has already been installed for you.
+
+The function for computing the standard error is `std.error()`.
+
+Compute the standard error of RQ for each of the two conditions.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the same syntax as you did for computing standard deviation.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+
+tapply(data$RQ,data$Condition,std.error)
+```
+:::
+
+::: {.callout-caution collapse="true" icon="false"}
+## Check your work
+::: question
+**What is the standard error of the RQ column?**
+
+::: choices
+::: {.choice .correct-choice}
+0.0169
+:::
+
+::: choice
+0.1238
+:::
+
+::: choice
+0.0447
+:::
+:::
+:::
+:::
+
+### Confidence Intervals
+
+Confidence intervals are closely related to standard error. The 95% confidence interval is a range of data values that encloses the sample mean. There is a 95% probability that the "true" mean lies within the 95% confidence interval of the sample mean.
+
+The easiest way to compute a 95% confidence interval is to use the `t.test()` function.
+
+The command for the t-test is `t.test(dataname$variablename)`, using the actual datafile and variable names instead of the placeholders shown here.
+
+Let's compute the confidence interval of the variable RQ measured during exercise. To do this, we need a way to extract a subset of the RQ data -- just the RQ values measured under Condition 1.
+
+In R, we do this by 'indexing' the value of one variable (`RQ`) by the value of a second variable (`Condition`). In this case, we wish to extract the values of RQ for those observations (rows) where Condition is exactly equal to 1(`==1`, in r-speak). The syntax is: `data$RQ[data$Condition==1]`.
+
+Now write the command to perform a t-test on the subset of RQ values measured under Condition 1, exercise.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+
+t.test(data$RQ[data$Condition==1])
+```
+:::
+
+
+In the output, you should see the name of the variable you created, followed by two lines of information that are not relevant if you are only interested in knowing the 95% confidence interval. The 95% confidence interval is on the following line, followed by a computation of the sample mean.
+
+So for these data, the (rounded) sample mean is 0.876, and the 95% confidence interval ranges from a minimum value of 0.834 to a maximum of 0.917.
+
+### Congratulations!
+
+You've completed lesson three, in which you learned how to compute several measures of **variability** (variance, standard deviation, standard error, and confidence intervals). You also learned two ways to **subset a data set**: using `tapply()` and indexing. In lesson four you will learn how to make a box plot, which is a basic way of graphically displaying the central tendency and the variability of any data set.

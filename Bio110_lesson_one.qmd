@@ -4,8 +4,6 @@ editor: visual
 filters: 
   - webr
 title: "Lesson 1"
-#resources: 
-    #- physiology_data.csv
 ---
 
 ```{webr-r}
@@ -15,6 +13,8 @@ url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/phys
 download.file(url, "physiology_data.csv")
 #Pulls data that has been loaded into the Bio 110 github repo. 
 #Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website. unclear if this is also necessary in the header of THIS document
+#resources: 
+  #  - physiology_data.csv
 
 data<- read.csv("physiology_data.csv")
 
@@ -22,7 +22,7 @@ data<- read.csv("physiology_data.csv")
 
 ## Introduction
 
-Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations. 
+Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations.
 
 R is a program for dealing with data. In Biology courses, most of the time your data will be in the form of a table with columns and rows.
 
@@ -34,13 +34,13 @@ For example, suppose you have measured the diameters of a sample of 8 bacterial 
 
 ### Assigning values to a variable name
 
-In R, you 'assign' these values to a variable name using an 'arrow' formed by the 'less than' symbol and the dash, like this: `<-`. 
+In R, you 'assign' these values to a variable name using an 'arrow' formed by the 'less than' symbol and the dash, like this: `<-`.
 
-On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces. On the right of the arrow, type your data values, separated by commas. The data values should be enclosed in parentheses, and preceded by the letter c, which stands for 'concatenate' or 'combine' all the values into a single vector of values. 
+On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces. On the right of the arrow, type your data values, separated by commas. The data values should be enclosed in parentheses, and preceded by the letter c, which stands for 'concatenate' or 'combine' all the values into a single vector of values.
 
 This command creates a variable called 'diam' that contains our example data values: `diam<-c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)`
 
-Now you should try creating the diam variable using these same data. In the code chunk below, type in a command to create `diam`. 
+Now you should try creating the diam variable using these same data. In the code chunk below, type in a command to create `diam`.
 
 ```{webr-r}
 #Type your code here
@@ -52,7 +52,6 @@ Now you should try creating the diam variable using these same data. In the code
 ## Hint
 
 Don't forget the parentheses.
-
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
@@ -62,7 +61,6 @@ Don't forget the parentheses.
 #| eval: false
 diam<- c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)
 ```
-
 :::
 
 If you are interested in knowing what a variable contains, you can just type its name. R is case-sensitive, so be careful about whether you type in upper or lower case.
@@ -78,7 +76,7 @@ Try typing diam and see what you get.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Just type the word `diam`. 
+Just type the word `diam`.
 :::
 
 ### Using data tables
@@ -110,7 +108,7 @@ data
 ```
 :::
 
-You can see that this data table contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.) 
+You can see that this data table contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.)
 
 These data are from a physiological study. Each individual's respiratory quotient (RQ) was measured, either after exercise (1), or during rest (2). Their heart rates in beats per minute were also measured. NA stands for 'not available,' meaning that the data for these combinations of individual and variable were lost or not recorded.
 
@@ -174,7 +172,6 @@ Try changing the variable named `Individual` to a factor variable. You will noti
 ## Hint
 
 Remember to use the dollar sign notation, and that R is case-sensitive.
-
 :::
 
 ::: {.callout-note collapse="true" icon="false"}
@@ -185,6 +182,5 @@ Remember to use the dollar sign notation, and that R is case-sensitive.
 data$Individual<-as.factor(data$Individual)
 ```
 :::
-
 
 Congratulations! You have finished the first R tutorial. You have learned how to create a variable in R, how data files in R are organized, and how to examine and change the properties of different variables.

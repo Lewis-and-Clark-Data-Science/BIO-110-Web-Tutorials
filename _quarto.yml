@@ -4,8 +4,8 @@ project:
   resources: 
     - physiology_data.csv
 
-webr: 
-  packages: ['plotrix', 'base64enc', 'stats']
+#webr: 
+#  packages: ['plotrix', 'base64enc', 'stats']
   
 website:
   title: "BIO 110 Web Tutorials"

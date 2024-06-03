@@ -3,9 +3,7 @@ format: html
 editor: visual
 filters: 
   - webr
-title: "Lesson 2"
-#resources: 
-    #- physiology_data.csv
+title: Lesson Two
 ---
 
 ```{webr-r}
