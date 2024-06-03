@@ -28,6 +28,7 @@ library("plotrix")
 library("stats")
 library("base64enc")
 ```
+## Introduction
 
 Welcome! In this lesson you will learn about measures of variability. But first, notice in the code chunk above that R has just told you that it has downloaded certain packages. An R package is a group of functions that perform special operations. R has loaded these packages to permit you to use these functions in this tutorial. When you start working on your own data outside of these tutorials, you will sometimes need to tell R to load certain packages. We'll walk you through this step when it is needed.
 

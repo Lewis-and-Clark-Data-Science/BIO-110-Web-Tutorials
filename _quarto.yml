@@ -13,7 +13,9 @@ website:
     left: 
       - Bio110_lesson_one.qmd
       - Bio110_lesson_two.qmd
-      - Bio110_lesson_three.qmd    
+      - Bio110_lesson_three.qmd 
+      - Bio110_lesson_four.qmd
+      - Bio110_lesson_five.qmd
   
 
 format:
