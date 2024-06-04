@@ -22,7 +22,7 @@ data<- read.csv("physiology_data.csv")
 
 Welcome. In this lesson, you will learn about central tendency.
 
-### Analyzing Central Tendency
+## Analyzing Central Tendency
 
 When analyzing a set of data values, it is often important to summarize where the numerical 'center' of the data values lies."
 
@@ -49,7 +49,7 @@ mydata<-c(4, 4, 2, 6, 3, 0, 3)
 ```
 :::
 
-#### Calculating Mean and Median
+### Calculating Mean and Median
 
 The mean (also known as the average) is a commonly-used measure of the center of a set of values. To compute the mean, you can use the command `mean(dataname)`, substituting the name of your variable for the placeholder shown here.
 
@@ -172,7 +172,7 @@ mean(data_two)-median(data_two)
 
 You may be wondering how to know whether to use the mean or the median. This can be especially challenging if you have a variable with many data values.
 
-#### Histograms
+### Histograms
 
 You can examine the distribution of the data values visually using a histogram. A histogram shows how many data values fall into different size categories.
 

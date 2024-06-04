@@ -1,0 +1,9 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+  - naquiz
+title: "Lesson 6: Bar Graphs"
+---
+
