@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources: 
     - physiology_data.csv
+    - bargraphdata.csv
   
 #webr: 
 #  packages: ['plotrix', 'base64enc', 'stats']
