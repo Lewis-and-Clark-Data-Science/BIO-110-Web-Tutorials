@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BIO 110 Web Tutorials - Lesson 6: Bar Graphs</title>
+<title>BIO 110 Web Tutorials - Lesson 7: Inferential stats</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -272,7 +306,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"label":"unnamed-chunk-1","out-height":"","editor-max-height":"","autorun":"true","classes":"","warning":"true","editor-font-scale":1,"context":"setup","results":"markup","read-only":"false","fig-cap":"","output":"true","message":"true","out-width":"700px","dpi":72,"fig-height":5,"fig-width":7,"comment":"","editor-quick-suggestions":"false"},"id":1,"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/sampledatastats.csv\"\n# Note: must include sampledatastats.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"sampledatastats.csv\" at the end after the slash \n\ndownload.file(url, \"sampledatastats.csv\")\n\nbargraphdata <- read.csv(\"sampledatastats.csv\")"}];
+globalThis.qwebrCellDetails = [{"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/sampledatastats.csv\"\n\n# Note: must include sampledatastats.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"sampledatastats.csv\" at the end after the slash \n\ndownload.file(url, \"sampledatastats.csv\")\n\nsampledata <- read.csv(\"sampledatastats.csv\")","id":1,"options":{"label":"unnamed-chunk-1","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"setup","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"true","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":2,"options":{"label":"unnamed-chunk-2","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":3,"options":{"label":"unnamed-chunk-3","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":4,"options":{"label":"unnamed-chunk-4","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":5,"options":{"label":"unnamed-chunk-5","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":6,"options":{"label":"unnamed-chunk-6","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":7,"options":{"label":"unnamed-chunk-7","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":8,"options":{"label":"unnamed-chunk-8","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":9,"options":{"label":"unnamed-chunk-9","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":10,"options":{"label":"unnamed-chunk-10","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}},{"code":"#Type your code here\n","id":11,"options":{"label":"unnamed-chunk-11","comment":"","fig-width":7,"editor-font-scale":1,"fig-height":5,"message":"true","dpi":72,"fig-cap":"","warning":"true","context":"interactive","out-height":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","read-only":"false","output":"true","autorun":"false","editor-max-height":"","classes":""}}];
 
 </script>
 <script type="module">
@@ -1156,7 +1190,7 @@ globalThis.qwebrExecuteCode = async function (
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./Bio110_lesson_seven.html" aria-current="page"> 
-<span class="menu-text">Lesson 6: Bar Graphs</span></a>
+<span class="menu-text">Lesson 7: Inferential stats</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -1170,7 +1204,13 @@ globalThis.qwebrExecuteCode = async function (
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1404,7 +1444,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesson 6: Bar Graphs</h1>
+<h1 class="title">Lesson 7: Inferential stats</h1>
 </div>
 
 
@@ -1423,8 +1463,341 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this lesson you will learn how to perform some basic inferential statistics.</p>
+<p>When testing scientific hypotheses, we are trying to decide whether the pattern in our data supports the hypothesis or not.</p>
+<p>But some apparent patterns can be due to chance alone. Statistical inference gives us a way to compute the likelihood that an apparent pattern in our data could be due merely to chance.</p>
+<p>Most scientists only accept a pattern as supporting a hypothesis if it is very unlikely that the pattern could be due to chance. We define an event as ‘very unlikely’ if it has a probability of .05 (5%) or less.</p>
+<p>Statistical inference involves using the data to compute the probability – the ‘p-value’ – that a pattern could have arisen by chance. If the p-value associated with a test is less than or equal to 0.05, we conclude that the pattern is ‘statistically significant’. In other words, the pattern is highly unlikely to have arisen by chance.</p>
+<p>In this tutorial you will work with a sample dataset called <code>sampledata</code> that has already been imported into the tutorial.</p>
+<p>Write the command for looking at the structure of <code>sampledata</code> so you can see what it contains.</p>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The structure function is <code>str(datafilename)</code>.</p>
+</div>
+</div>
+</div>
+<p>You should also look at the values in the table. Write the command to display the data file.</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Just type the name of the file</p>
+</div>
+</div>
+</div>
+<p>You can see that sampledata contains 30 different observations (rows) and 5 variables (columns).</p>
+<ul>
+<li><p>Weight, length, and repro are numerical variables.</p></li>
+<li><p>Temp is a factor variable with two levels, A and B.</p></li>
+<li><p>Diet is an integer variable, but in this data set, we will want to use it as a factor variable: the experimental organisms were fed one of three possible types of diet.</p></li>
+</ul>
+<p>Write a command that will convert diet to a factor variable.</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You will need to use the as.factor() function.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sampledata<span class="sc">$</span>diet<span class="ot">&lt;-</span><span class="fu">as.factor</span>(sampledata<span class="sc">$</span>diet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Let’s start by thinking about situations where both the independent and dependent variables are continuous. You are interested in knowing if there is an association or a relationship between the values of the two variables. Does the value of one predict the value of the other?</p>
+<p>We will work with the variables for weight and for length.</p>
+<div class="question">
+<p><strong>What is the most appropriate kind of plot for looking at the possible relationship between two continuous variables?</strong></p>
+<div class="choices">
+<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>histogram</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>scatterplot</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no3"> <span id="no3" x-show="answer == $el.id" class="badge">✗</span>barplot</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no4"> <span id="no4" x-show="answer == $el.id" class="badge">✗</span>boxplot</p><p></p>
+</div>
+</div>
+
+</div>
+</div>
+<p>Write a command to plot the relationship between weight and length. Put length on the x-axis.</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Did you remember to use the dollar sign to specify the data file, and that the x-variable goes first in the plot command?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sampledata<span class="sc">$</span>length, sampledata<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>We can carry out a regression analysis to find the equation for the best-fit line through the points. The command: <code>model&lt;-lm(sampledata$weight~sampledata$length)</code> performs a regression of <code>weight</code> (the y-variable) on <code>length</code> (the x-variable) and stores it in a variable called <code>model</code>. <code>lm</code> stands for ‘linear model.’</p>
+<p>It is important to notice that in this command, the positions of the x- and y-variables are reversed from what they are in the plot command, and they are separated by a tilde (<code>~</code>) rather than a comma.</p>
+<p>Write the command to perform a linear regression of weight on length for <code>sampledata</code>, and store it in a variable called <code>weightreg</code>.</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Try <code>weightreg&lt;-lm(sampledata$weight~sampledata$length)</code></p>
+</div>
+</div>
+</div>
+<p>To see the line superimposed on your graph, you can give the command <code>abline(model)</code>.</p>
+<p>Write the command to add a regression line to your scatterplot. Don’t forget to substitute <code>weightreg</code> for <code>model</code>.</p>
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Try <code>abline(weightreg)</code></p>
+</div>
+</div>
+</div>
+<p>You can find the slope of the line and the y-intercept (the values m and b in the equation y = mx + b) by typing the name of the variable you created from your regression.</p>
+<p>Write the code to find the slope and y-intercept of the best-fit line.</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You named your regression variable <code>weightreg</code></p>
+</div>
+</div>
+</div>
+<p>The output shows the values of the line’s y-intercept (-5.1502) and its slope (0.8149).</p>
+<p>The points fit the line quite well. It seems unlikely that this association could have happened just by accident, though it IS possible. We would like to know the probability that there is actually no relationship between these two variables, that the slope of the true line through them is actually zero (a flat line).</p>
+<p>We can find the p-value by using the command <code>summary(model)</code>.</p>
+<p>Write the command to find the probability that the true slope of the line is zero. Don’t forget to use the name you gave your model variable.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The command is <code>summary(weightreg)</code></p>
+</div>
+</div>
+</div>
+<p>In the ‘coefficients’ table, the line for <code>sampledata$length</code> shows a p-value, 4.7 x 10^-8, that is much smaller than 0.05. This means that you can conclude that the effect of length on weight in this sample is <strong>highly statistically significant</strong>.</p>
+<p>Now consider a different data analysis situation. Suppose you did a study where you measured some continuous dependent variable under two different conditions, and you want to know if the two groups differ.</p>
+<p>Again using <code>sampledata</code>, consider the categorical variable temp. Suppose we want to know whether weight differs depending on whether the temp category is A or B. In this situation, we would perform a t-test.</p>
+<p>First it is a good idea to look at the data visually. We can most easily do this with a boxplot.</p>
+<div class="question">
+<p><strong>To create a boxplot that compares weights for the two different temp categories, what variable should go on the x-axis?</strong></p>
+<div class="choices">
+<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>weight</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>length</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>temp</p><p></p>
+</div>
+</div>
+
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the variable that defines the categories.</p>
+</div>
+</div>
+</div>
+<p>In lesson 3, you used the plot function to make both boxplots and scatterplots, depending on the nature of the independent variable (categorical or continuous). There is another boxplot command, creatively named boxplot.</p>
+<p>In the boxplot command, any independent variable that is numeric is treated as a factor variable automatically. Its syntax is: <code>boxplot(depvar ~ indepvar)</code>. Notice that, unlike the plot command, the dependent variable is listed first in the boxplot command, and the two variables are separated by a tilde (<code>~</code>). It is easy to get these two commands mixed up!</p>
+<p>Using the boxplot function, write the command to make a boxplot of weights for the two temp categories</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In the parentheses, the dependent variable goes first, followed by the squiggle, and then the independent variable.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sampledata<span class="sc">$</span>weight<span class="sc">~</span>sampledata<span class="sc">$</span>temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>You can see that the medians for the two sets of data values are different, but the values overlap quite a bit. Are they different enough that the difference is unlikely to be due to chance?</p>
+<p>We can find out by performing a t-test. You used a t-test in lesson 3 to calculate the confidence interval for a single variable; this is called a one-sample t-test. This time you will do a two-sample t-test, which is a way of finding out whether two groups of data differ significantly.</p>
+<p>There are two ways of writing the t-test command. If the data are in one variable, and the classification categories are in another, as they are in this case, we would write: <code>t.test(data$depvar ~ data$catvar)</code>, using real file and variable names in place of these placeholders.</p>
+<p>Write the command to perform a t-test to determine if weights for the different temperatures are significantly different.</p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>try <code>t.test(sampledata$weight~sampledata$temp)</code></p>
+</div>
+</div>
+</div>
+<p>END WITH “The output shows a p-value (in”</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

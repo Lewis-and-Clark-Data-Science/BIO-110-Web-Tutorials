@@ -79,7 +79,7 @@ Notice that R has created a scatterplot, and that it is treating the Condition v
 
 If the Condition variable were a factor variable, R would make a boxplot instead. We can tell R to treat this variable as a factor by writing: `data$Condition<-as.factor(data$Condition)`.
 
-Try it for yourself. Make Condition  a factor variable.
+Try it for yourself. Make Condition a factor variable.
 
 ```{webr-r}
 #Type your code here
@@ -90,10 +90,10 @@ Try it for yourself. Make Condition  a factor variable.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Did you spell everything correctly? 
+Did you spell everything correctly?
 :::
 
-Now run the plot command again. 
+Now run the plot command again.
 
 ```{webr-r}
 #Type your code here
@@ -103,16 +103,15 @@ Now run the plot command again.
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{r}
 #| eval: false
 
 plot(data$Condition,data$RQ)
 ```
-
 :::
 
 When R understands that the Condition variable is a factor or category, the 'plot' command creates a boxplot. The horizontal bars represent the medians of each group. The boxes represent the interquartile range, i.e. the middle 50% of all the data values.
-
 
 ::: question
 **In which condition is the median respiratory quotient higher, exercise or resting?**
@@ -130,21 +129,22 @@ exercise
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+
 Remember that 1 represents the exercise condition and 2 represents the resting condition.
 :::
 
-### Modifying a plot 
+### Modifying a plot
 
 This boxplot is not very easy to read because the labels are not very clear. We can change the plotting parameters to improve its appearance. There are many ways to modify the plot command to add additional features. We'll cover some of the most basic modifications in this tutorial.
 
-#### Axis labels 
+#### Axis labels
 
 The axis labels should be self-explanatory. We can create axis labels by adding the `xlab='_____'` and `ylab='____'` arguments to the plot command. Because these labels are character strings (i.e. lists of letters), we need to enclose them in quotation marks.
 
 You can add these terms to the plot command, within the parentheses. For example, you might write: `plot(data$x, data$y, xlab='my x-axis label', ylab='my y-axis label')`.
 
 Try it yourself, with "Condition" as the x-axis label, and "RQ" as the y-axis label. Don't forget to put the text of these labels in quotation marks, and to use a comma to separate them.
-  
+
 ```{webr-r}
 #Type your code here
 
@@ -156,8 +156,10 @@ Try it yourself, with "Condition" as the x-axis label, and "RQ" as the y-axis la
 
 Remember that text is case-sensitive.
 :::
+
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{r}
 #| eval: false
 plot(data$Condition, data$RQ, xlab="Condition", ylab="RQ")
@@ -179,8 +181,10 @@ Try it now, using "exercise" for the first category name, and "resting" for the 
 
 In this tutorial, R is looking for you to enter the arguments in a particular order. Try putting the names argument in front of the axis label argument -- this might be why you got an error message despite seeing the correct graph.
 :::
+
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{r}
 #| eval: false
 plot(data$Condition, data$RQ, names=c("exercise","resting"), xlab="Condition",ylab="RQ")
@@ -188,14 +192,14 @@ plot(data$Condition, data$RQ, names=c("exercise","resting"), xlab="Condition",yl
 ```
 :::
 
-#### Adjusting the range of values 
+#### Adjusting the range of values
 
 You might also want to use a wider range of values on the y-axis so that the figure has a little more elbow room. For example, the current y-axis starts at an RQ value of 0.85 and ends at a value of 1.0. Maybe you'd like it to range from 0.75 to 1.05 instead.
 
 You can do this by inserting the `ylim=c(lowerlimit, upperlimit)` argument into the plot command like this: `plot(data$x, data$y, ylim=c(0.75, 1.05))`.
 
 Try it now, inserting the ylim specification after the commands for category names, axis labels, etc.
- 
+
 ```{webr-r}
 #Type your code here
 
@@ -206,10 +210,11 @@ Try it now, inserting the ylim specification after the commands for category nam
 ## Hint
 
 Remember to put all text expressions in quotes. And R wants you to use the same case, upper or lower, as the instructions specify.
-
 :::
+
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{r}
 #| eval: false
 plot(data$Condition, data$RQ, names=c("exercise","resting"), xlab="Condition", ylab="RQ", ylim=c(0.75,1.05))
@@ -217,10 +222,6 @@ plot(data$Condition, data$RQ, names=c("exercise","resting"), xlab="Condition", y
 ```
 :::
 
-## Congratulations! 
+## Congratulations!
 
-Hooray! You have completed lesson four. You have learned how to make and interpret a boxplot and how to modify the axis labels and the x- and y-limits. Lesson five  will teach you how to make a scatterplot.
-
-
-
-
+Hooray! You have completed lesson four. You have learned how to make and interpret a boxplot and how to modify the axis labels and the x- and y-limits. Lesson five will teach you how to make a scatterplot.

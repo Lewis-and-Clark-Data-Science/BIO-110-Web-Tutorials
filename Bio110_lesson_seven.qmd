@@ -4,17 +4,287 @@ editor: visual
 filters: 
   - webr
   - naquiz
-title: "Lesson 6: Bar Graphs"
+title: "Lesson 7: Inferential stats"
 ---
 
 ```{webr-r}
 #| context: setup
 
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/sampledatastats.csv"
+
 # Note: must include sampledatastats.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add "sampledatastats.csv" at the end after the slash 
 
 download.file(url, "sampledatastats.csv")
 
-bargraphdata <- read.csv("sampledatastats.csv")
+sampledata <- read.csv("sampledatastats.csv")
 
 ```
+
+## Introduction
+
+In this lesson you will learn how to perform some basic inferential statistics.
+
+When testing scientific hypotheses, we are trying to decide whether the pattern in our data supports the hypothesis or not.
+
+But some apparent patterns can be due to chance alone. Statistical inference gives us a way to compute the likelihood that an apparent pattern in our data could be due merely to chance.
+
+Most scientists only accept a pattern as supporting a hypothesis if it is very unlikely that the pattern could be due to chance. We define an event as 'very unlikely' if it has a probability of .05 (5%) or less.
+
+Statistical inference involves using the data to compute the probability -- the 'p-value' -- that a pattern could have arisen by chance. If the p-value associated with a test is less than or equal to 0.05, we conclude that the pattern is 'statistically significant'. In other words, the pattern is highly unlikely to have arisen by chance.
+
+In this tutorial you will work with a sample dataset called `sampledata` that has already been imported into the tutorial.
+
+Write the command for looking at the structure of `sampledata` so you can see what it contains.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+The structure function is `str(datafilename)`.
+:::
+
+You should also look at the values in the table. Write the command to display the data file.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Just type the name of the file
+:::
+
+You can see that sampledata contains 30 different observations (rows) and 5 variables (columns). 
+
+  - Weight, length, and repro are numerical variables. 
+  
+  - Temp is a factor variable with two levels, A and B. 
+  
+  - Diet is an integer variable, but in this data set, we will want to use it as a factor variable: the experimental organisms were fed one of three possible types of diet.
+
+Write a command that will convert diet to a factor variable.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+You will need to use the as.factor() function.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+```{r}
+#| eval: false
+sampledata$diet<-as.factor(sampledata$diet)
+```
+:::
+
+Let's start by thinking about situations where both the independent and dependent variables are continuous. You are interested in knowing if there is an association or a relationship between the values of the two variables. Does the value of one predict the value of the other?
+
+We will work with the variables for weight and for length.
+
+::: question
+**What is the most appropriate kind of plot for looking at the possible relationship between two continuous variables?**
+
+::: choices
+::: choice
+histogram
+:::
+
+::: {.choice .correct-choice}
+scatterplot
+:::
+::: choice
+barplot
+:::
+::: choice
+boxplot
+:::
+:::
+:::
+
+Write a command to plot the relationship between weight and length. Put length on the x-axis.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Did you remember to use the dollar sign to specify the data file, and that the x-variable goes first in the plot command?
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+```{r}
+#| eval: false
+plot(sampledata$length, sampledata$weight)
+```
+:::
+
+We can carry out a regression analysis to find the equation for the best-fit line through the points. The command: `model<-lm(sampledata$weight~sampledata$length)` performs a regression of `weight` (the y-variable) on `length` (the x-variable) and stores it in a variable called `model`. `lm` stands for 'linear model.' 
+
+It is important to notice that in this command, the positions of the x- and y-variables are reversed from what they are in the plot command, and they are separated by a tilde (`~`) rather than a comma.
+
+Write the command to perform a linear regression of weight on length for `sampledata`, and store it in a variable called `weightreg`.
+
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `weightreg<-lm(sampledata$weight~sampledata$length)`
+:::
+
+To see the line superimposed on your graph, you can give the command `abline(model)`.
+
+Write the command to add a regression line to your scatterplot. Don't forget to substitute `weightreg` for `model`.
+ 
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `abline(weightreg)`
+:::
+
+You can find the slope of the line and the y-intercept (the values m and b in the equation y = mx + b) by typing the name of the variable you created from your regression.
+
+Write the code to find the slope and y-intercept of the best-fit line.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+You named your regression variable `weightreg`
+:::
+
+The output shows the values of the line's y-intercept (-5.1502) and its slope (0.8149).
+
+The points fit the line quite well. It seems unlikely that this association could have happened just by accident, though it IS possible. We would like to know the probability that there is actually no relationship between these two variables, that the slope of the true line through them is actually zero (a flat line).
+
+We can find the p-value by using the command `summary(model)`.
+
+Write the command to find the probability that the true slope of the line is zero. Don't forget to use the name you gave your model variable.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+The command is `summary(weightreg)`
+:::
+
+In the 'coefficients' table, the line for `sampledata$length` shows a p-value, 4.7 x 10^-8, that is much smaller than 0.05. This means that you can conclude that the effect of length on weight in this sample is **highly statistically significant**.
+
+Now consider a different data analysis situation. Suppose you did a study where you measured some continuous dependent variable under two different conditions, and you want to know if the two groups differ.
+
+Again using `sampledata`, consider the categorical variable temp. Suppose we want to know whether weight differs depending on whether the temp category is A or B. In this situation, we would perform a t-test.
+
+First it is a good idea to look at the data visually. We can most easily do this with a boxplot.
+
+::: question
+**To create a boxplot that compares weights for the two different temp categories, what variable should go on the x-axis?**
+
+::: choices
+::: choice
+weight
+:::
+
+::: choice
+length
+:::
+::: {.choice .correct-choice}
+temp
+:::
+:::
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the variable that defines the categories.
+
+:::
+
+In lesson 3, you used the plot function to make both boxplots and scatterplots, depending on the nature of the independent variable (categorical or continuous). There is another boxplot command, creatively named boxplot.
+
+In the boxplot command, any independent variable that is numeric is treated as a factor variable automatically. Its syntax is: `boxplot(depvar ~ indepvar)`. Notice that, unlike the plot command, the dependent variable is listed first in the boxplot command, and the two variables are separated by a tilde (`~`). It is easy to get these two commands mixed up!
+
+Using the boxplot function, write the command to make a boxplot of weights for the two temp categories
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+In the parentheses, the dependent variable goes first, followed by the squiggle, and then the independent variable.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+```{r}
+#| eval: false
+boxplot(sampledata$weight~sampledata$temp)
+```
+:::
+
+You can see that the medians for the two sets of data values are different, but the values overlap quite a bit. Are they different enough that the difference is unlikely to be due to chance?
+
+We can find out by performing a t-test. You used a t-test in lesson 3 to calculate the confidence interval for a single variable; this is called a one-sample t-test. This time you will do a two-sample t-test, which is a way of finding out whether two groups of data differ significantly.
+
+There are two ways of writing the t-test command. If the data are in one variable, and the classification categories are in another, as they are in this case, we would write: `t.test(data$depvar ~ data$catvar)`, using real file and variable names in place of these placeholders.
+
+Write the command to perform a t-test to determine if weights for the different temperatures are significantly different.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try `t.test(sampledata$weight~sampledata$temp)`
+:::
+
+END WITH "The output shows a p-value (in"
