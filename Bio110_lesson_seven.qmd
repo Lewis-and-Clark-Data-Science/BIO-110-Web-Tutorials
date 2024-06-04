@@ -1,0 +1,20 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+  - naquiz
+title: "Lesson 6: Bar Graphs"
+---
+
+```{webr-r}
+#| context: setup
+
+url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/sampledatastats.csv"
+# Note: must include sampledatastats.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add "sampledatastats.csv" at the end after the slash 
+
+download.file(url, "sampledatastats.csv")
+
+bargraphdata <- read.csv("sampledatastats.csv")
+
+```

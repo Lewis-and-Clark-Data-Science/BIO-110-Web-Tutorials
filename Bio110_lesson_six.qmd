@@ -8,14 +8,347 @@ title: "Lesson 6: Bar Graphs"
 ---
 
 ```{webr-r}
-# #| context: setup
+#| context: setup
 
-url<- "https://github.com/Lewis-and-Clark-Data-Science/BIO-110-Web-Tutorials/blob/main/bargraphdata.csv"
+url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/bargraphdata.csv"
+# Note: must include bargraphdata.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add "bargraphdata.csv" at the end after the slash 
 
 download.file(url, "bargraphdata.csv")
 
-bargraphdata <- read_csv("bargraphdata.csv")
+bargraphdata <- read.csv("bargraphdata.csv")
+
+library(plotrix)
+library(gplots)
+```
+
+## Introduction 
+
+Welcome. In this lesson, you will learn how to create simple bar graphs and clustered bar graphs, and to add error bars to both types of graphs.
+
+You will need two packages, 'gplots' and 'plotrix,' which this tutorial loads automatically. If you work outside of the tutorial, you will need to load these yourself.
+
+## Dataset
+
+A dataset called `bargraphdata` has been included in this tutorial.
+
+Type its name so that you can see what it contains.
+
+```{webr-r}
+#Type your code here
+
 
 ```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `bargraphdata`
+:::
+
+It would also be good to understand the structure of the different variables. Type the command that allows you to see the structure of `bargraphdata`.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `str(bargraphdata)`
+:::
+
+This dataset contains three variables. The data come from an experimental field study that lasted three years and involved 40 study plots. Each plot received one of two different experimental treatments. 
+  
+  - The first variable, `var1`, is a measurement that was made in each of the plots; this variable is numerical. 
+  
+  - The second variable, `treatment`, refers to whether a particular study plot received treatment A or treatment B; this is a factor (category) variable. 
+  
+  - The third variable, `year`, refers to the year in which the measurement was made.
+
+## Bar Graphs
+
+Suppose you want to make a bar graph that compares the means of `var1` for each of the two treatments. For now, imagine that you do not care about the year the measurement was made.
+
+### Identify data
+
+The first thing you need to do is to identify the data that will be used to make each bar. Right now all of the data values for both bars are part of the same variable, `var1`.
+
+You will need to tell R which data values to use for each bar. The easiest way to do this is to subset `var1` according to the value of `treatment`. You have done this in earlier lessons, using the `tapply` function; you'll do something similar here.
+
+To make a bar graph showing means and error bars for each level of treatment, A and B, we start by computing the means for the two levels. Recall that we can use `tapply` to do this, using the following syntax: `tapply(datafilename$numeric_variable, datafilename$grouping_variable, mean)`. Instead of printing out the means, let's save them in a new variable, called `tmtmean`, that we can use later.
+
+Write a command that creates a new variable, `tmtmean`, that contains two means for var1: the mean for plots that received treatment A, and the mean for plots that received treatment B. Remember to substitute your data file and variable names for the placeholders shown above.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `tmtmean<-tapply(bargraphdata$var1, bargraphdata$treatment,mean)`
+:::
+
+The command for making a bar graph is `barplot2(list_of_means, beside=T)`. In this command,`list_of_means` is a placeholder for the variable name you used for the means variable you created. `beside=T` tells R to put the bars side-by-side rather than stacking them.
+
+Write a command that will create a bar graph comparing the means of `var1` for the two experimental treatments.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `barplot2(tmtmean, beside=T)`
+:::
+
+### Axis labels
+
+You now have a nice basic bar graph, but the graph is missing axis labels. Think about how you added axis labels when you made a boxplot. You can do the same thing here, by specifying `xlab='your label text'` and `ylab='your label text'` after the other parts of the command."
+
+Write a  line of code to modify the barplot2 command to include a label for the x-axis that reads 'treatment' and a label for the y-axis that reads 'variable one'. 
+ 
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `barplot2(tmtmean, beside=T, xlab="treatment", ylab="variable one")`
+:::
+
+### Adding error bars
+
+In lesson three, you learned about the importance of describing the variability in the data as well as its central tendency. This bar graph does not show the variability in `var1`. You can do that by adding error bars to the bars. The error bars can represent whatever measure of variability you choose: standard deviation, standard error, or 95% confidence limits.
+
+#### Compute measure of variability
+
+To add error bars to your graph, you first need to compute the values for the measure of variability you have chosen to use. In this example, let's use the standard deviation. We can use the same approach you took to calculating treatment means to calculate the standard deviations for the two treatment groups, A and B, and to put them into a new variable.
+
+Using `tapply`, as you did before, write a command that creates a new variable, `tmtsd`, that contains the standard deviations of `var1` for plots that received treatment A and for plots that received treatment B. Remember to substitute your data file and variable names for the placeholders shown above.
+ 
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `tmtsd<-tapply(bargraphdata$var1, bargraphdata$treatment,sd)`
+:::
+
+#### Add new variables as error bars 
+
+Now you can use this new variable to make a bar graph with error bars above and below the means. The error bars will extend 1 standard error above the mean and 1 standard error below the mean. This involves putting more arguments into the parentheses.
+
+  - Adding the argument: `plot.ci=T` tells R that you are adding information about variability to your graph. (`ci` technically stands for confidence interval, but is used here to refer to any measure of variability that you specify. `=T` means 'is true')
+
+  - `ci.u` refers to the location of the upper portion of the error bar. The argument `ci.u=tmtmean+tmtsd` says to make each error bar the height of one standard deviation above its respective mean.
+
+  - The equivalent argument to specify the lower part of the error bar is: `ci.l=tmtmean-tmtsd`
+
+To make a bar graph with error bars that are one standard deviation above and below the mean, you would add these two arguments within the parentheses, after the statements about the axis labels. Separate each argument from the others with a comma.
+
+Write a command for a bar graph of the means of variable1 for each of the two treatments, A and B, with axis labels of 'treatment' and 'variable one'. Include standard deviation bars.
+ 
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `barplot2(tmtmean, beside=T, xlab="treatment", ylab="variable one", plot.ci=T, ci.u=tmtmean+tmtsd, ci.l=tmtmean-tmtsd)`
+:::
+
+If you would rather show standard error bars and you have loaded `plotrix`, you can substitute `std.error` for `sd` and get a bargraph with standard error bars. You would first need to create a new variable with the standard error values for the two treatment groups, and then use that variable in your `ci.u` and `ci.l` expressions.
+
+## Clustered bar graph
+
+Suppose you were interested in a bar graph that not only compared the treatments, but also displayed if and how the years differed from each other. You can do this with what is called a clustered bar graph.
+
+In this case, a clustered bar graph would have six different bars, one for each combination of treatment (A and B) and year (1, 2, and 3).
+
+### Types of clusters
+
+There are two ways of 'clustering' these six bars, depending on what comparison you were most interested in. 
+
+  - You could have two clusters, one for each treatment, and put the three years next to each other within each of the treatment clusters. This would be the best arrangement if you were particularly interested in comparing the years to each other. 
+
+  - The alternative would be to have three clusters, one for each year, and to put the two treatments next to each other within each of the year clusters. This would be the best arrangement if you were particularly interested in comparing the treatments to each other.
+  
+### Specifying data and variables
+
+To make either of these clustered bar graphs, you would go back to working with the original data file, `bargraphdata`, where the data are arranged in rows and columns.
+
+You would start by making a table of the means of `var1` for each of the 6 subgroups using `tapply`. You used `tapply` earlier in this lesson to make a simple bar graph. This time, instead of subdividing the values of `var1` by just a single grouping variable, `treatment`, you wish to subdivide `var1` by all combinations of two different grouping variables, `treatment` and `year`. 
+
+This requires a slightly different syntax for the `tapply` command: `tmt_yr_means<-tapply(bargraphdata$var1, list(bargraphdata$treatment, bargraphdata$year), mean)`. Notice that the two grouping variables are bundled together in parentheses following the word 'list.'
+
+Try it yourself now.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `tmt_yr_means <- tapply(bargraphdata$var1, list(bargraphdata$treatment, bargraphdata$year), mean)`
+:::
+
+Write a command to see what the `tmt_yr_means` variable looks like.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `tmt_yr_means`
+:::
+
+The variable that you have created is a table that has two rows, one for each treatment, and three columns, one for each year.
+
+### Adding standard deviation bars
+
+If you want your bar graph to include standard deviation bars, you need a similar table of the standard deviations.
+
+Write the equivalent command to create such a table, and call it `tmt_yr_errors`.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Use the same command as previously, substituting 'sd' for 'mean'
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+tmt_yr_errors<-tapply(bargraphdata$var1,list(bargraphdata$treatment,bargraphdata$year),sd)
+```
+
+:::
+
+### Creating the clustered bar graph
+
+The command for the clustered bar graph is similar to the one for a simple graph, but uses the new tables of means and errors that you have created.
+
+The command is: `barplot2(tmt_yr_means, beside=T, plot.ci=T, ci.u=tmt_yr_means+tmt_yr_errors, ci.l=tmt_yr_means-tmt_yr_errors)`.
+
+Try writing this command and running it.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Try `barplot2(tmt_yr_means, beside=T, plot.ci=T, ci.u=tmt_yr_means+tmt_yr_errors, ci.l=tmt_yr_means-tmt_yr_errors)`
+:::
+
+Notice that this is the second kind of clustered bar graph, which shows a cluster that compares the two treatments within each year.
+
+### Changing the layout of clusters by transposing
+
+If you are more interested in creating two clusters, one for each treatment, you can do that by transposing the tables of mean and sd values. Transposing a table means that the rows become the columns and the columns become the rows. The transpose command is `t()`.
+
+When two tables having the same dimensions are added or subtracted, the result is another table of the same dimensions, with each element having been added to or subtracted from the corresponding element. This means that you do not need to transpose the 'errors' table separately; you can use `t(means+errors)` and `t(means-errors)` to revise this command.
+
+Write a new command using the `t()` function to create a graph with two treatment clusters of three years each.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Did you remember to transpose the means table as well as the others? 
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+barplot2(t(tmt_yr_means), beside=T, plot.ci=T, ci.u=t(tmt_yr_means+tmt_yr_errors), ci.l=t(tmt_yr_means-tmt_yr_errors))
+```
+
+:::
+
+### Legend
+
+With a clustered barplot, it is important to include a legend so that the reader can interpret the graph; axis labels are not enough.
+
+The legend command creates a legend for a graph that already exists. This command should be written and run after you have produced the graph you want; it will be added to that graph. The command: `legend("topleft",legend=c("Year 1","Year 2","Year 3"), fill=c("red","orange","yellow"))` will place a legend in the top left-hand corner of the graph.
+
+Try it yourself now.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+First create your plot again with the command from the previous code chunk. Then add the command to create legends. 
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+barplot2(t(tmt_yr_means), beside=T, plot.ci=T, ci.u=t(tmt_yr_means+tmt_yr_errors), ci.l=t(tmt_yr_means-tmt_yr_errors))
+
+legend("topleft",legend=c("Year 1","Year 2","Year 3"), fill=c("red","orange","yellow"))
+ 
+```
+
+:::
+
+## Congratulations
+
+That's it! Now you know how to use bar graphs to display your data. Remember that if the distribution of data values is highly non-normal, boxplots are a more appropriate form of graphical display than bar graphs.
+
+
+
 
 

@@ -4,6 +4,7 @@ project:
   resources: 
     - physiology_data.csv
     - bargraphdata.csv
+    - sampledatastats.csv
   
 #webr: 
 #  packages: ['plotrix', 'base64enc', 'stats']
@@ -17,6 +18,8 @@ website:
       - Bio110_lesson_three.qmd 
       - Bio110_lesson_four.qmd
       - Bio110_lesson_five.qmd
+      - Bio110_lesson_six.qmd
+      - Bio110_lesson_seven.qmd
   
 
 format:

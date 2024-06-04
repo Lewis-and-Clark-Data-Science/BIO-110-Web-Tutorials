@@ -13,8 +13,7 @@ title: "Lesson 5: Scatterplots"
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
 download.file(url, "physiology_data.csv")
 #Pulls data that has been loaded into the Bio 110 github repo. 
-#Note, the title of this data is also included in the _quarto.yml doc under resources so that it's included in the website. unclear if this is also necessary in the header of THIS document
-
+# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add "physiology_data.csv" at the end after the slash 
 
 data<- read.csv("physiology_data.csv")
 
