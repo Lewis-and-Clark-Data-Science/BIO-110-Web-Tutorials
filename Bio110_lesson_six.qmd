@@ -7,3 +7,15 @@ filters:
 title: "Lesson 6: Bar Graphs"
 ---
 
+```{webr-r}
+# #| context: setup
+
+url<- "https://github.com/Lewis-and-Clark-Data-Science/BIO-110-Web-Tutorials/blob/main/bargraphdata.csv"
+
+download.file(url, "bargraphdata.csv")
+
+bargraphdata <- read_csv("bargraphdata.csv")
+
+```
+
+
