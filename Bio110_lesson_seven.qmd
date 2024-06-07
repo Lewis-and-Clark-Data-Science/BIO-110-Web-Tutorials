@@ -28,9 +28,13 @@ When testing scientific hypotheses, we are trying to decide whether the pattern 
 
 But some apparent patterns can be due to chance alone. Statistical inference gives us a way to compute the likelihood that an apparent pattern in our data could be due merely to chance.
 
+### Statistical Significance 
+
 Most scientists only accept a pattern as supporting a hypothesis if it is very unlikely that the pattern could be due to chance. We define an event as 'very unlikely' if it has a probability of .05 (5%) or less.
 
-Statistical inference involves using the data to compute the probability -- the 'p-value' -- that a pattern could have arisen by chance. If the p-value associated with a test is less than or equal to 0.05, we conclude that the pattern is 'statistically significant'. In other words, the pattern is highly unlikely to have arisen by chance.
+Statistical inference involves using the data to compute the probability -- the **p-value** -- that a pattern could have arisen by chance. If the p-value associated with a test is less than or equal to 0.05, we conclude that the pattern is *statistically significant*. In other words, the pattern is highly unlikely to have arisen by chance.
+
+## Dataset 
 
 In this tutorial you will work with a sample dataset called `sampledata` that has already been imported into the tutorial.
 
@@ -62,13 +66,13 @@ You should also look at the values in the table. Write the command to display th
 Just type the name of the file
 :::
 
-You can see that sampledata contains 30 different observations (rows) and 5 variables (columns). 
+You can see that sampledata contains 30 different observations (rows) and 5 variables (columns).
 
-  - Weight, length, and repro are numerical variables. 
-  
-  - Temp is a factor variable with two levels, A and B. 
-  
-  - Diet is an integer variable, but in this data set, we will want to use it as a factor variable: the experimental organisms were fed one of three possible types of diet.
+-   Weight, length, and repro are numerical variables.
+
+-   Temp is a factor variable with two levels, A and B.
+
+-   Diet is an integer variable, but in this data set, we will want to use it as a factor variable: the experimental organisms were fed one of three possible types of diet.
 
 Write a command that will convert diet to a factor variable.
 
@@ -86,15 +90,18 @@ You will need to use the as.factor() function.
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{r}
 #| eval: false
 sampledata$diet<-as.factor(sampledata$diet)
 ```
 :::
 
+## Statistical Analysis with Continuous Variables 
+
 Let's start by thinking about situations where both the independent and dependent variables are continuous. You are interested in knowing if there is an association or a relationship between the values of the two variables. Does the value of one predict the value of the other?
 
-We will work with the variables for weight and for length.
+We will work with the variables for `weight` and for `length`.
 
 ::: question
 **What is the most appropriate kind of plot for looking at the possible relationship between two continuous variables?**
@@ -107,9 +114,11 @@ histogram
 ::: {.choice .correct-choice}
 scatterplot
 :::
+
 ::: choice
 barplot
 :::
+
 ::: choice
 boxplot
 :::
@@ -132,18 +141,20 @@ Did you remember to use the dollar sign to specify the data file, and that the x
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{r}
 #| eval: false
 plot(sampledata$length, sampledata$weight)
 ```
 :::
 
-We can carry out a regression analysis to find the equation for the best-fit line through the points. The command: `model<-lm(sampledata$weight~sampledata$length)` performs a regression of `weight` (the y-variable) on `length` (the x-variable) and stores it in a variable called `model`. `lm` stands for 'linear model.' 
+### Regression Analysis 
+
+We can carry out a regression analysis to find the equation for the best-fit line through the points. The command: `model<-lm(sampledata$weight~sampledata$length)` performs a regression of `weight` (the y-variable) on `length` (the x-variable) and stores it in a variable called `model`. `lm` stands for 'linear model.'
 
 It is important to notice that in this command, the positions of the x- and y-variables are reversed from what they are in the plot command, and they are separated by a tilde (`~`) rather than a comma.
 
 Write the command to perform a linear regression of weight on length for `sampledata`, and store it in a variable called `weightreg`.
-
 
 ```{webr-r}
 #Type your code here
@@ -160,7 +171,7 @@ Try `weightreg<-lm(sampledata$weight~sampledata$length)`
 To see the line superimposed on your graph, you can give the command `abline(model)`.
 
 Write the command to add a regression line to your scatterplot. Don't forget to substitute `weightreg` for `model`.
- 
+
 ```{webr-r}
 #Type your code here
 
@@ -191,7 +202,9 @@ You named your regression variable `weightreg`
 
 The output shows the values of the line's y-intercept (-5.1502) and its slope (0.8149).
 
-The points fit the line quite well. It seems unlikely that this association could have happened just by accident, though it IS possible. We would like to know the probability that there is actually no relationship between these two variables, that the slope of the true line through them is actually zero (a flat line).
+#### Is it statistically significant? 
+
+The points fit the line quite well. It seems unlikely that this association could have happened just by accident, though it *IS* possible. We would like to know the probability that there is actually no relationship between these two variables, that the slope of the true line through them is actually zero (a flat line).
 
 We can find the p-value by using the command `summary(model)`.
 
@@ -209,11 +222,15 @@ Write the command to find the probability that the true slope of the line is zer
 The command is `summary(weightreg)`
 :::
 
-In the 'coefficients' table, the line for `sampledata$length` shows a p-value, 4.7 x 10^-8, that is much smaller than 0.05. This means that you can conclude that the effect of length on weight in this sample is **highly statistically significant**.
+In the 'coefficients' table, the line for `sampledata$length` shows a p-value, 4.7 x 10\^-8, that is much smaller than 0.05. This means that you can conclude that the effect of length on weight in this sample is **highly statistically significant**.
+
+## Statistical Analysis with Continuous and Categorical Variables
 
 Now consider a different data analysis situation. Suppose you did a study where you measured some continuous dependent variable under two different conditions, and you want to know if the two groups differ.
 
-Again using `sampledata`, consider the categorical variable temp. Suppose we want to know whether weight differs depending on whether the temp category is A or B. In this situation, we would perform a t-test.
+Again using `sampledata`, consider the categorical variable temp. Suppose we want to know whether weight differs depending on whether the temp category is A or B. In this situation, we would perform a **t-test**.
+
+### Visualize data
 
 First it is a good idea to look at the data visually. We can most easily do this with a boxplot.
 
@@ -228,6 +245,7 @@ weight
 ::: choice
 length
 :::
+
 ::: {.choice .correct-choice}
 temp
 :::
@@ -238,7 +256,6 @@ temp
 ## Hint
 
 Use the variable that defines the categories.
-
 :::
 
 In lesson 3, you used the plot function to make both boxplots and scatterplots, depending on the nature of the independent variable (categorical or continuous). There is another boxplot command, creatively named boxplot.
@@ -261,6 +278,7 @@ In the parentheses, the dependent variable goes first, followed by the squiggle,
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Answer
+
 ```{r}
 #| eval: false
 boxplot(sampledata$weight~sampledata$temp)
@@ -269,7 +287,9 @@ boxplot(sampledata$weight~sampledata$temp)
 
 You can see that the medians for the two sets of data values are different, but the values overlap quite a bit. Are they different enough that the difference is unlikely to be due to chance?
 
-We can find out by performing a t-test. You used a t-test in lesson 3 to calculate the confidence interval for a single variable; this is called a one-sample t-test. This time you will do a two-sample t-test, which is a way of finding out whether two groups of data differ significantly.
+### 2 Sample t-test
+
+We can find out by performing a t-test. You used a t-test in lesson 3 to calculate the confidence interval for a single variable; this is called a one-sample t-test. This time you will do a **two-sample t-test**, which is a way of finding out whether two groups of data differ significantly.
 
 There are two ways of writing the t-test command. If the data are in one variable, and the classification categories are in another, as they are in this case, we would write: `t.test(data$depvar ~ data$catvar)`, using real file and variable names in place of these placeholders.
 
@@ -287,4 +307,260 @@ Write the command to perform a t-test to determine if weights for the different 
 try `t.test(sampledata$weight~sampledata$temp)`
 :::
 
-END WITH "The output shows a p-value (in"
+The output shows a p-value (in this case, 0.2308) for the probability that a difference this large could be due to chance alone. Since p is **greater** than 0.05, we should conclude that the differences in weights are **NOT statistically significant**. The two groups might really have similar weights, but just by chance, we sampled heavier individuals in one group than in the other.
+
+Sometimes the data for the two groups we would like to compare with a t-test are in two different variables of our data table.
+
+When that is the case, we use this command: `t.test(varA, varB)`.  If we wished, we could use the subset command to create two separate variables from `sampledata$weight`, but this would be an unnecessary extra step. If we did this, though, we would get the same result.
+
+It is important to remember, though, that t-tests are designed for data values with a *normal distribution*. Sometimes data are very non-normal. For example, go back and look at the variable    `repro`.
+
+You can see that there are a very large number of zeroes. This is often a good indication that the mean is not the center of the data distribution.
+
+### Wilcoxon test 
+
+There is an alternative to the t-test that does not require the data to have a normal distribution. It is called a **Wilcoxon test** (also sometimes a Mann-Whitney Test).
+
+#### Visualize data
+
+Before doing a statistical test, though, write some code to make a boxplot showing how the values of `repro` differ for the two temperatures.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Put the y-variable first, followed by the squiggle, and then the x-variable.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+boxplot(sampledata$repro~sampledata$temp)
+```
+:::
+
+Once again, the medians differ, but the data values for the two groups overlap.
+
+#### Wilcoxon test
+
+To carry out a Wilcoxon test, use the command: `wilcox.test(data$depvar~data$catvar)`.
+
+Write the command to perform a Wilcoxon test to determine whether values of `repro` differ for the two temp conditions.
+ 
+ 
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try `wilcox.test(sampledata$repro~sampledata$temp)`
+:::
+ 
+It's fine to ignore the warning values that you see whenever the data contain duplicate values. 
+
+You can see that the p-value (.076) tells you that the differences are NOT statistically significant, though they are nearly so.
+
+### ANOVA Test
+
+Another data analysis situation you might encounter is the need to compare more than two groups with each other. This is done with a test called **an analysis of variance (ANOVA)**.
+
+Suppose we wanted to know whether diet had an effect on the length of the organisms in our sample. Notice that there are 3 diet categories.
+
+#### Visualize data
+
+Write a command to create a boxplot for length as a function of diet category.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Length is the dependent variable, diet is the independent variable.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+boxplot(sampledata$length~sampledata$diet)
+```
+:::
+
+We can see that length is quite different between diets 1 and 2, but not nearly as different between diets 2 and 3. Are these differences statistically significant?
+
+#### ANOVA test
+
+The command to perform an ANOVA is: `model<-aov(depvar~indvar)`. This syntax `(dependent variable, tilde, independent variable)` should be feeling familiar by now.
+
+Write a command to perform an ANOVA on length as a function of diet, and assign the result to a variable called `dietaov`.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try `dietaov<-aov(sampledata$length~sampledata$diet)`
+:::
+
+To see the output from the ANOVA, you can use the command `summary(model)`, replacing the placeholder with your own model's name.
+
+Write a command to look at the output from your ANOVA.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try `summary(dietaov)`
+:::
+
+The output is a table of numbers. The important line is the one labelled `sampledata$diet`. This reports the probability that the differences in length among the diets could be merely due to chance. The p-value is very small, .00011, so the effect of diet on length is **highly statistically significant**.
+
+However, recall that you are comparing 3 groups, and that the differences between diet groups 1 and 2 were larger than the differences between diet groups 2 and 3. Are ALL these differences statistically significant?
+
+Not necessarily. A significant p-value in an ANOVA only means that at least one of the groups is different from the rest, not that ALL the groups are different from one another.
+
+### Tukey's test
+
+So to probe the situation more deeply, we should follow up this significant ANOVA with a Tukey's test. A **Tukey's test** looks at all the pairwise comparisons of groups, and gives a separate p-value for each comparison.
+
+The command to perform a Tukey's test is `TukeyHSD(model)`, HSD stands for 'honestly significant difference.'
+
+Write the command to perform a Tukey's test on your model.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try `TukeyHSD(dietaov)`
+:::
+
+The output is in the form of a table that compares each of the 3 groups to the others, with the p-value for that particular comparison as the final column.
+
+We can see that diet group 1 differs significantly from group 2, and that group 1 differs from group 3, but that diet group 2 does NOT differ significantly from diet group 3.
+
+### Two-way ANOVA for multiple independent variables
+
+ANOVA is a very versatile data analysis tool. For example, an ANOVA can be used to explore data from experiments that have more than one independent variable.
+
+In our `sampledata`, there are two categorical variables, `temp` and `diet`. In the study that generated these data, individuals were reared under one of two different temperature regimes, and were raised on one of three different diets. We'd like to know how temp influenced body weight, how diet influenced body weight, and whether there was an interaction between the effects of temp and diet.
+
+#### Visualize data
+
+Let's start, as always, by looking at a graph. In this case, we want to see a clustered boxplot that shows all 6 combinations of diet and temperature as separate bars.
+
+To create a boxplot for a situation where there are two different independent variables, you can use this code: `boxplot(depvar ~ indvar1*indvar2)`, replacing these placeholders with the appropriate file and variable names.
+
+Write the code to create a boxplot of length, using temp for the first independent variable and diet for the second.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try `boxplot(sampledata$length~sampledata$temp*sampledata$diet)`
+:::
+
+Notice that on the x-axis, there are 3 diet groups (1,2,and 3); within each group, the data for the two temps (A and B) are shown side-by-side. If instead you wanted two temp groups, with the 3 diets shown side-by-side within them, you would reverse the order of the two independent variables in the boxplot command.
+
+Try it now. Write a boxplot command to create a length boxplot that has two temperature groups with the three diet types shown side-by-side.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+Just reverse the positions of temp and diet in the code you just wrote.
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+## Answer
+
+```{r}
+#| eval: false
+boxplot(sampledata$length~sampledata$diet*sampledata$temp)
+```
+:::
+
+#### Two-way ANOVA 
+
+We can assess the effect of both temperature and diet on length with a **two-way ANOVA**. The two-way refers to having two different independent variables, temp and diet in this case.
+
+The command for performing a two-way ANOVA is `model<-aov(data$depvar ~ data$cat1*data$cat2)`. `cat1` and `cat2` are placeholders that represent the 2 independent variables.
+
+Write a command to perform a two-way ANOVA on the effect of `temp` and `diet` on `length`, and store the result in a variable named `length2way`. Put `temp` in front of the `*`, and `diet` behind.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try ` length2way<-aov(sampledata$length~sampledata$temp*sampledata$diet)`
+:::
+
+Type a command to look at the output from your new two-way ANOVA.
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+::: {.callout-tip collapse="true" icon="false"}
+## Hint
+
+try ` summary(length2way)`
+:::
+
+The table of output gives the probability that the differences in length between the two temperatures could be due to chance alone, and the probability that the differences in length among the three diets could be due to chance alone. The interaction term assesses whether the effect of temperature depends on which diet type the organism received.
+
+In this example, temperature did **NOT** have a significant effect on length (p=.205761), diet **DID** have a significant effect on length (p=.000124), and there was no interaction between temperature and diet (p=.154474)). 
+
+In other words, the effect of temperature was the same for all diets, and the effect of diet was the same for both temperatures.
+
+## Congratulations! 
+
+Now you are familiar with some of the most basic and widely-used tests of statistical inference. To learn more about statistical inference in general, consider taking Math 255. To learn more about carrying out statistical analyses in R, there are many online resources that can be easily found by Googling your specific situation.
+
+
