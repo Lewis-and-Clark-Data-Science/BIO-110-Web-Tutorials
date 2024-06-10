@@ -6,7 +6,8 @@ Link to website with tutorials: https://lewis-and-clark-data-science.github.io/B
 
 Extensions used: 
 
-- Webr 
+- Webr
+  - To install, type quarto add coatless/quarto-webr into the terminal. https://github.com/coatless/quarto-webr
 
 - naquiz: https://github.com/nareal/naquiz#readme 
   - To install: type 'quarto add nareal/naquiz' into terminal.
