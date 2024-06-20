@@ -3,32 +3,41 @@ format: html
 editor: visual
 filters: 
   - webr
-title: "Lesson 1: Basic Operations"
-
+title: "Lesson 1: R Introduction, Working with Datasets"
 ---
 
 ```{webr-r}
 #| context: setup
 
+library(tidyverse)
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
 download.file(url, "physiology_data.csv")
 #Pulls data that has been loaded into the Bio 110 github repo. 
 # Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add "physiology_data.csv" at the end after the slash 
 
-
-data<- read.csv("physiology_data.csv")
-
 ```
 
 ## Introduction
 
-Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations.
+Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations. R is a programming language that is used to work with data. It can do lots of things, including basic arithmetic.
+
+First, let's try using R. In the code chunk right below this, try typing in a basic math problem, like `35*10`. Click the green `run code` button and see what happens.
+
+```{webr-r}
+#Type your code here!
+
+
+```
+
+The rest of this tutorial will teach you how to work with data in R. It is interactive, so you'll be able to write your own code in code chunks like the one above throughout the tutorial. The code chunks also must be run in order, so if you get an error message, check and make sure you didn't forget to run a previous code chunk.
+
+There are also hints and answers for most code chunks. Try to do each problem on your own, but feel free to use the hints and answers if you get stuck and to check your work!
+
+## Working with data
 
 R is a program for dealing with data. In Biology courses, most of the time your data will be in the form of a table with columns and rows.
 
-Later on, you will learn how to import your own data table into R in order to work with it. For now, we will work with a very simple set of data: data for a single variable.
-
-## Working with data
+We will start by working with a very simple set of data: data for a single variable. Later on, you will learn how to import your own data table into R in order to work with it.
 
 For example, suppose you have measured the diameters of a sample of 8 bacterial colonies. The data values (in mm) are: 4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, and 4.6.
 
@@ -36,11 +45,19 @@ For example, suppose you have measured the diameters of a sample of 8 bacterial 
 
 In R, you 'assign' these values to a variable name using an 'arrow' formed by the 'less than' symbol and the dash, like this: `<-`.
 
-On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces. On the right of the arrow, type your data values, separated by commas. The data values should be enclosed in parentheses, and preceded by the letter c, which stands for 'concatenate' or 'combine' all the values into a single vector of values.
+On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces.
 
-This command creates a variable called 'diam' that contains our example data values: `diam<-c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)`
+On the right of the arrow, type `c(your data values here)`. The `c` stands for 'concatenate' or 'combine' all the values into a single vector of values. In the parentheses, type your data values, separated by commas.
 
-Now you should try creating the diam variable using these same data. In the code chunk below, type in a command to create `diam`.
+This command creates a variable called 'diam' that contains our example data values:
+
+`diam <- c(4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, 4.6)`
+
+Now you try creating the `diam` variable using these same data. In the code chunk below, type in a command to create `diam`.
+
+::: panel-tabset
+
+## Interactive editor
 
 ```{webr-r}
 #Type your code here
@@ -48,22 +65,14 @@ Now you should try creating the diam variable using these same data. In the code
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Don't forget the parentheses.
-:::
-
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{r}
-#| eval: false
+```{webr-r}
 diam<- c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)
 ```
 :::
 
-If you are interested in knowing what a variable contains, you can just type its name. R is case-sensitive, so be careful about whether you type in upper or lower case.
+If you want to see what a variable contains, you can just type its name. R is case-sensitive, so be careful about whether you type in upper or lower case.
 
 Try typing diam and see what you get.
 
@@ -73,19 +82,22 @@ Try typing diam and see what you get.
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
+### Importing data
 
-Just type the word `diam`.
-:::
+Next, we'll learn how to import and use large amounts of data. Specifically, we'll use R to view our data as a dataframe. A **dataframe** is just the R version of a data table.
 
-### Using data tables
+We'll start with a `.csv` file. We can then use R to convert the `.csv` file into a dataframe, which will be much easier to work with.
 
-In an R data table, each column represents a different variable. Each observational unit is represented by a separate row in the table. The first row of the table is used for the names of the different variables. In R, variable names must not contain any spaces.
+The command we'll use is: `myDataFrame <- read.csv("myCSVFile.csv")`.
 
-A table with this format has been created for you and imported into this tutorial. It has been given the creative name of `data`.
+-   On the left side of the arrow, you'll create a name for your dataframe and write that instead of `myDataFrame`.
 
-Type a command that will show you a display of the data table called "data".
+-   On the right side of the arrow, in the quotation marks, you'll write the name of your CSV file.
+
+We have pre-loaded a CSV file into this tutorial. It is called "physiology_data.csv". Let's try converting the CSV file into a dataframe in the code chunk below. We'll name the dataframe `data`.
+
+::: {.panel-tabset}
+## Interactive editor
 
 ```{webr-r}
 #Type your code here
@@ -93,30 +105,27 @@ Type a command that will show you a display of the data table called "data".
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
+## Hint {style="background-color:yellow"}
+
+The name of your dataframe should **not** be in quotes, but the name of the .csv file **should** be in quotes.
+
 ## Hint
 
-To see an object in R, type its name. No quotes are required.
-:::
+`__________ <- read.csv("physiology_data.csv")`
 
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
 ```{r}
 #| eval: false
-data
+data <- read.csv("physiology_data.csv")
 ```
 :::
 
-You can see that this data table contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.)
+Now, let's check if you did it right. In R, you can type the name of a dataframe to see it displayed. Try typing `data` into the code chunk below.
 
-These data are from a physiological study. Each individual's respiratory quotient (RQ) was measured, either after exercise (1), or during rest (2). Their heart rates in beats per minute were also measured. NA stands for 'not available,' meaning that the data for these combinations of individual and variable were lost or not recorded.
+::: panel-tabset
 
-#### Specifying Variables
-
-You might wish to see just one of the variables in this data file. The way to specify an individual variable is to use the name of the data file, followed by the dollar sign, `$`, followed by the name of the variable -- with no spaces.
-
-What would you type to see a list of the heart_rate data values in this file?
+## Interactive editor
 
 ```{webr-r}
 #Type your code here
@@ -124,7 +133,48 @@ What would you type to see a list of the heart_rate data values in this file?
 
 ```
 
-::: {.callout-note collapse="true" icon="false"}
+
+## Answer 
+
+```{webr-r}
+data
+```
+
+:::
+
+You can see that this dataframe contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.)
+
+These data are from a physiological study. Each individual's respiratory quotient (RQ) was measured, either after exercise (1), or during rest (2). Their heart rates in beats per minute were also measured. NA stands for 'not available,' meaning that the data for these combinations of individual and variable were lost or not recorded.
+
+### Using data tables
+
+#### Dataframe set up: 
+
+-   In an R dataframe, each *column* represents a different variable. 
+
+-   Each observational unit is represented by a separate *row* in the table. 
+
+-   The first row of the table contains the *names* of the different variables. In R, variable names cannot contain any spaces.
+
+#### Specifying Variables
+
+You might wish to see just one of the variables in this data file. The way to specify an individual variable is to use the name of the data file, followed by the dollar sign, `$`, followed by the name of the variable with no spaces.
+
+The syntax is: `yourDataName$variableName`
+
+What would you type to see a list of the `heart_rate` data values in this file?
+
+::: panel-tabset
+
+## Interactive editor
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+
 ## Answer
 
 ```{r}
@@ -137,9 +187,12 @@ data$heart_rate
 
 In R, each variable is encoded as either numeric (a number), integer (a whole number), a factor (a category, expressed either as a word or a number), or character (a string of letters). There are other less common variable properties as well. A variable's property is important because some operations can only be carried out on variables with certain properties.
 
-A data file's 'structure' refers to the properties of its variables. To find out the properties of all the variables in a data set, you would use the command `str(dataname)`, using the name of your data file in place of the placeholder here.
+A data file's 'structure' refers to the properties of its variables. To find out the properties of all the variables in a data set, you would use the command `str(yourDataName)`, using the name of your data file in place of the placeholder here.
 
-Write a command that will allow you to see the structure of 'data.'
+Write a command that will allow you to see the structure of `data`.
+
+::: panel-tabset
+## Interactive editor
 
 ```{webr-r}
 # Type your code here
@@ -147,7 +200,6 @@ Write a command that will allow you to see the structure of 'data.'
 
 ```
 
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
 ```{r}
@@ -158,9 +210,17 @@ str(data)
 
 #### Changing a variable's property
 
-You can see that the variable `data$Condition` is currently encoded as an integer. But it is actually a category variable. You can change this variable's property with the assignment arrow, in the following way: `data$Condition <-as.factor(data$Condition)`.
+You can see that the variable `data$Condition` is currently encoded as an integer. But it is actually a category variable. 
+
+You can change a variable's property with the assignment arrow, in the following way: `yourDataName$variableName <- as.factor(yourDataName$variableName)`.
+
+For example, to change the property of the `Condition` variable, you can run: `data$Condition <- as.factor(data$Condition)`.
 
 Try changing the variable named `Individual` to a factor variable. You will notice that a little prompt box shows up. You can save yourself some typing by choosing the rest of the expression from among the choices in the prompt box.
+
+::: panel-tabset
+
+## Interactive editor 
 
 ```{webr-r}
 #Type your code here
@@ -168,19 +228,41 @@ Try changing the variable named `Individual` to a factor variable. You will noti
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
+
 ## Hint
 
 Remember to use the dollar sign notation, and that R is case-sensitive.
-:::
 
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
 ```{r}
 #| eval: false
-data$Individual<-as.factor(data$Individual)
+data$Individual <- as.factor(data$Individual)
 ```
 :::
 
-Congratulations! You have finished the first R tutorial. You have learned how to create a variable in R, how data files in R are organized, and how to examine and change the properties of different variables.
+## R Packages
+
+R has a set of commands that it understands automatically. But, there are other commands that you can teach R. These "extra" commands live in packages that you can install and then use when you code with R. 
+
+Throughout this tutorial, we've been using something called the `tidyverse` package to run commands. It contains helpful commands for viewing and rearranging data as well as graphing data (which we'll get to in future tutorials).
+
+`tidyverse` was pre-installed for you, but if you ever have to install a package in the future, run the command: 
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+After installing the package, you can load it using the command: 
+
+```{r}
+#| eval: false
+library(tidyverse)
+```
+
+In this tutorial, you won't need to worry about installing or loading packages, because they are pre-loaded for you. 
+
+## Congratulations!
+
+You have finished the first R tutorial. You have learned how to create a variable in R, import data and create a dataframe, and how to examine and change the properties of different variables.

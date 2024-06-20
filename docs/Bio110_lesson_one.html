@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BIO 110 Web Tutorials - Lesson 1: Basic Operations</title>
+<title>BIO 110 Web Tutorials - Lesson 1: R Introduction, Working with Datasets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -283,7 +283,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = [''];
+globalThis.qwebrInstallRPackagesList = ['tidyverse'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -305,7 +305,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\ndata<- read.csv(\"physiology_data.csv\")","options":{"results":"markup","read-only":"false","label":"unnamed-chunk-1","out-height":"","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","fig-height":5,"fig-width":7,"warning":"true","editor-max-height":"","autorun":"true","message":"true","classes":"","dpi":72,"out-width":"700px","output":"true","context":"setup"}},{"id":2,"code":"#Type your code here\n","options":{"results":"markup","read-only":"false","label":"unnamed-chunk-2","out-height":"","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","fig-height":5,"fig-width":7,"warning":"true","editor-max-height":"","autorun":"false","message":"true","classes":"","dpi":72,"out-width":"700px","output":"true","context":"interactive"}},{"id":3,"code":"#Type your code here\n","options":{"results":"markup","read-only":"false","label":"unnamed-chunk-3","out-height":"","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","fig-height":5,"fig-width":7,"warning":"true","editor-max-height":"","autorun":"false","message":"true","classes":"","dpi":72,"out-width":"700px","output":"true","context":"interactive"}},{"id":4,"code":"#Type your code here\n","options":{"results":"markup","read-only":"false","label":"unnamed-chunk-4","out-height":"","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","fig-height":5,"fig-width":7,"warning":"true","editor-max-height":"","autorun":"false","message":"true","classes":"","dpi":72,"out-width":"700px","output":"true","context":"interactive"}},{"id":5,"code":"#Type your code here\n","options":{"results":"markup","read-only":"false","label":"unnamed-chunk-5","out-height":"","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","fig-height":5,"fig-width":7,"warning":"true","editor-max-height":"","autorun":"false","message":"true","classes":"","dpi":72,"out-width":"700px","output":"true","context":"interactive"}},{"id":6,"code":"# Type your code here\n","options":{"results":"markup","read-only":"false","label":"unnamed-chunk-6","out-height":"","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","fig-height":5,"fig-width":7,"warning":"true","editor-max-height":"","autorun":"false","message":"true","classes":"","dpi":72,"out-width":"700px","output":"true","context":"interactive"}},{"id":7,"code":"#Type your code here\n","options":{"results":"markup","read-only":"false","label":"unnamed-chunk-7","out-height":"","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","fig-cap":"","fig-height":5,"fig-width":7,"warning":"true","editor-max-height":"","autorun":"false","message":"true","classes":"","dpi":72,"out-width":"700px","output":"true","context":"interactive"}}];
+globalThis.qwebrCellDetails = [{"id":1,"code":"\nlibrary(tidyverse)\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash ","options":{"autorun":"true","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-1","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"setup","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":2,"code":"#Type your code here!\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-2","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":3,"code":"#Type your code here\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-3","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":4,"code":"diam<- c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-4","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":5,"code":"#Type your code here\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-5","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":6,"code":"#Type your code here\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-6","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":7,"code":"#Type your code here\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-7","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":8,"code":"data","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-8","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":9,"code":"#Type your code here\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-9","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":10,"code":"# Type your code here\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-10","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}},{"id":11,"code":"#Type your code here\n","options":{"autorun":"false","fig-width":7,"out-width":"700px","editor-quick-suggestions":"false","classes":"","results":"markup","editor-max-height":"","dpi":72,"label":"unnamed-chunk-11","comment":"","warning":"true","output":"true","message":"true","editor-font-scale":1,"context":"interactive","out-height":"","fig-height":5,"fig-cap":"","read-only":"false"}}];
 
 </script>
 <script type="module">
@@ -1165,7 +1165,7 @@ globalThis.qwebrExecuteCode = async function (
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./Bio110_lesson_one.html" aria-current="page"> 
-<span class="menu-text">Lesson 1: Basic Operations</span></a>
+<span class="menu-text">Lesson 1: R Introduction, Working with Datasets</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_two.html"> 
@@ -1211,9 +1211,12 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#working-with-data" id="toc-working-with-data" class="nav-link" data-scroll-target="#working-with-data">Working with data</a>
   <ul class="collapse">
   <li><a href="#assigning-values-to-a-variable-name" id="toc-assigning-values-to-a-variable-name" class="nav-link" data-scroll-target="#assigning-values-to-a-variable-name">Assigning values to a variable name</a></li>
+  <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data">Importing data</a></li>
   <li><a href="#using-data-tables" id="toc-using-data-tables" class="nav-link" data-scroll-target="#using-data-tables">Using data tables</a></li>
   <li><a href="#data-structure" id="toc-data-structure" class="nav-link" data-scroll-target="#data-structure">Data Structure</a></li>
   </ul></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R Packages</a></li>
+  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations">Congratulations!</a></li>
   </ul>
 </nav>
     </div>
@@ -1449,7 +1452,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesson 1: Basic Operations</h1>
+<h1 class="title">Lesson 1: R Introduction, Working with Datasets</h1>
 </div>
 
 
@@ -1470,139 +1473,116 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations.</p>
-<p>R is a program for dealing with data. In Biology courses, most of the time your data will be in the form of a table with columns and rows.</p>
-<p>Later on, you will learn how to import your own data table into R in order to work with it. For now, we will work with a very simple set of data: data for a single variable.</p>
+<p>Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations. R is a programming language that is used to work with data. It can do lots of things, including basic arithmetic.</p>
+<p>First, let’s try using R. In the code chunk right below this, try typing in a basic math problem, like <code>35*10</code>. Click the green <code>run code</code> button and see what happens.</p>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The rest of this tutorial will teach you how to work with data in R. It is interactive, so you’ll be able to write your own code in code chunks like the one above throughout the tutorial. The code chunks also must be run in order, so if you get an error message, check and make sure you didn’t forget to run a previous code chunk.</p>
+<p>There are also hints and answers for most code chunks. Try to do each problem on your own, but feel free to use the hints and answers if you get stuck and to check your work!</p>
 </section>
 <section id="working-with-data" class="level2">
 <h2 class="anchored" data-anchor-id="working-with-data">Working with data</h2>
+<p>R is a program for dealing with data. In Biology courses, most of the time your data will be in the form of a table with columns and rows.</p>
+<p>We will start by working with a very simple set of data: data for a single variable. Later on, you will learn how to import your own data table into R in order to work with it.</p>
 <p>For example, suppose you have measured the diameters of a sample of 8 bacterial colonies. The data values (in mm) are: 4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, and 4.6.</p>
 <section id="assigning-values-to-a-variable-name" class="level3">
 <h3 class="anchored" data-anchor-id="assigning-values-to-a-variable-name">Assigning values to a variable name</h3>
 <p>In R, you ‘assign’ these values to a variable name using an ‘arrow’ formed by the ‘less than’ symbol and the dash, like this: <code>&lt;-</code>.</p>
-<p>On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces. On the right of the arrow, type your data values, separated by commas. The data values should be enclosed in parentheses, and preceded by the letter c, which stands for ‘concatenate’ or ‘combine’ all the values into a single vector of values.</p>
-<p>This command creates a variable called ‘diam’ that contains our example data values: <code>diam&lt;-c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)</code></p>
-<p>Now you should try creating the diam variable using these same data. In the code chunk below, type in a command to create <code>diam</code>.</p>
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Don’t forget the parentheses.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>diam<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="fl">3.5</span>,<span class="fl">6.1</span>,<span class="fl">2.2</span>,<span class="fl">4.7</span>,<span class="dv">3</span>,<span class="fl">5.2</span>,<span class="fl">4.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<p>If you are interested in knowing what a variable contains, you can just type its name. R is case-sensitive, so be careful about whether you type in upper or lower case.</p>
-<p>Try typing diam and see what you get.</p>
+<p>On the left side of the arrow, put the name of the variable you wish to create. The name should be short, descriptive, and must not contain any spaces.</p>
+<p>On the right of the arrow, type <code>c(your data values here)</code>. The <code>c</code> stands for ‘concatenate’ or ‘combine’ all the values into a single vector of values. In the parentheses, type your data values, separated by commas.</p>
+<p>This command creates a variable called ‘diam’ that contains our example data values:</p>
+<p><code>diam &lt;- c(4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, 4.6)</code></p>
+<p>Now you try creating the <code>diam</code> variable using these same data. In the code chunk below, type in a command to create <code>diam</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Interactive editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Just type the word <code>diam</code>.</p>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </div>
+<p>If you want to see what a variable contains, you can just type its name. R is case-sensitive, so be careful about whether you type in upper or lower case.</p>
+<p>Try typing diam and see what you get.</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="importing-data" class="level3">
+<h3 class="anchored" data-anchor-id="importing-data">Importing data</h3>
+<p>Next, we’ll learn how to import and use large amounts of data. Specifically, we’ll use R to view our data as a dataframe. A <strong>dataframe</strong> is just the R version of a data table.</p>
+<p>We’ll start with a <code>.csv</code> file. We can then use R to convert the <code>.csv</code> file into a dataframe, which will be much easier to work with.</p>
+<p>The command we’ll use is: <code>myDataFrame &lt;- read.csv("myCSVFile.csv")</code>.</p>
+<ul>
+<li><p>On the left side of the arrow, you’ll create a name for your dataframe and write that instead of <code>myDataFrame</code>.</p></li>
+<li><p>On the right side of the arrow, in the quotation marks, you’ll write the name of your CSV file.</p></li>
+</ul>
+<p>We have pre-loaded a CSV file into this tutorial. It is called “physiology_data.csv”. Let’s try converting the CSV file into a dataframe in the code chunk below. We’ll name the dataframe <code>data</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Interactive editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>The name of your dataframe should <strong>not</strong> be in quotes, but the name of the .csv file <strong>should</strong> be in quotes.</p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p><code>__________ &lt;- read.csv("physiology_data.csv")</code></p>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"physiology_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Now, let’s check if you did it right. In R, you can type the name of a dataframe to see it displayed. Try typing <code>data</code> into the code chunk below.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Interactive editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</div>
+<p>You can see that this dataframe contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.)</p>
+<p>These data are from a physiological study. Each individual’s respiratory quotient (RQ) was measured, either after exercise (1), or during rest (2). Their heart rates in beats per minute were also measured. NA stands for ‘not available,’ meaning that the data for these combinations of individual and variable were lost or not recorded.</p>
 </section>
 <section id="using-data-tables" class="level3">
 <h3 class="anchored" data-anchor-id="using-data-tables">Using data tables</h3>
-<p>In an R data table, each column represents a different variable. Each observational unit is represented by a separate row in the table. The first row of the table is used for the names of the different variables. In R, variable names must not contain any spaces.</p>
-<p>A table with this format has been created for you and imported into this tutorial. It has been given the creative name of <code>data</code>.</p>
-<p>Type a command that will show you a display of the data table called “data”.</p>
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>To see an object in R, type its name. No quotes are required.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<p>You can see that this data table contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.)</p>
-<p>These data are from a physiological study. Each individual’s respiratory quotient (RQ) was measured, either after exercise (1), or during rest (2). Their heart rates in beats per minute were also measured. NA stands for ‘not available,’ meaning that the data for these combinations of individual and variable were lost or not recorded.</p>
+<section id="dataframe-set-up" class="level4">
+<h4 class="anchored" data-anchor-id="dataframe-set-up">Dataframe set up:</h4>
+<ul>
+<li><p>In an R dataframe, each <em>column</em> represents a different variable.</p></li>
+<li><p>Each observational unit is represented by a separate <em>row</em> in the table.</p></li>
+<li><p>The first row of the table contains the <em>names</em> of the different variables. In R, variable names cannot contain any spaces.</p></li>
+</ul>
+</section>
 <section id="specifying-variables" class="level4">
 <h4 class="anchored" data-anchor-id="specifying-variables">Specifying Variables</h4>
-<p>You might wish to see just one of the variables in this data file. The way to specify an individual variable is to use the name of the data file, followed by the dollar sign, <code>$</code>, followed by the name of the variable – with no spaces.</p>
-<p>What would you type to see a list of the heart_rate data values in this file?</p>
-<div id="qwebr-insertion-location-5"></div>
+<p>You might wish to see just one of the variables in this data file. The way to specify an individual variable is to use the name of the data file, followed by the dollar sign, <code>$</code>, followed by the name of the variable with no spaces.</p>
+<p>The syntax is: <code>yourDataName$variableName</code></p>
+<p>What would you type to see a list of the <code>heart_rate</code> data values in this file?</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Interactive editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>heart_rate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>heart_rate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1612,73 +1592,67 @@ Answer
 <section id="data-structure" class="level3">
 <h3 class="anchored" data-anchor-id="data-structure">Data Structure</h3>
 <p>In R, each variable is encoded as either numeric (a number), integer (a whole number), a factor (a category, expressed either as a word or a number), or character (a string of letters). There are other less common variable properties as well. A variable’s property is important because some operations can only be carried out on variables with certain properties.</p>
-<p>A data file’s ‘structure’ refers to the properties of its variables. To find out the properties of all the variables in a data set, you would use the command <code>str(dataname)</code>, using the name of your data file in place of the placeholder here.</p>
-<p>Write a command that will allow you to see the structure of ‘data.’</p>
-<div id="qwebr-insertion-location-6"></div>
+<p>A data file’s ‘structure’ refers to the properties of its variables. To find out the properties of all the variables in a data set, you would use the command <code>str(yourDataName)</code>, using the name of your data file in place of the placeholder here.</p>
+<p>Write a command that will allow you to see the structure of <code>data</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Interactive editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <section id="changing-a-variables-property" class="level4">
 <h4 class="anchored" data-anchor-id="changing-a-variables-property">Changing a variable’s property</h4>
-<p>You can see that the variable <code>data$Condition</code> is currently encoded as an integer. But it is actually a category variable. You can change this variable’s property with the assignment arrow, in the following way: <code>data$Condition &lt;-as.factor(data$Condition)</code>.</p>
+<p>You can see that the variable <code>data$Condition</code> is currently encoded as an integer. But it is actually a category variable.</p>
+<p>You can change a variable’s property with the assignment arrow, in the following way: <code>yourDataName$variableName &lt;- as.factor(yourDataName$variableName)</code>.</p>
+<p>For example, to change the property of the <code>Condition</code> variable, you can run: <code>data$Condition &lt;- as.factor(data$Condition)</code>.</p>
 <p>Try changing the variable named <code>Individual</code> to a factor variable. You will notice that a little prompt box shows up. You can save yourself some typing by choosing the rest of the expression from among the choices in the prompt box.</p>
-<div id="qwebr-insertion-location-7"></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Interactive editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <p>Remember to use the dollar sign notation, and that R is case-sensitive.</p>
 </div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>Individual<span class="ot">&lt;-</span><span class="fu">as.factor</span>(data<span class="sc">$</span>Individual)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>Individual <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data<span class="sc">$</span>Individual)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>Congratulations! You have finished the first R tutorial. You have learned how to create a variable in R, how data files in R are organized, and how to examine and change the properties of different variables.</p>
-
-
 </section>
 </section>
+</section>
+<section id="r-packages" class="level2">
+<h2 class="anchored" data-anchor-id="r-packages">R Packages</h2>
+<p>R has a set of commands that it understands automatically. But, there are other commands that you can teach R. These “extra” commands live in packages that you can install and then use when you code with R.</p>
+<p>Throughout this tutorial, we’ve been using something called the <code>tidyverse</code> package to run commands. It contains helpful commands for viewing and rearranging data as well as graphing data (which we’ll get to in future tutorials).</p>
+<p><code>tidyverse</code> was pre-installed for you, but if you ever have to install a package in the future, run the command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>After installing the package, you can load it using the command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this tutorial, you won’t need to worry about installing or loading packages, because they are pre-loaded for you.</p>
+</section>
+<section id="congratulations" class="level2">
+<h2 class="anchored" data-anchor-id="congratulations">Congratulations!</h2>
+<p>You have finished the first R tutorial. You have learned how to create a variable in R, import data and create a dataframe, and how to examine and change the properties of different variables.</p>
+
+
 </section>
 
 </main> <!-- /main -->

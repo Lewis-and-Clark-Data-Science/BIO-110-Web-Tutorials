@@ -6,8 +6,8 @@ project:
     - bargraphdata.csv
     - sampledatastats.csv
   
-#webr: 
-#  packages: ['plotrix', 'base64enc', 'stats']
+webr: 
+  packages: ['tidyverse']
   
 website:
   title: "BIO 110 Web Tutorials"
