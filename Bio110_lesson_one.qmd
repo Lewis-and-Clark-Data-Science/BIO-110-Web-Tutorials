@@ -7,7 +7,7 @@ title: "Lesson 1: R Introduction, Working with Datasets"
 ---
 
 ```{webr-r}
-#| context: setup
+##| context: setup
 
 library(tidyverse)
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
@@ -56,8 +56,7 @@ This command creates a variable called 'diam' that contains our example data val
 Now you try creating the `diam` variable using these same data. In the code chunk below, type in a command to create `diam`.
 
 ::: panel-tabset
-
-## Interactive editor
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -96,8 +95,8 @@ The command we'll use is: `myDataFrame <- read.csv("myCSVFile.csv")`.
 
 We have pre-loaded a CSV file into this tutorial. It is called "physiology_data.csv". Let's try converting the CSV file into a dataframe in the code chunk below. We'll name the dataframe `data`.
 
-::: {.panel-tabset}
-## Interactive editor
+::: panel-tabset
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -124,8 +123,7 @@ data <- read.csv("physiology_data.csv")
 Now, let's check if you did it right. In R, you can type the name of a dataframe to see it displayed. Try typing `data` into the code chunk below.
 
 ::: panel-tabset
-
-## Interactive editor
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -133,13 +131,11 @@ Now, let's check if you did it right. In R, you can type the name of a dataframe
 
 ```
 
-
-## Answer 
+## Answer
 
 ```{webr-r}
 data
 ```
-
 :::
 
 You can see that this dataframe contains 4 variables and 15 rows. (Also, each row is numbered sequentially; these numbers are not considered a variable.)
@@ -148,11 +144,11 @@ These data are from a physiological study. Each individual's respiratory quotien
 
 ### Using data tables
 
-#### Dataframe set up: 
+#### Dataframe set up:
 
--   In an R dataframe, each *column* represents a different variable. 
+-   In an R dataframe, each *column* represents a different variable.
 
--   Each observational unit is represented by a separate *row* in the table. 
+-   Each observational unit is represented by a separate *row* in the table.
 
 -   The first row of the table contains the *names* of the different variables. In R, variable names cannot contain any spaces.
 
@@ -165,15 +161,13 @@ The syntax is: `yourDataName$variableName`
 What would you type to see a list of the `heart_rate` data values in this file?
 
 ::: panel-tabset
-
-## Interactive editor
+## Code editor
 
 ```{webr-r}
 #Type your code here
 
 
 ```
-
 
 ## Answer
 
@@ -192,7 +186,7 @@ A data file's 'structure' refers to the properties of its variables. To find out
 Write a command that will allow you to see the structure of `data`.
 
 ::: panel-tabset
-## Interactive editor
+## Code editor
 
 ```{webr-r}
 # Type your code here
@@ -210,7 +204,7 @@ str(data)
 
 #### Changing a variable's property
 
-You can see that the variable `data$Condition` is currently encoded as an integer. But it is actually a category variable. 
+You can see that the variable `data$Condition` is currently encoded as an integer. But it is actually a category variable.
 
 You can change a variable's property with the assignment arrow, in the following way: `yourDataName$variableName <- as.factor(yourDataName$variableName)`.
 
@@ -219,15 +213,13 @@ For example, to change the property of the `Condition` variable, you can run: `d
 Try changing the variable named `Individual` to a factor variable. You will notice that a little prompt box shows up. You can save yourself some typing by choosing the rest of the expression from among the choices in the prompt box.
 
 ::: panel-tabset
-
-## Interactive editor 
+## Code editor
 
 ```{webr-r}
 #Type your code here
 
 
 ```
-
 
 ## Hint
 
@@ -243,25 +235,25 @@ data$Individual <- as.factor(data$Individual)
 
 ## R Packages
 
-R has a set of commands that it understands automatically. But, there are other commands that you can teach R. These "extra" commands live in packages that you can install and then use when you code with R. 
+R has a set of commands that it understands automatically. But, there are other commands that you can teach R. These "extra" commands live in packages that you can install and then use when you code with R.
 
 Throughout this tutorial, we've been using something called the `tidyverse` package to run commands. It contains helpful commands for viewing and rearranging data as well as graphing data (which we'll get to in future tutorials).
 
-`tidyverse` was pre-installed for you, but if you ever have to install a package in the future, run the command: 
+`tidyverse` was pre-installed for you, but if you ever have to install a package in the future, run the command:
 
 ```{r}
 #| eval: false
 install.packages("tidyverse")
 ```
 
-After installing the package, you can load it using the command: 
+After installing the package, you can load it using the command:
 
 ```{r}
 #| eval: false
 library(tidyverse)
 ```
 
-In this tutorial, you won't need to worry about installing or loading packages, because they are pre-loaded for you. 
+In this tutorial, you won't need to worry about installing or loading packages, because they are pre-loaded for you.
 
 ## Congratulations!
 
