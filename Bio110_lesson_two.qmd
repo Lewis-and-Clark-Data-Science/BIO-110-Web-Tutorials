@@ -21,7 +21,7 @@ data<- read.csv("physiology_data.csv")
 
 ## Introduction
 
-Welcome. In this lesson, you will learn about central tendency.
+Welcome. In this lesson, you will learn about central tendency. See [the home page](index.qmd) for more details on how to use this tutorial and for troubleshooting tips!
 
 ## Analyzing Central Tendency
 
@@ -30,7 +30,6 @@ When analyzing a set of data values, it is often important to summarize where th
 Start by creating a variable called `mydata` that contains the values 4, 4, 2, 6, 3, 0, and 3
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -55,7 +54,7 @@ mydata <- c(4, 4, 2, 6, 3, 0, 3)
 
 #### Mean
 
-The **mean** (also known as the average) is a commonly-used measure of the center of a set of values. To compute the mean, you can use the command `mean(dataName)`, substituting the name of your variable for the placeholder shown here.
+The **mean** (also known as the average) is a commonly-used measure of the center of a set of values. To compute the mean, you can use the command `mean(data)`, substituting the name of your variable for the placeholder shown here.
 
 Find the mean of your `mydata` variable.
 
@@ -70,7 +69,7 @@ Find the mean of your `mydata` variable.
 
 ## Hint
 
-Put the name of your variable in the parentheses. You don't need to use quotes. 
+Put the name of your variable in the parentheses. You don't need to use quotes.
 
 ## Answer
 
@@ -80,12 +79,16 @@ mean(mydata)
 ```
 :::
 
+#### Arguments in a function {#sec-arguments}
+
+When you use functions like `mean()` in R, the thing you put in the parentheses is called an **argument**. In this case, our argument for the mean function is `mydata`. Sometimes, functions will require multiple different arguments. 
+
+
 For some data sets, the mean is not a very good measure of the data's central tendency. For example, what if your data values were 2, 2, 2, 3, 1, 3, 12?
 
 To analyze this data, create a new variable, `data_two`, containing these values.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -93,7 +96,6 @@ To analyze this data, create a new variable, `data_two`, containing these values
 
 
 ```
-
 
 ## Hint
 
@@ -110,8 +112,7 @@ data_two<-c(2, 2, 2, 3, 1, 3, 12)
 Next, compute the mean of `data_two`.
 
 ::: panel-tabset
-
-## Code editor 
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -127,9 +128,9 @@ mean(data_two)
 ```
 :::
 
-Notice that all but one of the data values are lower than the mean, because there is one really high value. For data like these, the median is a better measure of central tendency. 
+Notice that all but one of the data values are lower than the mean, because there is one really high value. For data like these, the median is a better measure of central tendency.
 
-#### Median 
+#### Median
 
 The **median** is the middle value when the data are ordered from lowest to highest.
 
@@ -138,7 +139,6 @@ The function `median(dataName)` computes the median for a variable.
 Compute the median of data_two.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -162,7 +162,6 @@ Notice that the median is not unduly influenced by the single large data value, 
 Next, write an expression for the difference between the mean and the median of `data_two`. R uses the symbols `+` for addition, `-` for subtraction, `*` for multiplication, and `/` for division. Subtract the smaller value from the larger value.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -179,50 +178,236 @@ mean(data_two)-median(data_two)
 ```
 :::
 
+#### Finding mean and median in a dataset
+
+Finally, in [lesson 1](Bio110_lesson_one.qmd#sec-our-data), we used a dataframe called `data` with the variables `RQ`, `Condition`, `heart_rate`, `Individual`. 
+
+Type `data` to recall what it contains. 
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Your code here
+
+
+```
+
+## Answer
+
+```{webr-r}
+data
+```
+
+:::
+
+Now, try to find the mean of the `heart_rate` column in `data`.
+
+::: panel-tabset
+## Code editor
+
+```{webr-r}
+#Your code here
+
+
+```
+
+## Hint
+
+Use the syntax `yourDataName$columnName` to refer to a specific column. You can type your column name directly in the parentheses in the `mean()` function. 
+
+## Answer
+
+```{r}
+#| eval: false
+mean(data$heart_rate)
+```
+:::
+
+You should get an answer that says 'NA'. This is because there are NA values in the heart rate column, which prevent R from calculating the mean. So, we have to add one more thing to our code which tells R to ignore the 'NA' values: `na.rm=TRUE`. We add this in the parentheses in the `mean()` and `median()` functions. Use a comma to seperate `yourDataName` and `na.rm=TRUE`.
+
+For example:
+
+-   `mean(data$heart_rate, na.rm=TRUE)`
+
+-   `median(data$heart_rate, na.rm=TRUE)`
+
+Try finding the mean of the heart rate column again, but add `na.rm=TRUE` this time.
+
+::: panel-tabset
+## Code editor
+
+```{webr-r}
+#Your code here
+
+
+```
+
+## Answer
+
+```{r}
+#| eval: false
+mean(data$heart_rate, na.rm=TRUE)
+```
+:::
+
 ## Summarizing central tendency
 
 In this section, we'll learn how you can easily display the mean and median of multiple different groups in a data set.
 
-The functions `group_by()` and `summarize()` help us do this. 
+The functions `group_by()` and `summarize()` help us do this.
 
-
+First, though, we'll learn about a function called the pipe.
 
 ### The Pipe
 
-A very useful function in the tidyverse (our current set of R packages) is called **the pipe**. It's a way to string together functions and data. You can read it as "AND THEN". 
+A very useful function in the tidyverse (our current set of R packages) is called **the pipe**. It's a way to string together functions and data. You can read it as "AND THEN".
 
 The pipe can be written as `%>%` or `|>`
 
-Both do the same thing! 
-
-Let's look at an example. Click "run code" below. 
+Both do the same thing! Let's look at an example. Click "run code" below.
 
 ```{webr-r}
 #| read-only: TRUE
-data |> 
-  summarize()
+data$RQ |> 
+  mean()
 ```
 
+Let's break down what is happening:
+
+-   First, we call up the data we want with `data$RQ`.
+
+-   Then we use the pipe (`|>`) to say "AND THEN".
+
+-   Finally, we calculate the mean, but we *don't* need to input our data because we already did in the first line and used the pipe to string them together.
+
+The pipe will be very helpful to string together functions!
+
+### Summarizing data with `group_by()` and `summarize()`
+
+We use the functions `group_by()` and `summarize()` to generate summary statistics (mean, median, etc) for specific groups in our data set.
+
+-   `group_by()`: a function that takes a data set and groups it by a variable/column
+
+-   `summarize()`: uses the grouped data set from `group_by`, and lets you define summary statistics columns for that group.
+
+    -   The syntax is: `summarize(yourStatName = formula(columnName, na.RM=TRUE))`
+
+Let's see how these work with an example:
+
+Recall, the Condition variable specifies whether the measurements were made under exercise (1) or resting (2) conditions. Suppose we want to compute the mean and median heart rate for the individuals in our sample, but we want separate values for the exercise and resting conditions.
+
+We can use `group_by()` and `summarize()` to do this.
+
+```{webr-r}
+#| read-only:true
+data |>
+  group_by(Condition) |>
+  summarize(averageHeartRate = mean(heart_rate, na.rm=TRUE),
+            medianHeartRate = median(heart_rate, na.rm=TRUE))
+```
+
+You should see a table that displays the average and median heart rate for each condition (1 and 2).
+
+Let's break down how this works:
+
+1.  First, we specify our data and pipe to the next function.
+
+2.  Then we group by our conditions, listed in the column `Condition`.
+
+3.  Next, use `summarize()` and specify that we want to find the mean and median. `summarize()` creates new columns for each statistic we define. We also rename the columns `averageHearRate` and `medianHeartRate`.
+
+    -   Define mean: `averageHeartRate = mean(heart_rate, na.rm=TRUE)`
+    -   Define median: `medianHeartRate = median(heart_rate, na.rm=TRUE)`
+
+We use the pipe `|>` to string all these functions together.
+
+Now you try! Find the mean and median for the `RQ` (respiratory quotiont), and find separate values for each condition (resting or exercise). 
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Your code here
+
+
+```
+
+## Check your work 
+
+::: question
+
+**What is the mean of the RQ for condition 1?** 
+
+::: choices
+
+::: {.choice .correct-choice}
+
+0.876
+
+:::
+::: choice
+0.87
+:::
+::: choice
+0.973
+:::
+
+:::
+:::
+
+
+## Hint
+
+Use the pipe to string together your functions. 
+
+## Hint
+
+Here's how you set up the `summarize()` function: 
+
+```{r}
+#| eval: false
+summarize(averageRQ = mean(________, na.rm=TRUE), 
+          medianRQ = median(_______, na.rm=TRUE))
+```
+
+## Hint
+```{r}
+#| eval: false
+data |>
+  group_by(________) |>
+  summarize(averageRQ = mean(________, na.rm=TRUE), 
+            medianRQ = median(_______, na.rm=TRUE))
+```
+
+## Answer
+
+```{r}
+#| eval: false
+data |>
+  group_by(Condition) |>
+  summarize(averageRQ = mean(RQ, na.rm=TRUE), 
+            medianRQ = median(RQ, na.rm=TRUE))
+```
+
+:::
+
+## Congratulations! 
+
+You have finished this tutorial. You learned how to calculate the mean and median of data and how to use `group_by()` and `summarize()` to calculate the mean and median of specific groups within a column. 
 
 
 
 
-NOTE: Plan to just have people use ggplot NOT the other way to plot... 
 
 
-
-
-
-
-
-
-
-
-
+NOTE: Plan to just have people use ggplot NOT the other way to plot...
 
 ### Histograms
 
-You may be wondering how to know whether to use the mean or the median. This can be especially challenging if you have a variable with many data values. One option is to use a histogram to see how your data is distributed. In the next tutorial, we'll cover histograms. 
+You may be wondering how to know whether to use the mean or the median. This can be especially challenging if you have a variable with many data values. One option is to use a histogram to see how your data is distributed. In the next tutorial, we'll cover histograms.
 
 You can examine the distribution of the data values visually using a histogram. A histogram shows how many data values fall into different size categories.
 

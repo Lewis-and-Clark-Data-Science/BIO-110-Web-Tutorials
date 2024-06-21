@@ -4,11 +4,12 @@ editor: visual
 filters: 
   - webr
   - naquiz
-title: "Lesson 4: Box Plots"
+title: "Lesson 4: Introduction to Plots"
 ---
 
 ```{webr-r}
 #| context: setup
+library(tidyverse)
 
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
 download.file(url, "physiology_data.csv")
@@ -22,9 +23,11 @@ data<- read.csv("physiology_data.csv")
 
 ## Introduction
 
-Welcome to lesson four, where you will learn the basics of graphing using boxplots. Boxplots are an excellent graphing option for many datasets, because they are valid regardless of whether or not the data are normally distributed. But they take a little getting used to, because they are not as commonly seen as bar graphs are.
+Welcome to lesson four, where you will learn the basics of graphing using a package called `ggplot2`. GGPlot is an excellent resource for creating many types of graphs, including histograms, box plots, scatterplots and more. We'll start by introducing how ggplot works and then try creating some box plots and histograms. 
 
-We will work with the physiology dataset, called data, that you have already seen.
+### Dataset
+
+We will work with the physiology dataset, called `data`, that you have already seen.
 
 Type the word data to recall what it contains.
 
@@ -33,6 +36,113 @@ Type the word data to recall what it contains.
 
 
 ```
+
+## GGPlot 
+
+There are 3 main components of ggplot: 
+
+-   Data (`data`): This is your dataset
+
+-   Aesthetics (`mapping=aes()`): This allows you to define your variables and define how you want your graph to look (color, size, shape, etc)
+
+-   Geometric Objects (`geom_ ______`): Define the type of plot (bar plot, scatter plot, histogram, etc)
+
+The basic structure of `ggplot()` is as follows. You'll notice that each of the three components above are included in this structure. Also notice that different lines (or properties) are connected using a `+`. 
+
+```{r}
+#| eval: false
+ggplot(data, mapping=aes()) +
+  geom_object()
+```
+
+Let's look at an example to see how this works. We'll start by creating a histogram. Try running the code below. 
+
+```{webr-r}
+ggplot(data, mapping=aes(x=heart_rate))+
+  geom_histogram(bins=5)
+```
+
+This will create a histogram of the heart rate values. 
+
+Note how the code is set up: 
+
+  - Specify the `data` right after the first parenthesis
+  
+  - Specify the x variable (independent variable) and y variable (dependent variable) in the `aes()` argument. A histogram only requires an independent variable, so we did not specify the y variable. 
+  
+  - Specify histogram as your chosen `geom`. You can also decide how many bins you'd like with the `bins=5` argument. Try changing the 5 to a different number and running the code again, see what happens!
+  
+  - Chain together the function `ggplot()` with the geom `geom_histogram()` using a `+`. 
+
+### Customizing a plot 
+
+-   You can change how a plot looks by adding the "color" and "fill" attributes to your `geom_object()`. `color` indicates the outline color and `fill` specifies the background color. 
+
+    ```{webr-r}
+    ggplot(data, mapping=aes(x=heart_rate))+
+      geom_histogram(bins=5, color="blue", fill="lightgray")
+    ```
+
+-   You can adjust the labels of the plot by chaining on the `labs()` function: `labs(x="x label", y="y label", title="title")`
+
+    ```{webr-r}
+    ggplot(data, mapping=aes(x=heart_rate))+
+      geom_histogram(bins=5, color="blue", fill="lightgray")+
+      labs(x="Heart rate", y="Count", title="Histogram of Heart Rate for Physiology Data")
+    ```
+
+### Other ggplot resources
+
+There are LOTS of resources online where you can learn about making plots with ggplot. Here are a few to start with: 
+
+-   [ggplot cheatsheet PDF](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
+
+-   [posit.cloud ggplot cheatsheet website version](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+
+-   [Bio110 tutorial cheatsheet - ggplot section](Bio110_cheatsheet.qmd#sec-ggplot)
+
+### Try it out
+
+Your turn to give it a try! Make a histogram of the `RQ` values for our `data`. As an extra challenge, add color and labels to your graph. 
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+# Your code here
+
+
+```
+
+## Hint
+
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(___________))+
+      geom_histogram(______________)+
+      labs(_____________)
+```
+
+## Answer
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=RQ))+
+      geom_histogram(bins=5, color="pink", fill="darkorange")+
+      labs(x="Respiratory Quotient", y="Count", title="Histogram of Respiratory Quotient for Physiology Data")
+```
+
+:::
+
+Great work! 
+
+
+
+
+
+Boxplots are an excellent graphing option for many datasets, because they are valid regardless of whether or not the data are normally distributed. But they take a little getting used to, because they are not as commonly seen as bar graphs are.
+
+
 
 ## Plotting Data
 

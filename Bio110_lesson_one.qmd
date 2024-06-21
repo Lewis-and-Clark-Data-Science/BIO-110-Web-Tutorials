@@ -7,7 +7,7 @@ title: "Lesson 1: R Introduction, Working with Datasets"
 ---
 
 ```{webr-r}
-##| context: setup
+#| context: setup
 
 library(tidyverse)
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
@@ -29,7 +29,7 @@ First, let's try using R. In the code chunk right below this, try typing in a ba
 
 ```
 
-The rest of this tutorial will teach you how to work with data in R. It is interactive, so you'll be able to write your own code in code chunks like the one above throughout the tutorial. The code chunks also must be run in order, so if you get an error message, check and make sure you didn't forget to run a previous code chunk.
+The rest of this tutorial will teach you how to work with data in R. It is interactive, so you'll be able to write your own code in code chunks like the one above throughout the tutorial. See [the home page](index.qmd) for more details on using the tutorials and for troubleshooting tips!
 
 There are also hints and answers for most code chunks. Try to do each problem on your own, but feel free to use the hints and answers if you get stuck and to check your work!
 
@@ -41,7 +41,7 @@ We will start by working with a very simple set of data: data for a single varia
 
 For example, suppose you have measured the diameters of a sample of 8 bacterial colonies. The data values (in mm) are: 4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, and 4.6.
 
-### Assigning values to a variable name
+### Assigning values to a variable name {#sec-assign-variable}
 
 In R, you 'assign' these values to a variable name using an 'arrow' formed by the 'less than' symbol and the dash, like this: `<-`.
 
@@ -120,10 +120,12 @@ data <- read.csv("physiology_data.csv")
 ```
 :::
 
+### Our data {#sec-our-data}
+
 Now, let's check if you did it right. In R, you can type the name of a dataframe to see it displayed. Try typing `data` into the code chunk below.
 
 ::: panel-tabset
-## Code editor
+## Code editor {#view_data}
 
 ```{webr-r}
 #Type your code here
@@ -253,7 +255,7 @@ After installing the package, you can load it using the command:
 library(tidyverse)
 ```
 
-In this tutorial, you won't need to worry about installing or loading packages, because they are pre-loaded for you.
+In this tutorial, you won't need to worry about installing or loading packages, because they are pre-loaded for you. But when you start working on your own data outside of these tutorials, you will sometimes need to tell R to load certain packages.
 
 ## Congratulations!
 

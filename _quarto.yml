@@ -7,7 +7,7 @@ project:
     - sampledatastats.csv
   
 webr: 
-  packages: ['tidyverse']
+  packages: ['tidyverse', 'plotrix']
   
 website:
   title: "BIO 110 Web Tutorials"
@@ -20,6 +20,7 @@ website:
       - Bio110_lesson_five.qmd
       - Bio110_lesson_six.qmd
       - Bio110_lesson_seven.qmd
+      - Bio110_cheatsheet.qmd
   
 
 format:

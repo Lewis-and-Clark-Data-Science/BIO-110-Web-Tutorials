@@ -284,7 +284,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['tidyverse'];
+globalThis.qwebrInstallRPackagesList = ['tidyverse', 'plotrix'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -306,7 +306,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\ndata<- read.csv(\"physiology_data.csv\")","options":{"classes":"","output":"true","autorun":"true","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"setup","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-1","read-only":"false","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}},{"id":2,"code":"\nlibrary(\"plotrix\")\nlibrary(\"stats\")\nlibrary(\"base64enc\")","options":{"classes":"","output":"true","autorun":"true","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-2","read-only":"true","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}},{"id":3,"code":"#Type your code here\n","options":{"classes":"","output":"true","autorun":"false","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-3","read-only":"false","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}},{"id":4,"code":"#Type your code here\n","options":{"classes":"","output":"true","autorun":"false","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-4","read-only":"false","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}},{"id":5,"code":"#Type your code here\n","options":{"classes":"","output":"true","autorun":"false","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-5","read-only":"false","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}},{"id":6,"code":"#Type your code here\n","options":{"classes":"","output":"true","autorun":"false","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-6","read-only":"false","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}},{"id":7,"code":"#Type your code here\n","options":{"classes":"","output":"true","autorun":"false","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-7","read-only":"false","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}},{"id":8,"code":"#Type your code here\n","options":{"classes":"","output":"true","autorun":"false","results":"markup","warning":"true","fig-width":7,"editor-quick-suggestions":"false","context":"interactive","out-width":"700px","fig-height":5,"editor-max-height":"","label":"unnamed-chunk-8","read-only":"false","message":"true","dpi":72,"comment":"","editor-font-scale":1,"fig-cap":"","out-height":""}}];
+globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\ndata<- read.csv(\"physiology_data.csv\")\n\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"setup","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"true","label":"unnamed-chunk-1","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":1},{"code":"#Type your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-2","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":2},{"code":"data","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-3","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":3},{"code":"# Type your code here ","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-4","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":4},{"code":"#Type your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-5","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":5},{"code":"#Type your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-6","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":6},{"code":"#Type your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-7","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":7},{"code":"#Your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-8","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":8},{"code":"filter(data, Condition == \"1\")","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"true","classes":"","autorun":"false","label":"unnamed-chunk-9","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":9},{"code":"# Your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-10","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":10},{"code":"# Your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-11","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":11},{"code":"# Your code here\n","options":{"output":"true","editor-max-height":"","fig-height":5,"context":"interactive","dpi":72,"comment":"","fig-cap":"","fig-width":7,"message":"true","out-height":"","out-width":"700px","read-only":"false","classes":"","autorun":"false","label":"unnamed-chunk-12","warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"results":"markup"},"id":12}];
 
 </script>
 <script type="module">
@@ -1178,7 +1178,7 @@ globalThis.qwebrExecuteCode = async function (
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_four.html"> 
-<span class="menu-text">Lesson 4: Box Plots</span></a>
+<span class="menu-text">Lesson 4: Introduction to Plots</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_five.html"> 
@@ -1191,6 +1191,10 @@ globalThis.qwebrExecuteCode = async function (
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_seven.html"> 
 <span class="menu-text">Lesson 7: Inferential stats</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Bio110_cheatsheet.html"> 
+<span class="menu-text">GGPlot</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -1212,10 +1216,14 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#variation-around-a-central-tendency" id="toc-variation-around-a-central-tendency" class="nav-link" data-scroll-target="#variation-around-a-central-tendency">Variation Around a Central Tendency</a>
   <ul class="collapse">
   <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
-  <li><a href="#compute-central-tendency-values-for-specific-groups" id="toc-compute-central-tendency-values-for-specific-groups" class="nav-link" data-scroll-target="#compute-central-tendency-values-for-specific-groups">Compute central tendency values for specific groups</a></li>
   <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance">Variance</a></li>
-  <li><a href="#standard-error-and-confidence-intervals" id="toc-standard-error-and-confidence-intervals" class="nav-link" data-scroll-target="#standard-error-and-confidence-intervals">Standard error and confidence intervals</a></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation">Standard Deviation</a></li>
+  </ul></li>
+  <li><a href="#standard-error-and-confidence-intervals" id="toc-standard-error-and-confidence-intervals" class="nav-link" data-scroll-target="#standard-error-and-confidence-intervals">Standard error and confidence intervals</a>
+  <ul class="collapse">
+  <li><a href="#standard-error" id="toc-standard-error" class="nav-link" data-scroll-target="#standard-error">Standard Error</a></li>
   <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals">Confidence Intervals</a></li>
+  <li><a href="#subsetting-data-with-the-filter-function" id="toc-subsetting-data-with-the-filter-function" class="nav-link" data-scroll-target="#subsetting-data-with-the-filter-function">Subsetting Data with the <code>Filter()</code> Function</a></li>
   <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations">Congratulations!</a></li>
   </ul></li>
   </ul>
@@ -1472,11 +1480,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome! In this lesson you will learn about measures of variability. But first, notice in the code chunk above that R has just told you that it has downloaded certain packages. An R package is a group of functions that perform special operations. R has loaded these packages to permit you to use these functions in this tutorial. When you start working on your own data outside of these tutorials, you will sometimes need to tell R to load certain packages. We’ll walk you through this step when it is needed.</p>
+<p>Welcome! In this lesson you will learn about measures of variability. You’ll learn how to find the standard deviation, variance, standard error, and confidence intervals. You’ll also practice subsetting data with the <code>group_by()</code> and <code>filter()</code> functions.</p>
+<p>See <a href="./index.html">the home page</a> for more details on how to use this tutorial and for troubleshooting tips!</p>
 </section>
 <section id="variation-around-a-central-tendency" class="level2">
 <h2 class="anchored" data-anchor-id="variation-around-a-central-tendency">Variation Around a Central Tendency</h2>
@@ -1484,27 +1491,39 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Another important summary statistic is the amount of variation around that central tendency.</p>
 <section id="dataset" class="level3">
 <h3 class="anchored" data-anchor-id="dataset">Dataset</h3>
-<p>This lesson contains a dataset that you will work with, named data. You have already worked with these data, in lesson one.</p>
+<p>This lesson contains a dataset that you will work with, named <code>data</code>. You have already worked with these data, in lesson one and two.</p>
 <p>Type the word data to recall what it contains.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Did you spell data correctly? No quotation marks are needed.</p>
 </div>
 </div>
 </div>
 <p>The dataset contains physiological data for a sample of individuals.</p>
+<p>You can determine how many entries are in the dataframe by using the command <code>nrow(data)</code>. Try that now.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="question">
 <p><strong>How many different individuals are in the sample?</strong></p>
 <div class="choices">
@@ -1523,155 +1542,40 @@ Hint
 
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Each individual has a unique number.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="compute-central-tendency-values-for-specific-groups" class="level3">
-<h3 class="anchored" data-anchor-id="compute-central-tendency-values-for-specific-groups">Compute central tendency values for specific groups</h3>
-<p>The Condition variable specifies whether the measurements were made under <em>exercise (1)</em> or <em>resting (2)</em> conditions.</p>
-<p>Suppose we want to compute the mean and the variability of RQ (respiratory quotient) for the individuals in our sample, but we want separate values for the exercise and resting conditions.</p>
-<p>We can do this with the <code>tapply()</code> function, which allows us to compute the value of some function, such as the mean, for a numeric variable that has been subdivided into groups according to the values of another, category variable, such as Condition.</p>
-<p>The syntax for this command is: <code>tapply(datafilename$numeric_variable, datafilename$grouping_variable, function_name)</code>.</p>
-<p>Find the mean RQ for the two conditions, exercise and at rest. Be sure to substitute the actual names of your variables and function for the placeholders shown in the sample command above.</p>
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The grouping variable is data$Condition. Remember that R is case-sensitive.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(data<span class="sc">$</span>RQ,data<span class="sc">$</span>Condition,mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Check your work
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="question">
-<p><strong>What is the mean of the RQ column?</strong></p>
-<div class="choices">
-<div x-data="{ answer: '' , clear() { this.answer = '' }}">
-
-<div class="choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>0.45</p><p></p>
-</div>
-<div class="choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>0.99</p><p></p>
-</div>
-<div class="choice correct-choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>0.876</p><p></p>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="variance" class="level3">
 <h3 class="anchored" data-anchor-id="variance">Variance</h3>
 <p>One common measure of variability is the variance. The variance is the square of the average difference between each data value and the mean.</p>
 <p>You can compute the variance of a variable with the <code>var()</code> function.</p>
-<p>Use <code>var()</code> to compute the variance of the RQ for the two conditions.</p>
+<p>Use <code>var()</code> to compute the variance of the <code>RQ</code> for the two conditions exercise (1) and resting (2), found in the <code>Condition</code> column.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Answer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false">Check your work</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Hint
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Use <code>group_by()</code> and <code>summarize()</code>, and string the functions together with the pipe (<code>|&gt;</code>).</p>
+<p>Don’t forget to add <code>na.rm=TRUE</code> in the <code>var()</code> function.</p>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the <code>tapply()</code> function.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(data<span class="sc">$</span>RQ,data<span class="sc">$</span>Condition,var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(_____) <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">varianceRQ =</span> <span class="fu">var</span>(______, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">varianceRQ =</span> <span class="fu">var</span>(RQ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Check your work
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
 <div class="question">
-<p><strong>What is the variance of the Condition column?</strong></p>
+<p><strong>What is the variance of the respiratory quotient for the resting group (condition 2)?</strong></p>
 <div class="choices">
 <div x-data="{ answer: '' , clear() { this.answer = '' }}">
 
@@ -1679,7 +1583,7 @@ Check your work
 <p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>1.80123</p><p></p>
 </div>
 <div class="choice correct-choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>0.001757</p><p></p>
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>0.00176</p><p></p>
 </div>
 <div class="choice">
 <p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no3"> <span id="no3" x-show="answer == $el.id" class="badge">✗</span>0.001995</p><p></p>
@@ -1691,66 +1595,47 @@ Check your work
 </div>
 </div>
 </div>
+</section>
+<section id="standard-deviation" class="level3">
+<h3 class="anchored" data-anchor-id="standard-deviation">Standard Deviation</h3>
 <p>Another common measure of variance is the standard deviation, which is simply the square root of the variance. The function for standard deviation is <code>sd()</code>.</p>
-<p>Compute the standard deviation of RQ for each of the two conditions.</p>
+<p>Compute the standard deviation of <code>RQ</code> for each of the two conditions.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false">Answer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false">Check your work</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Hint
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>Use <code>group_by()</code> and <code>summarize()</code>, and string the functions together with the pipe (<code>|&gt;</code>).</p>
+<p>Don’t forget to add <code>na.rm=TRUE</code> in the <code>sd()</code> function.</p>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Did you remember that R is case-sensitive?</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(data<span class="sc">$</span>RQ,data<span class="sc">$</span>Condition,sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(_____) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">stdDevRQ =</span> <span class="fu">sd</span>(______, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">stdDevRQ =</span> <span class="fu">sd</span>(RQ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Check your work
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
 <div class="question">
-<p><strong>What is the standard deviation of the Condition column?</strong></p>
+<p><strong>What is the variance of the respiratory quotient for the exercise group (condition 1)</strong></p>
 <div class="choices">
 <div x-data="{ answer: '' , clear() { this.answer = '' }}">
 
-<div class="choice correct-choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>0.0419</p><p></p>
-</div>
 <div class="choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>0.0447</p><p></p>
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>0.0419</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>0.0447</p><p></p>
 </div>
 <div class="choice">
 <p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no3"> <span id="no3" x-show="answer == $el.id" class="badge">✗</span>0.0223</p><p></p>
@@ -1763,63 +1648,50 @@ Check your work
 </div>
 </div>
 </section>
-<section id="standard-error-and-confidence-intervals" class="level3">
-<h3 class="anchored" data-anchor-id="standard-error-and-confidence-intervals">Standard error and confidence intervals</h3>
-<p>One reason to compute the variability in a data set is to get an idea of how accurately our sample has estimated the mean of a population. Two additional measures of variability, standard error and confidence intervals, do this more usefully than variance or standard deviation.</p>
-<p>This is because both standard error and confidence intervals become smaller as the sample size, or number of data values, gets larger – which reflects our increased certainty that our sample mean represents the true population mean.</p>
+</section>
+<section id="standard-error-and-confidence-intervals" class="level2">
+<h2 class="anchored" data-anchor-id="standard-error-and-confidence-intervals">Standard error and confidence intervals</h2>
+<p>One reason to compute the variability in a data set is to get an idea of how accurately our sample has estimated the mean of a population. Two additional measures of variability, <strong>standard error</strong> and <strong>confidence intervals</strong>, do this more usefully than variance or standard deviation.</p>
+<p>This is because both standard error and confidence intervals become smaller as the sample size (or number of data values) gets larger – which reflects our increased certainty that our sample mean represents the true population mean.</p>
+<section id="standard-error" class="level3">
+<h3 class="anchored" data-anchor-id="standard-error">Standard Error</h3>
 <p>To compute the standard error of a set of data in R, a package called <code>plotrix</code> is required. In this tutorial, <code>plotrix</code> has already been installed for you.</p>
 <p>The function for computing the standard error is <code>std.error()</code>.</p>
 <p>Compute the standard error of RQ for each of the two conditions.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-4" role="tab" aria-controls="tabset-5-4" aria-selected="false">Answer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-5" role="tab" aria-controls="tabset-5-5" aria-selected="false">Alternate tidyverse answer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-6" role="tab" aria-controls="tabset-5-6" aria-selected="false">Check your work</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Hint
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Use the same syntax as you did for computing standard deviation and variance, just with a new formula. Don’t forget to use the pipe to string your functions together!</p>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use the same syntax as you did for computing standard deviation.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(data<span class="sc">$</span>RQ,data<span class="sc">$</span>Condition,std.error)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(______) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">______ =</span> <span class="fu">std.error</span>(_____, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<div id="tabset-5-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">stdErrorRQ =</span> <span class="fu">std.error</span>(RQ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<div id="tabset-5-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-5-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">stdErrorRQ =</span> <span class="fu">sd</span>(RQ, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">n</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Check your work
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-5-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-6-tab">
 <div class="question">
-<p><strong>What is the standard error of the RQ column?</strong></p>
+<p><strong>What is the standard error of RQ for the exercise condition?</strong></p>
 <div class="choices">
 <div x-data="{ answer: '' , clear() { this.answer = '' }}">
 
@@ -1842,38 +1714,98 @@ Check your work
 </section>
 <section id="confidence-intervals" class="level3">
 <h3 class="anchored" data-anchor-id="confidence-intervals">Confidence Intervals</h3>
-<p>Confidence intervals are closely related to standard error. The 95% confidence interval is a range of data values that encloses the sample mean. There is a 95% probability that the “true” mean lies within the 95% confidence interval of the sample mean.</p>
+<p>Confidence intervals are closely related to standard error. The 95% confidence interval is a range of data values that enclose the sample mean. There is a 95% probability that the “true” mean lies within the 95% confidence interval of the sample mean.</p>
 <p>The easiest way to compute a 95% confidence interval is to use the <code>t.test()</code> function.</p>
-<p>The command for the t-test is <code>t.test(dataname$variablename)</code>, using the actual datafile and variable names instead of the placeholders shown here.</p>
-<p>Let’s compute the confidence interval of the variable RQ measured during exercise. To do this, we need a way to extract a subset of the RQ data – just the RQ values measured under Condition 1.</p>
-<p>In R, we do this by ‘indexing’ the value of one variable (<code>RQ</code>) by the value of a second variable (<code>Condition</code>). In this case, we wish to extract the values of RQ for those observations (rows) where Condition is exactly equal to 1(<code>==1</code>, in r-speak). The syntax is: <code>data$RQ[data$Condition==1]</code>.</p>
-<p>Now write the command to perform a t-test on the subset of RQ values measured under Condition 1, exercise.</p>
+<p>The command for the t-test is <code>t.test(data$variableName)</code></p>
+<p>Let’s compute the 95% confidence interval of the variable <code>heart_rate</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(data<span class="sc">$</span>RQ[data<span class="sc">$</span>Condition<span class="sc">==</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(data<span class="sc">$</span>heart_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>In the output, you should see the name of the variable you created, followed by two lines of information that are not relevant if you are only interested in knowing the 95% confidence interval. The 95% confidence interval is on the following line, followed by a computation of the sample mean.</p>
+<p>In the output, you should see the name of your variable, followed by two lines of information that are not relevant if you are only interested in knowing the 95% confidence interval. The 95% confidence interval is on the following line, followed by a computation of the sample mean.</p>
+<p>The 95% confidence interval for the heart rate variable is between 61.08295 and 75.91705. We read this as: There is a 95% probability that the “true” mean lies between 61.08 and 75.92.</p>
+</section>
+<section id="subsetting-data-with-the-filter-function" class="level3">
+<h3 class="anchored" data-anchor-id="subsetting-data-with-the-filter-function">Subsetting Data with the <code>Filter()</code> Function</h3>
+<p>What if we wanted to find a 95% confidence interval for each condition (exercise and resting)?</p>
+<p>We will use the <code>filter()</code> function to extract data with a specific condition.</p>
+<p>The syntax is: <code>filter(data, columnName == "some value")</code></p>
+<ul>
+<li><a href="./Bio110_lesson_two.html#sec-arguments">Arguments</a> used:
+<ul>
+<li><p><code>data</code>: Input your original data set</p></li>
+<li><p><code>columnName == "some value"</code> Choose a column you’d like to filter (<code>columnName</code>) and then replace <code>some value</code> with whatever condition you would like to specify.</p></li>
+<li><p>You can also replace the <code>==</code> with other operators including:</p>
+<ul>
+<li><code>&gt;</code> (greater than)</li>
+<li><code>&lt;</code> (less than)</li>
+<li><code>&lt;=</code> (less than or equal to)</li>
+<li><code>&gt;=</code> (greater than or equal to)</li>
+<li><code>==</code> (equal to)</li>
+<li><code>!=</code> (not equal to)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Let’s see how this works with an example:</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>If you run this example, you should see <code>data</code>, but it will only show rows where the condition is “1”.</p>
+<p>Now, let’s save this data as a new variable. Recall you can use <code>&lt;-</code> to <a href="./Bio110_lesson_one.html#sec-assign-variable">assign data</a> to a new variable. Try creating a new variable that includes all the rows for which the <code>Condition</code> is equal to “1”. Call your new variable <code>exerciseData</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p>Use the same code in the example: <code>filter(data, Condition == "1")</code> but assign it to a new variable name <code>exerciseData</code>.</p>
+</div>
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>exerciseData <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, Condition <span class="sc">==</span> <span class="st">"1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Now that you’ve created your variable, type <code>exerciseData</code> to see if it worked!</p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Finally, let’s find the 95% confidence interval for the RQ values measured under Condition 1.</p>
+<p>Perform a t.test on your new dataset <code>exerciseData</code>, on the RQ column.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<p>Try something like <code>t.test(______$______)</code></p>
+</div>
+<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(exerciseData<span class="sc">$</span>RQ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 <p>So for these data, the (rounded) sample mean is 0.876, and the 95% confidence interval ranges from a minimum value of 0.834 to a maximum of 0.917.</p>
 </section>
 <section id="congratulations" class="level3">
 <h3 class="anchored" data-anchor-id="congratulations">Congratulations!</h3>
-<p>You’ve completed lesson three, in which you learned how to compute several measures of <strong>variability</strong> (variance, standard deviation, standard error, and confidence intervals). You also learned two ways to <strong>subset a data set</strong>: using <code>tapply()</code> and indexing. In lesson four you will learn how to make a box plot, which is a basic way of graphically displaying the central tendency and the variability of any data set.</p>
+<p>You’ve completed lesson three, in which you learned how to compute several measures of <strong>variability</strong>: variance, standard deviation, standard error, and confidence intervals. You also learned ways to <strong>subset a data set</strong> using <code>group_by()</code> and <code>filter()</code>.</p>
+<p>In lesson four you will learn how to make plots. You’ll start with a box plot and histogram, which are a basic ways of graphically displaying the central tendency and the variability of any data set.</p>
 
 
 </section>

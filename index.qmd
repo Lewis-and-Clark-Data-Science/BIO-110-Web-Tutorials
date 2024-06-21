@@ -2,4 +2,28 @@
 title: "Bio 110 Tutorials"
 ---
 
-Welcome to the BIO 110 tutorial site! Here you can find tutorials for lessons in working with data. 
+## Welcome
+
+Welcome to the BIO 110 tutorial site! Here you can find tutorials that will teach you how to work with data.
+
+## How to use these tutorials
+
+Here's a quick introduction for how to use the tutorials:
+
+-   Use the bar at the top of the website to navigate between tutorials.
+
+-   The tutorials sometimes take a little time to load, wait until there is a green circle that says **Ready!** under "WEBR STATUS" at the top of the page.
+
+-   There are **interactive code editors** throughout the tutorials. Sometimes, there is an option to see a hint, check your work or see the answer. You are encouraged to try writing the code yourself before looking at a hint or the answer. You can also click the "Check your work" button if you want a way to see if you did it right without giving away the answer.
+
+### Trouble Shooting
+
+-   Sometimes, code chunks use the output from *previous* code chunks to run. So, it's important to go through each **tutorial sequentially**. If you get an error message that says "[Error: object not found]{style="color:red"}", it is probably because you didn't run the previous code chunks, or because you typed the code wrong.
+
+    -   You **can** do separate tutorials out of order, as they do not rely on each other to run. For example, it's fine to do lesson 4 before lesson 2.
+
+-   You can refresh the page to restart, but this will delete any code you've already completed.
+
+-   [Error]{style="color:red"}: If you get an error message, check that you included all the parenthesis, quotation marks and capitalization (R is case sensitive).
+
+    -   If that still doesn't work, try copying and pasting the given answer and running the code. If that doesn't work, you probably forgot to run a previous code chunk or properly define a variable.
