@@ -3,6 +3,7 @@ format: html
 editor: visual
 filters: 
   - webr
+  - naquiz
 title: "Lesson 2: Central Tendency"
 ---
 
@@ -13,7 +14,7 @@ url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/phys
 download.file(url, "physiology_data.csv")
 #Pulls data that has been loaded into the Bio 110 github repo. 
 # Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add "physiology_data.csv" at the end after the slash 
-
+library(tidyverse)
 data<- read.csv("physiology_data.csv")
 
 ```
@@ -24,9 +25,9 @@ Welcome. In this lesson, you will learn about central tendency.
 
 ## Analyzing Central Tendency
 
-When analyzing a set of data values, it is often important to summarize where the numerical 'center' of the data values lies."
+When analyzing a set of data values, it is often important to summarize where the numerical 'center' of the data values lies.
 
-Start by creating a variable called "mydata" that contains the values 4, 4, 2, 6, 3, 0, and 3
+Start by creating a variable called `mydata` that contains the values 4, 4, 2, 6, 3, 0, and 3
 
 ::: panel-tabset
 
@@ -179,6 +180,79 @@ mean(data_two)-median(data_two)
 :::
 
 ## Summarizing central tendency
+
+In this section, we'll learn how you can easily display the mean and median of multiple different groups in a data set.
+
+The functions `group_by()` and `summarize()` help us do this. 
+
+### Summary 
+
+First, we'll learn how to quickly find the mean and median for columns in a dataframe. 
+
+The function `summary()` will display the mean, median, minimum, maximum, and quartiles for each variable (or column) in a dataframe. 
+
+The syntax is `summary(yourDataName)`. 
+
+The dataframe `data` was used in the previous lesson. We'll use it again here, so take a look at [lesson 1](Bio110_lesson_one.qmd) to learn more about what it contains. 
+
+Try using `summary()` with `data`. 
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Your code here
+
+
+```
+
+## Answer
+
+```{r}
+#| eval: false
+summary(data)
+```
+
+:::
+
+You should see that for each variable (RQ, condition, heart_rate, Individual), the minimum, 1st quartile, median, mean, 3rd quartile and maximum values are given. 
+
+
+::: question
+**What is the median heart rate value?**
+
+::: choices
+::: choice
+68.50
+:::
+::: choice
+7.50
+:::
+::: {.choice .correct-choice}
+70.50
+:::
+:::
+:::
+
+### The Pipe
+
+A very useful function in the tidyverse (our current set of R packages) is called **the pipe**. It's a way to string together functions and data. You can read it as "AND THEN". 
+
+The pipe can be written as `%>%` or `|>`
+
+Both do the same thing! 
+
+Let's look at an example. Click "run code" below. 
+
+```{webr-r}
+#| read-only: TRUE
+data |> 
+  summarize()
+```
+
+
+
 
 
 NOTE: Plan to just have people use ggplot NOT the other way to plot... 

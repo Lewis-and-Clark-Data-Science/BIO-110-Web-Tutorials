@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,6 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -305,7 +306,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\ndata<- read.csv(\"physiology_data.csv\")","options":{"classes":"","context":"setup","dpi":72,"message":"true","autorun":"true","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-1","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":1},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-2","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":2},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-3","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":3},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-4","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":4},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-5","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":5},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-6","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":6},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-7","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":7},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-8","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":8},{"code":"#Type your code here\n","options":{"classes":"","context":"interactive","dpi":72,"message":"true","autorun":"false","results":"markup","read-only":"false","warning":"true","label":"unnamed-chunk-9","editor-font-scale":1,"editor-quick-suggestions":"false","editor-max-height":"","comment":"","fig-width":7,"output":"true","fig-cap":"","out-width":"700px","out-height":"","fig-height":5},"id":9}];
+globalThis.qwebrCellDetails = [{"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \nlibrary(tidyverse)\ndata<- read.csv(\"physiology_data.csv\")","options":{"fig-cap":"","results":"markup","context":"setup","read-only":"false","label":"unnamed-chunk-1","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"true","message":"true"},"id":1},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-2","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":2},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-3","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":3},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-4","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":4},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-5","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":5},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-6","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":6},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-7","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":7},{"code":"#Your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-8","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":8},{"code":"data |> \n  summarize()","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"TRUE","label":"unnamed-chunk-9","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":9},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-10","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":10},{"code":"#Type your code here\n","options":{"fig-cap":"","results":"markup","context":"interactive","read-only":"false","label":"unnamed-chunk-11","out-width":"700px","out-height":"","warning":"true","editor-quick-suggestions":"false","editor-max-height":"","comment":"","editor-font-scale":1,"classes":"","output":"true","dpi":72,"fig-width":7,"fig-height":5,"autorun":"false","message":"true"},"id":11}];
 
 </script>
 <script type="module">
@@ -1214,6 +1215,8 @@ globalThis.qwebrExecuteCode = async function (
   </ul></li>
   <li><a href="#summarizing-central-tendency" id="toc-summarizing-central-tendency" class="nav-link" data-scroll-target="#summarizing-central-tendency">Summarizing central tendency</a>
   <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#the-pipe" id="toc-the-pipe" class="nav-link" data-scroll-target="#the-pipe">The Pipe</a></li>
   <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
   </ul></li>
   </ul>
@@ -1476,8 +1479,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="analyzing-central-tendency" class="level2">
 <h2 class="anchored" data-anchor-id="analyzing-central-tendency">Analyzing Central Tendency</h2>
-<p>When analyzing a set of data values, it is often important to summarize where the numerical ‘center’ of the data values lies.”</p>
-<p>Start by creating a variable called “mydata” that contains the values 4, 4, 2, 6, 3, 0, and 3</p>
+<p>When analyzing a set of data values, it is often important to summarize where the numerical ‘center’ of the data values lies.</p>
+<p>Start by creating a variable called <code>mydata</code> that contains the values 4, 4, 2, 6, 3, 0, and 3</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1597,14 +1600,66 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="summarizing-central-tendency" class="level2">
 <h2 class="anchored" data-anchor-id="summarizing-central-tendency">Summarizing central tendency</h2>
+<p>In this section, we’ll learn how you can easily display the mean and median of multiple different groups in a data set.</p>
+<p>The functions <code>group_by()</code> and <code>summarize()</code> help us do this.</p>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>First, we’ll learn how to quickly find the mean and median for columns in a dataframe.</p>
+<p>The function <code>summary()</code> will display the mean, median, minimum, maximum, and quartiles for each variable (or column) in a dataframe.</p>
+<p>The syntax is <code>summary(yourDataName)</code>.</p>
+<p>The dataframe <code>data</code> was used in the previous lesson. We’ll use it again here, so take a look at <a href="./Bio110_lesson_one.html">lesson 1</a> to learn more about what it contains.</p>
+<p>Try using <code>summary()</code> with <code>data</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>You should see that for each variable (RQ, condition, heart_rate, Individual), the minimum, 1st quartile, median, mean, 3rd quartile and maximum values are given.</p>
+<div class="question">
+<p><strong>What is the median heart rate value?</strong></p>
+<div class="choices">
+<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no1"> <span id="no1" x-show="answer == $el.id" class="badge">✗</span>68.50</p><p></p>
+</div>
+<div class="choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>7.50</p><p></p>
+</div>
+<div class="choice correct-choice">
+<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>70.50</p><p></p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<section id="the-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="the-pipe">The Pipe</h3>
+<p>A very useful function in the tidyverse (our current set of R packages) is called <strong>the pipe</strong>. It’s a way to string together functions and data. You can read it as “AND THEN”.</p>
+<p>The pipe can be written as <code>%&gt;%</code> or <code>|&gt;</code></p>
+<p>Both do the same thing!</p>
+<p>Let’s look at an example. Click “run code” below.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>NOTE: Plan to just have people use ggplot NOT the other way to plot…</p>
+</section>
 <section id="histograms" class="level3">
 <h3 class="anchored" data-anchor-id="histograms">Histograms</h3>
 <p>You may be wondering how to know whether to use the mean or the median. This can be especially challenging if you have a variable with many data values. One option is to use a histogram to see how your data is distributed. In the next tutorial, we’ll cover histograms.</p>
 <p>You can examine the distribution of the data values visually using a histogram. A histogram shows how many data values fall into different size categories.</p>
 <p>The function <code>hist()</code> creates a histogram for a variable.</p>
 <p>Create a histogram for the original data variable, called <code>mydata</code>.</p>
-<div id="qwebr-insertion-location-8"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -1619,14 +1674,14 @@ Answer
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <p>You should see a histogram pop up under the code block. On the x-axis are intervals (bins) representing the different possible data values. On the y-axis are the frequencies with which different data values are present in the data set (once, twice, etc.).</p>
 <p>Now create a second histogram for data_two.</p>
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>You can see from the histogram that the mean of <code>data_two</code> does not describe these data very well. When a histogram’s peak is not near the center, and/or its two tails are quite asymetrical, it’s best to use the <em>median</em>, not the <em>mean</em>, to summarize the central tendency.</p>
 <p>That’s the end of this lesson on central tendency. Another important kind of descriptive statistic is variability; that’s the topic of lesson three.</p>
@@ -2162,4 +2217,5 @@ qwebrInstance.then(
 
 
 
+<script src="site_libs/quarto-contrib/alpine-3.12/alpine@3.12.min.js"></script>
 </body></html>
