@@ -185,55 +185,7 @@ In this section, we'll learn how you can easily display the mean and median of m
 
 The functions `group_by()` and `summarize()` help us do this. 
 
-### Summary 
 
-First, we'll learn how to quickly find the mean and median for columns in a dataframe. 
-
-The function `summary()` will display the mean, median, minimum, maximum, and quartiles for each variable (or column) in a dataframe. 
-
-The syntax is `summary(yourDataName)`. 
-
-The dataframe `data` was used in the previous lesson. We'll use it again here, so take a look at [lesson 1](Bio110_lesson_one.qmd) to learn more about what it contains. 
-
-Try using `summary()` with `data`. 
-
-::: panel-tabset
-
-## Code editor
-
-```{webr-r}
-#Your code here
-
-
-```
-
-## Answer
-
-```{r}
-#| eval: false
-summary(data)
-```
-
-:::
-
-You should see that for each variable (RQ, condition, heart_rate, Individual), the minimum, 1st quartile, median, mean, 3rd quartile and maximum values are given. 
-
-
-::: question
-**What is the median heart rate value?**
-
-::: choices
-::: choice
-68.50
-:::
-::: choice
-7.50
-:::
-::: {.choice .correct-choice}
-70.50
-:::
-:::
-:::
 
 ### The Pipe
 
