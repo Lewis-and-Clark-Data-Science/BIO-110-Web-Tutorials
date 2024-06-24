@@ -55,17 +55,26 @@ ggplot(data, mapping=aes()) +
   geom_object()
 ```
 
-Let's look at an example to see how this works. We'll start by creating a histogram. Try running the code below. 
+### Example: Histogram
+
+Let's look at an example to see how this works. We'll start by creating a histogram. A **histogram** shows the distribution of data values. 
+
+Try running the code below. 
 
 ```{webr-r}
+#| read-only: true
 ggplot(data, mapping=aes(x=heart_rate))+
   geom_histogram(bins=5)
 ```
 
-This will create a histogram of the heart rate values. 
+This will create a histogram of the heart rate values. On the x-axis are intervals (bins) representing the different possible data values. On the y-axis are the frequencies with which different data values are present in the data set (once, twice, etc.).
 
-Note how the code is set up: 
-
+Notice how the code is set up: 
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=heart_rate)) +
+  geom_histogram(bins=5)
+```
   - Specify the `data` right after the first parenthesis
   
   - Specify the x variable (independent variable) and y variable (dependent variable) in the `aes()` argument. A histogram only requires an independent variable, so we did not specify the y variable. 
@@ -80,7 +89,7 @@ Note how the code is set up:
 
     ```{webr-r}
     ggplot(data, mapping=aes(x=heart_rate))+
-      geom_histogram(bins=5, color="blue", fill="lightgray")
+      geom_histogram(bins=5, color="blue", fill="lightyellow")
     ```
 
 -   You can adjust the labels of the plot by chaining on the `labs()` function: `labs(x="x label", y="y label", title="title")`
@@ -116,12 +125,21 @@ Your turn to give it a try! Make a histogram of the `RQ` values for our `data`. 
 ```
 
 ## Hint
-
+Here's the basic structure. Click the next hint for more detailed structure. 
 ```{r}
 #| eval: false
 ggplot(data, mapping=aes(___________))+
       geom_histogram(______________)+
       labs(_____________)
+```
+
+## Hint
+
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=______))+
+      geom_histogram(bins=_____, color="_____", fill="_______")+
+      labs(x="______", y="_______", title="_______")
 ```
 
 ## Answer
@@ -142,46 +160,6 @@ Great work!
 
 Boxplots are an excellent graphing option for many datasets, because they are valid regardless of whether or not the data are normally distributed. But they take a little getting used to, because they are not as commonly seen as bar graphs are.
 
-
-
-## Plotting Data
-
-R has a function called plot, which makes a simple graph showing the relationship between an independent and a dependent variable.
-
--   When the independent variable is continuous, the plot command creates a scatterplot.
-
--   When the independent variable is categorical, the plot command creates a boxplot.
-
-When data are in the form of numbers, R can treat them either as continuous (numeric variables, in R language) or as categorical (factor variables, in R language).
-
-In `data` the different measurements are categorized as having been made under either `exercise (1)` or `resting (2)` conditions.
-
-Suppose you wanted to create a graph that compared the respiratory quotients (RQ) under these two conditions.
-
-The basic plot function has this form: `plot(yourdata$xvariable, yourdata$yvariable)`. You would need to substitute the actual names for the dataset and variables used as place-holders here.
-
-Use the plot function to graph the RQs of the two groups, exercise and resting.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Remember that variable names are case-sensitive.
-:::
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$Condition, data$RQ)
-```
-:::
 
 Notice that R has created a scatterplot, and that it is treating the Condition variable as continuous. Many of the dots representing the data values overlap with each other. For this reason, it is hard to see whether the central tendencies of the two conditions differ. A boxplot is a better choice for these data.
 

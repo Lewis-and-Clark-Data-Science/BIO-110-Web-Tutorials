@@ -157,6 +157,8 @@ median(data_two)
 
 Notice that the median is not unduly influenced by the single large data value, and so is a more accurate measure of the center of these data values.
 
+If you are unsure whether to use mean or median to describe the center of data values, a **histogram** can be very helpful. In [lesson 4](Bio110_lesson_four.qmd), you will learn how to create a histogram but for now it is worth noting that a histogram can help you see how data is distributed. When a histogram's peak is not near the center, and/or its two tails are quite asymetrical, it's best to use the *median*, not the *mean*, to summarize the central tendency.
+
 #### Basic Arithmetic with mean/median
 
 Next, write an expression for the difference between the mean and the median of `data_two`. R uses the symbols `+` for addition, `-` for subtraction, `*` for multiplication, and `/` for division. Subtract the smaller value from the larger value.
@@ -180,7 +182,7 @@ mean(data_two)-median(data_two)
 
 #### Finding mean and median in a dataset
 
-Finally, in [lesson 1](Bio110_lesson_one.qmd#sec-our-data), we used a dataframe called `data` with the variables `RQ`, `Condition`, `heart_rate`, `Individual`. 
+In [lesson 1](Bio110_lesson_one.qmd#sec-our-data), we used a dataframe called `data` with the variables `RQ`, `Condition`, `heart_rate`, `Individual`. 
 
 Type `data` to recall what it contains. 
 
@@ -399,47 +401,4 @@ data |>
 You have finished this tutorial. You learned how to calculate the mean and median of data and how to use `group_by()` and `summarize()` to calculate the mean and median of specific groups within a column. 
 
 
-
-
-
-
-NOTE: Plan to just have people use ggplot NOT the other way to plot...
-
-### Histograms
-
-You may be wondering how to know whether to use the mean or the median. This can be especially challenging if you have a variable with many data values. One option is to use a histogram to see how your data is distributed. In the next tutorial, we'll cover histograms.
-
-You can examine the distribution of the data values visually using a histogram. A histogram shows how many data values fall into different size categories.
-
-The function `hist()` creates a histogram for a variable.
-
-Create a histogram for the original data variable, called `mydata`.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-hist(mydata)
-```
-:::
-
-You should see a histogram pop up under the code block. On the x-axis are intervals (bins) representing the different possible data values. On the y-axis are the frequencies with which different data values are present in the data set (once, twice, etc.).
-
-Now create a second histogram for data_two.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-You can see from the histogram that the mean of `data_two` does not describe these data very well. When a histogram's peak is not near the center, and/or its two tails are quite asymetrical, it's best to use the *median*, not the *mean*, to summarize the central tendency.
-
-That's the end of this lesson on central tendency. Another important kind of descriptive statistic is variability; that's the topic of lesson three.
+Another important kind of descriptive statistic is variability; that's the topic of lesson three.

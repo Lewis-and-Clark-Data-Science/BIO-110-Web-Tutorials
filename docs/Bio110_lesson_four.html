@@ -306,7 +306,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-1","autorun":"true","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"setup","classes":""},"code":"library(tidyverse)\n\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\ndata<- read.csv(\"physiology_data.csv\")"},{"id":2,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-2","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"#Type your code here\n"},{"id":3,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-3","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5)"},{"id":4,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-4","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"lightgray\")"},{"id":5,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-5","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"lightgray\")+\n  labs(x=\"Heart rate\", y=\"Count\", title=\"Histogram of Heart Rate for Physiology Data\")"},{"id":6,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-6","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"# Your code here\n"},{"id":7,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-7","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"#Type your code here\n"},{"id":8,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-8","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"#Type your code here\n"},{"id":9,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-9","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"#Type your code here\n"},{"id":10,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-10","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"#Type your code here\n"},{"id":11,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-11","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"#Type your code here\n"},{"id":12,"options":{"message":"true","fig-width":7,"label":"unnamed-chunk-12","autorun":"false","read-only":"false","out-width":"700px","output":"true","out-height":"","fig-cap":"","results":"markup","fig-height":5,"comment":"","dpi":72,"warning":"true","editor-quick-suggestions":"false","editor-font-scale":1,"editor-max-height":"","context":"interactive","classes":""},"code":"#Type your code here\n"}];
+globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\n\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\ndata<- read.csv(\"physiology_data.csv\")","id":1,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"setup","output":"true","editor-max-height":"","autorun":"true","warning":"true","label":"unnamed-chunk-1","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"#Type your code here\n","id":2,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-2","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5)","id":3,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"true","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-3","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"lightyellow\")","id":4,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-4","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"lightgray\")+\n  labs(x=\"Heart rate\", y=\"Count\", title=\"Histogram of Heart Rate for Physiology Data\")","id":5,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-5","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"# Your code here\n","id":6,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-6","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"#Type your code here\n","id":7,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-7","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"#Type your code here\n","id":8,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-8","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"#Type your code here\n","id":9,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-9","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"#Type your code here\n","id":10,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-10","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}},{"code":"#Type your code here\n","id":11,"options":{"editor-quick-suggestions":"false","fig-width":7,"fig-cap":"","read-only":"false","out-width":"700px","message":"true","out-height":"","comment":"","context":"interactive","output":"true","editor-max-height":"","autorun":"false","warning":"true","label":"unnamed-chunk-11","editor-font-scale":1,"classes":"","fig-height":5,"dpi":72,"results":"markup"}}];
 
 </script>
 <script type="module">
@@ -1182,7 +1182,7 @@ globalThis.qwebrExecuteCode = async function (
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_five.html"> 
-<span class="menu-text">Lesson 5: Scatterplots</span></a>
+<span class="menu-text">Lesson 5: Boxplots and scatterplots</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Bio110_lesson_six.html"> 
@@ -1218,12 +1218,10 @@ globalThis.qwebrExecuteCode = async function (
   </ul></li>
   <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot">GGPlot</a>
   <ul class="collapse">
+  <li><a href="#example-histogram" id="toc-example-histogram" class="nav-link" data-scroll-target="#example-histogram">Example: Histogram</a></li>
   <li><a href="#customizing-a-plot" id="toc-customizing-a-plot" class="nav-link" data-scroll-target="#customizing-a-plot">Customizing a plot</a></li>
   <li><a href="#other-ggplot-resources" id="toc-other-ggplot-resources" class="nav-link" data-scroll-target="#other-ggplot-resources">Other ggplot resources</a></li>
   <li><a href="#try-it-out" id="toc-try-it-out" class="nav-link" data-scroll-target="#try-it-out">Try it out</a></li>
-  </ul></li>
-  <li><a href="#plotting-data" id="toc-plotting-data" class="nav-link" data-scroll-target="#plotting-data">Plotting Data</a>
-  <ul class="collapse">
   <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a></li>
   <li><a href="#modifying-a-plot" id="toc-modifying-a-plot" class="nav-link" data-scroll-target="#modifying-a-plot">Modifying a plot</a></li>
   </ul></li>
@@ -1506,17 +1504,25 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>()) <span class="sc">+</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_object</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Let’s look at an example to see how this works. We’ll start by creating a histogram. Try running the code below.</p>
+<section id="example-histogram" class="level3">
+<h3 class="anchored" data-anchor-id="example-histogram">Example: Histogram</h3>
+<p>Let’s look at an example to see how this works. We’ll start by creating a histogram. A <strong>histogram</strong> shows the distribution of data values.</p>
+<p>Try running the code below.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This will create a histogram of the heart rate values.</p>
-<p>Note how the code is set up:</p>
+<p>This will create a histogram of the heart rate values. On the x-axis are intervals (bins) representing the different possible data values. On the y-axis are the frequencies with which different data values are present in the data set (once, twice, etc.).</p>
+<p>Notice how the code is set up:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>heart_rate)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
 <li><p>Specify the <code>data</code> right after the first parenthesis</p></li>
 <li><p>Specify the x variable (independent variable) and y variable (dependent variable) in the <code>aes()</code> argument. A histogram only requires an independent variable, so we did not specify the y variable.</p></li>
 <li><p>Specify histogram as your chosen <code>geom</code>. You can also decide how many bins you’d like with the <code>bins=5</code> argument. Try changing the 5 to a different number and running the code again, see what happens!</p></li>
 <li><p>Chain together the function <code>ggplot()</code> with the geom <code>geom_histogram()</code> using a <code>+</code>.</p></li>
 </ul>
+</section>
 <section id="customizing-a-plot" class="level3">
 <h3 class="anchored" data-anchor-id="customizing-a-plot">Customizing a plot</h3>
 <ul>
@@ -1541,44 +1547,44 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <h3 class="anchored" data-anchor-id="try-it-out">Try it out</h3>
 <p>Your turn to give it a try! Make a histogram of the <code>RQ</code> values for our <code>data</code>. As an extra challenge, add color and labels to your graph.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Answer</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Here’s the basic structure. Click the next hint for more detailed structure.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>(___________))<span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_histogram</span>(______________)<span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(_____________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>(___________))<span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_histogram</span>(______________)<span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(_____________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>RQ))<span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">5</span>, <span class="at">color=</span><span class="st">"pink"</span>, <span class="at">fill=</span><span class="st">"darkorange"</span>)<span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Respiratory Quotient"</span>, <span class="at">y=</span><span class="st">"Count"</span>, <span class="at">title=</span><span class="st">"Histogram of Respiratory Quotient for Physiology Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>______))<span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_histogram</span>(<span class="at">bins=</span>_____, <span class="at">color=</span><span class="st">"_____"</span>, <span class="at">fill=</span><span class="st">"_______"</span>)<span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"______"</span>, <span class="at">y=</span><span class="st">"_______"</span>, <span class="at">title=</span><span class="st">"_______"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>RQ))<span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">5</span>, <span class="at">color=</span><span class="st">"pink"</span>, <span class="at">fill=</span><span class="st">"darkorange"</span>)<span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Respiratory Quotient"</span>, <span class="at">y=</span><span class="st">"Count"</span>, <span class="at">title=</span><span class="st">"Histogram of Respiratory Quotient for Physiology Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <p>Great work!</p>
 <p>Boxplots are an excellent graphing option for many datasets, because they are valid regardless of whether or not the data are normally distributed. But they take a little getting used to, because they are not as commonly seen as bar graphs are.</p>
+<p>Notice that R has created a scatterplot, and that it is treating the Condition variable as continuous. Many of the dots representing the data values overlap with each other. For this reason, it is hard to see whether the central tendencies of the two conditions differ. A boxplot is a better choice for these data.</p>
 </section>
-</section>
-<section id="plotting-data" class="level2">
-<h2 class="anchored" data-anchor-id="plotting-data">Plotting Data</h2>
-<p>R has a function called plot, which makes a simple graph showing the relationship between an independent and a dependent variable.</p>
-<ul>
-<li><p>When the independent variable is continuous, the plot command creates a scatterplot.</p></li>
-<li><p>When the independent variable is categorical, the plot command creates a boxplot.</p></li>
-</ul>
-<p>When data are in the form of numbers, R can treat them either as continuous (numeric variables, in R language) or as categorical (factor variables, in R language).</p>
-<p>In <code>data</code> the different measurements are categorized as having been made under either <code>exercise (1)</code> or <code>resting (2)</code> conditions.</p>
-<p>Suppose you wanted to create a graph that compared the respiratory quotients (RQ) under these two conditions.</p>
-<p>The basic plot function has this form: <code>plot(yourdata$xvariable, yourdata$yvariable)</code>. You would need to substitute the actual names for the dataset and variables used as place-holders here.</p>
-<p>Use the plot function to graph the RQs of the two groups, exercise and resting.</p>
+<section id="boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="boxplot">Boxplot</h3>
+<p>If the Condition variable were a factor variable, R would make a boxplot instead. We can tell R to treat this variable as a factor by writing: <code>data$Condition&lt;-as.factor(data$Condition)</code>.</p>
+<p>Try it for yourself. Make Condition a factor variable.</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1593,10 +1599,13 @@ Hint
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Remember that variable names are case-sensitive.</p>
+<p>Did you spell everything correctly?</p>
 </div>
 </div>
 </div>
+<p>Now run the plot command again.</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1610,51 +1619,7 @@ Answer
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition, data<span class="sc">$</span>RQ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<p>Notice that R has created a scatterplot, and that it is treating the Condition variable as continuous. Many of the dots representing the data values overlap with each other. For this reason, it is hard to see whether the central tendencies of the two conditions differ. A boxplot is a better choice for these data.</p>
-<section id="boxplot" class="level3">
-<h3 class="anchored" data-anchor-id="boxplot">Boxplot</h3>
-<p>If the Condition variable were a factor variable, R would make a boxplot instead. We can tell R to treat this variable as a factor by writing: <code>data$Condition&lt;-as.factor(data$Condition)</code>.</p>
-<p>Try it for yourself. Make Condition a factor variable.</p>
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Did you spell everything correctly?</p>
-</div>
-</div>
-</div>
-<p>Now run the plot command again.</p>
-<div id="qwebr-insertion-location-9"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition,data<span class="sc">$</span>RQ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition,data<span class="sc">$</span>RQ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1676,7 +1641,7 @@ Answer
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1685,7 +1650,7 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Remember that 1 represents the exercise condition and 2 represents the resting condition.</p>
 </div>
@@ -1700,6 +1665,44 @@ Hint
 <p>The axis labels should be self-explanatory. We can create axis labels by adding the <code>xlab='_____'</code> and <code>ylab='____'</code> arguments to the plot command. Because these labels are character strings (i.e.&nbsp;lists of letters), we need to enclose them in quotation marks.</p>
 <p>You can add these terms to the plot command, within the parentheses. For example, you might write: <code>plot(data$x, data$y, xlab='my x-axis label', ylab='my y-axis label')</code>.</p>
 <p>Try it yourself, with “Condition” as the x-axis label, and “RQ” as the y-axis label. Don’t forget to put the text of these labels in quotation marks, and to use a comma to separate them.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Remember that text is case-sensitive.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition, data<span class="sc">$</span>RQ, <span class="at">xlab=</span><span class="st">"Condition"</span>, <span class="at">ylab=</span><span class="st">"RQ"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>But the labels are still not completely clear. It would be much clearer to replace the 1 and 2 with the labels ‘exercise’ and ‘resting.’ You can do this by adding the <code>names=c('category name1', 'category name2', etc.)</code> argument to the plot command.</p>
+<p>Try it now, using “exercise” for the first category name, and “resting” for the second one. Put the names command in front of the arguments for the axis labels, and separate them with a comma.</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1714,7 +1717,7 @@ Hint
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Remember that text is case-sensitive.</p>
+<p>In this tutorial, R is looking for you to enter the arguments in a particular order. Try putting the names argument in front of the axis label argument – this might be why you got an error message despite seeing the correct graph.</p>
 </div>
 </div>
 </div>
@@ -1731,13 +1734,17 @@ Answer
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition, data<span class="sc">$</span>RQ, <span class="at">xlab=</span><span class="st">"Condition"</span>, <span class="at">ylab=</span><span class="st">"RQ"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition, data<span class="sc">$</span>RQ, <span class="at">names=</span><span class="fu">c</span>(<span class="st">"exercise"</span>,<span class="st">"resting"</span>), <span class="at">xlab=</span><span class="st">"Condition"</span>,<span class="at">ylab=</span><span class="st">"RQ"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>But the labels are still not completely clear. It would be much clearer to replace the 1 and 2 with the labels ‘exercise’ and ‘resting.’ You can do this by adding the <code>names=c('category name1', 'category name2', etc.)</code> argument to the plot command.</p>
-<p>Try it now, using “exercise” for the first category name, and “resting” for the second one. Put the names command in front of the arguments for the axis labels, and separate them with a comma.</p>
+</section>
+<section id="adjusting-the-range-of-values" class="level4">
+<h4 class="anchored" data-anchor-id="adjusting-the-range-of-values">Adjusting the range of values</h4>
+<p>You might also want to use a wider range of values on the y-axis so that the figure has a little more elbow room. For example, the current y-axis starts at an RQ value of 0.85 and ends at a value of 1.0. Maybe you’d like it to range from 0.75 to 1.05 instead.</p>
+<p>You can do this by inserting the <code>ylim=c(lowerlimit, upperlimit)</code> argument into the plot command like this: <code>plot(data$x, data$y, ylim=c(0.75, 1.05))</code>.</p>
+<p>Try it now, inserting the ylim specification after the commands for category names, axis labels, etc.</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1752,7 +1759,7 @@ Hint
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In this tutorial, R is looking for you to enter the arguments in a particular order. Try putting the names argument in front of the axis label argument – this might be why you got an error message despite seeing the correct graph.</p>
+<p>Remember to put all text expressions in quotes. And R wants you to use the same case, upper or lower, as the instructions specify.</p>
 </div>
 </div>
 </div>
@@ -1769,49 +1776,7 @@ Answer
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition, data<span class="sc">$</span>RQ, <span class="at">names=</span><span class="fu">c</span>(<span class="st">"exercise"</span>,<span class="st">"resting"</span>), <span class="at">xlab=</span><span class="st">"Condition"</span>,<span class="at">ylab=</span><span class="st">"RQ"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="adjusting-the-range-of-values" class="level4">
-<h4 class="anchored" data-anchor-id="adjusting-the-range-of-values">Adjusting the range of values</h4>
-<p>You might also want to use a wider range of values on the y-axis so that the figure has a little more elbow room. For example, the current y-axis starts at an RQ value of 0.85 and ends at a value of 1.0. Maybe you’d like it to range from 0.75 to 1.05 instead.</p>
-<p>You can do this by inserting the <code>ylim=c(lowerlimit, upperlimit)</code> argument into the plot command like this: <code>plot(data$x, data$y, ylim=c(0.75, 1.05))</code>.</p>
-<p>Try it now, inserting the ylim specification after the commands for category names, axis labels, etc.</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Remember to put all text expressions in quotes. And R wants you to use the same case, upper or lower, as the instructions specify.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition, data<span class="sc">$</span>RQ, <span class="at">names=</span><span class="fu">c</span>(<span class="st">"exercise"</span>,<span class="st">"resting"</span>), <span class="at">xlab=</span><span class="st">"Condition"</span>, <span class="at">ylab=</span><span class="st">"RQ"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">1.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>Condition, data<span class="sc">$</span>RQ, <span class="at">names=</span><span class="fu">c</span>(<span class="st">"exercise"</span>,<span class="st">"resting"</span>), <span class="at">xlab=</span><span class="st">"Condition"</span>, <span class="at">ylab=</span><span class="st">"RQ"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">1.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
