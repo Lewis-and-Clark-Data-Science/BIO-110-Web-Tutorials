@@ -5,6 +5,7 @@ project:
     - physiology_data.csv
     - bargraphdata.csv
     - sampledatastats.csv
+    - Boxplot_quartiles.png
   
 webr: 
   packages: ['tidyverse', 'plotrix']

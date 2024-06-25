@@ -14,7 +14,11 @@ Here's a quick introduction for how to use the tutorials:
 
 -   The tutorials sometimes take a little time to load, wait until there is a green circle that says **Ready!** under "WEBR STATUS" at the top of the page.
 
--   There are **interactive code editors** throughout the tutorials. Sometimes, there is an option to see a hint, check your work or see the answer. You are encouraged to try writing the code yourself before looking at a hint or the answer. You can also click the "Check your work" button if you want a way to see if you did it right without giving away the answer.
+-   There are **interactive code editors** throughout the tutorials. Click the green "run code" button to run them. 
+        
+    -   Sometimes, there is an option to see a hint, check your work or see the answer. You are encouraged to try writing the code yourself before looking at a hint or the answer. You can also click the "Check your work" button if you want a way to see if you did it right without giving away the answer.
+
+    -   Within a code editor, everything is considered code and will run when you click "run code". You can tell R to IGNORE a line by using a `#` in front of the line. This is called commenting. 
 
 ### Trouble Shooting
 

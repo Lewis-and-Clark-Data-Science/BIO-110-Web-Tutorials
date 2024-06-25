@@ -37,7 +37,9 @@ Type the word data to recall what it contains.
 
 ```
 
-## GGPlot 
+When you examine the data table, you can see that there are some rows that are missing data for heart rate. In R, missing data are indicated by the letters 'NA'. R will ignore these missing values when making a graph. Once you collect your own data, this is the way to enter any missing data into your data table.
+
+## GGPlot graphing
 
 There are 3 main components of ggplot: 
 
@@ -83,16 +85,59 @@ ggplot(data, mapping=aes(x=heart_rate)) +
   
   - Chain together the function `ggplot()` with the geom `geom_histogram()` using a `+`. 
 
+#### Try it out
+
+Your turn to give it a try! Make a histogram of the `RQ` values for our `data`.
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+# Your code here
+
+
+```
+
+## Hint
+Here's the basic structure. Click the next hint for more detailed structure. 
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(___________))+
+      geom_histogram(______________)
+```
+
+## Hint
+
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=______))+
+      geom_histogram(bins=_____)
+```
+
+## Hint
+Make sure you use the proper capitalization and spelling for the x variable, exactly as it is shown in our `data`. 
+
+## Answer
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=RQ))+
+      geom_histogram(bins=5)
+```
+
+:::
+
+
 ### Customizing a plot 
 
--   You can change how a plot looks by adding the "color" and "fill" attributes to your `geom_object()`. `color` indicates the outline color and `fill` specifies the background color. 
+-   You can change how a plot looks by adding the "color" and "fill" attributes to your `geom_object()`. `color` indicates the outline color and `fill` specifies the background color. Notice that we put the color name inside quotation marks. This is because the colors are character strings (i.e. lists of letters).
 
     ```{webr-r}
     ggplot(data, mapping=aes(x=heart_rate))+
       geom_histogram(bins=5, color="blue", fill="lightyellow")
     ```
 
--   You can adjust the labels of the plot by chaining on the `labs()` function: `labs(x="x label", y="y label", title="title")`
+-   You can adjust the labels of the plot by chaining on the `labs()` function: `labs(x="x label", y="y label", title="title")` Again, we enclose the labels in quotation marks.
 
     ```{webr-r}
     ggplot(data, mapping=aes(x=heart_rate))+
@@ -100,15 +145,6 @@ ggplot(data, mapping=aes(x=heart_rate)) +
       labs(x="Heart rate", y="Count", title="Histogram of Heart Rate for Physiology Data")
     ```
 
-### Other ggplot resources
-
-There are LOTS of resources online where you can learn about making plots with ggplot. Here are a few to start with: 
-
--   [ggplot cheatsheet PDF](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
-
--   [posit.cloud ggplot cheatsheet website version](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
-
--   [Bio110 tutorial cheatsheet - ggplot section](Bio110_cheatsheet.qmd#sec-ggplot)
 
 ### Try it out
 
@@ -154,131 +190,16 @@ ggplot(data, mapping=aes(x=RQ))+
 
 Great work! 
 
+### Other ggplot resources
 
+There are LOTS of resources online where you can learn about making plots with ggplot. Here are a few to start with: 
 
+-   [ggplot cheatsheet PDF](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
 
+-   [posit.cloud ggplot cheatsheet website version](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
 
-Boxplots are an excellent graphing option for many datasets, because they are valid regardless of whether or not the data are normally distributed. But they take a little getting used to, because they are not as commonly seen as bar graphs are.
+-   [Bio110 tutorial cheatsheet - ggplot section](Bio110_cheatsheet.qmd#sec-ggplot)
 
-
-Notice that R has created a scatterplot, and that it is treating the Condition variable as continuous. Many of the dots representing the data values overlap with each other. For this reason, it is hard to see whether the central tendencies of the two conditions differ. A boxplot is a better choice for these data.
-
-### Boxplot
-
-If the Condition variable were a factor variable, R would make a boxplot instead. We can tell R to treat this variable as a factor by writing: `data$Condition<-as.factor(data$Condition)`.
-
-Try it for yourself. Make Condition a factor variable.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Did you spell everything correctly?
-:::
-
-Now run the plot command again.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-
-plot(data$Condition,data$RQ)
-```
-:::
-
-When R understands that the Condition variable is a factor or category, the 'plot' command creates a boxplot. The horizontal bars represent the medians of each group. The boxes represent the interquartile range, i.e. the middle 50% of all the data values.
-
-::: question
-**In which condition is the median respiratory quotient higher, exercise or resting?**
-
-::: choices
-::: choice
-resting
-:::
-
-::: {.choice .correct-choice}
-exercise
-:::
-:::
-:::
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Remember that 1 represents the exercise condition and 2 represents the resting condition.
-:::
-
-### Modifying a plot
-
-This boxplot is not very easy to read because the labels are not very clear. We can change the plotting parameters to improve its appearance. There are many ways to modify the plot command to add additional features. We'll cover some of the most basic modifications in this tutorial.
-
-#### Axis labels
-
-The axis labels should be self-explanatory. We can create axis labels by adding the `xlab='_____'` and `ylab='____'` arguments to the plot command. Because these labels are character strings (i.e. lists of letters), we need to enclose them in quotation marks.
-
-You can add these terms to the plot command, within the parentheses. For example, you might write: `plot(data$x, data$y, xlab='my x-axis label', ylab='my y-axis label')`.
-
-Try it yourself, with "Condition" as the x-axis label, and "RQ" as the y-axis label. Don't forget to put the text of these labels in quotation marks, and to use a comma to separate them.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Remember that text is case-sensitive.
-:::
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$Condition, data$RQ, xlab="Condition", ylab="RQ")
-```
-:::
-
-But the labels are still not completely clear. It would be much clearer to replace the 1 and 2 with the labels 'exercise' and 'resting.' You can do this by adding the `names=c('category name1', 'category name2', etc.)` argument to the plot command.
-
-Try it now, using "exercise" for the first category name, and "resting" for the second one. Put the names command in front of the arguments for the axis labels, and separate them with a comma.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-In this tutorial, R is looking for you to enter the arguments in a particular order. Try putting the names argument in front of the axis label argument -- this might be why you got an error message despite seeing the correct graph.
-:::
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$Condition, data$RQ, names=c("exercise","resting"), xlab="Condition",ylab="RQ")
-
-```
-:::
 
 #### Adjusting the range of values
 

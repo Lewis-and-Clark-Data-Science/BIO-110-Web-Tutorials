@@ -40,6 +40,8 @@ Type the word data to recall what it contains.
 
 ## Boxplots
 
+Boxplots are an excellent graphing option for many datasets, because they are valid regardless of whether or not the data are normally distributed. To create a boxplot, you need one variable that is **categorical** and one that is **continuous**. 
+
 The command `geom_boxplot()` will create a boxplot. We will add this as a `geom_object()` to our `ggplot()` function using a `+`. The structure of the code looks like this: 
 
 ```{r}
@@ -52,9 +54,13 @@ ggplot(data, mapping = aes()) +
 
 Before we create a boxplot, we need to tell R what kind of variables we are inputting. 
 
-When creating a boxplot, our x variable should be **categorical**, and our y variable is **continuous**. 
+When creating a boxplot, our x variable should be **categorical** (called a **factor** variable in R language), and our y variable is **continuous**. 
 
 A categorical variable has defined categories or groups. A continuous variable can take any numerical value. 
+
+::: panel-tabset
+
+## Question
 
 ::: question
 
@@ -74,6 +80,12 @@ heart_rate
 Condition
 :::
 :::
+:::
+
+## Answer and reasoning 
+
+In `data` the different measurements are categorized as having been made under either exercise (1) or resting (2) conditions. So `Condition` is a categorical variable because it has two different categories (or groups) that the measurements are placed into
+
 :::
 
 Before we can create a boxplot, we have to tell R that whether our variable is a categorical variable. In R language, a categorical variable is called a "factor" variable. You can use this command to convert a variable to a categorical (or factor variable): `data$variableName <- as.factor(data$variableName)`.
@@ -132,8 +144,13 @@ ggplot(data, mapping = aes(x= _______, y= ________)) +
 ```
 
 ## Hint
+Make sure you use the proper capitalization and spelling for the x variable, exactly as it is shown in our `data`. 
+
+## Hint
 
 If you get a weird looking boxplot, return to the previous code chunk and make sure you converted `Condition` to a factor variable! 
+
+
 
 ## Answer
 
@@ -151,22 +168,108 @@ If your code worked, you should see a boxplot for each condition, 1 (exercise) a
 Here's an image that illustrates how to interpret a boxplot:
 ![~*From https://datatab.net/tutorial/box-plot*~](Boxplot_quartiles.png)
 
+::: question
 
-Boxplots are an excellent graphing option for many datasets, because they are valid regardless of whether or not the data are normally distributed. But they take a little getting used to, because they are not as commonly seen as histogram or bar graphs are.
+**Looking at the boxplot you created, what is the 1st quartile for condition 2?**
+
+:::choices
+
+::: choice
+65
+:::
+
+::: {.choice .correct-choice}
+53
+:::
+
+::: choice
+73
+:::
+:::
+:::
+
+### Modifying a Boxplot
+
+#### Adding labels
+
+Now, try adding labels to your boxplot. We'll use the same function we used in lesson 4: `labs(x="_____", y="______", title="_________")`. Try it now! 
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Type your code here
 
 
+```
+
+## Hint
+Don't forget to use a `+` to chain on the `labs()` function after `geom_boxplot()`. 
+
+## Hint
+```{r}
+#| eval: false
+ggplot(data, mapping = aes(x= _______, y= ________)) +
+  geom_boxplot()+
+  labs(x="____", y="_____", title="_______")
+```
+
+## Answer
+```{r}
+#| eval: false
+ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
+  geom_boxplot()+
+  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise (1) and rest (2)")
+```
+
+:::
+
+But these labels do not specify whether "1" and "2" refer to resting or exercise conditions. We can add the following function to change the labels on the x axis: `scale_x_discrete(labels=c("firstLabel", "secondLabel"))`
+
+Give it a try! 
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+## Hint
+```{r}
+#| eval: false
+ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
+  geom_boxplot() +
+  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise (1) and rest (2)") +
+  scale_x_discrete(labels=c("_______", "_______"))
+```
+
+## Answer
+```{r}
+#| eval: false
+ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
+  geom_boxplot()+
+  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise (1) and rest (2)")+
+  scale_x_discrete(labels=c("Exercise", "Resting"))
+```
+
+:::
 
 ## Scatterplots
 
 Suppose we wanted to look at a scatterplot of the relationship between heart rate and respiratory quotient (RQ).
 
-When you examine the data table, you can see that there are some rows that are missing data for heart rate. In R, missing data are indicated by the letters 'NA'. R will ignore these missing values when making a graph. One you collect your own data, this is the way to enter any missing data into your data table.
+We can create a scatter plot by adding the geom `geom_point()` to the main `ggplot()` function. This will create a point for every data value.  
 
-As you have learned, R has a function called `plot` that graphs the relationship between an independent and a dependent variable. When the independent variable is a factor variable, `plot` creates a *box plot*, as you saw in lesson four. When the independent variable is continuous (numeric), plot creates a *scatterplot*, as you will see in this lesson.
+Follow the same overall structure that you used to create a boxplot and histogram. Try to create a scatterplot displaying the relationship between `heart_rate` (on the x-axis) and `RQ` (on the y-axis). 
 
-The basic plot function has this form: `plot(yourdata$xvariable, yourdata$yvariable)`. You would need to substitute the actual names for your dataset and variables used as place-holders here.
+::: panel-tabset
 
-Use the plot command to plot the relationship between heart rate (on the x-axis) and RQ (on the y-axis). Be sure to use heart rate's proper variable name.
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -174,164 +277,175 @@ Use the plot command to plot the relationship between heart rate (on the x-axis)
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
-
-Copy the column names exactly to have the proper variable name.
-:::
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
+Recall the overall structure should be: 
 ```{r}
 #| eval: false
-plot(data$heart_rate,data$RQ)
+ggplot(data, mapping = aes(____________))+
+  geom_ _________ ()
 ```
+
+## Hint
+```{r}
+#| eval: false
+ggplot(data, mapping = aes(x= _______, y= ________)) +
+  geom_point()
+```
+
+## Answer
+```{r}
+#| eval: false
+ggplot(data, mapping = aes(x= heart_rate, y= RQ)) +
+  geom_point()
+```
+
 :::
 
 ### Adjust plot style
 
-Now that we have a basic graph, let's learn how to adjust some of the plotting parameters to change things like color, text size, axis labels, axis limits, and point style.
+Just like a boxplot, we can adjust the color, labels, and even the point size and shape. 
 
-All of the plotting parameters that can be adjusted can be found on the par help page. You cna find help for functions by typing a question mark followed by a function name into a code chunk. Type `?par` to view this page and read through the graphical parameters.
+#### Point size, color, shape
+
+You can adjust the size, color and shape of the point by adding arguments to the `geom_point()` function.
+
+For example: 
+`geom_point(color="red", size=0.7, shape="circle")`
+
+Give it a try! Create a scatter plot displaying the relationship between `heart_rate` (on the x-axis) and `RQ` (on the y-axis) and change the color, size and shape of the points. 
+
+Try different shapes and colors - just type in their name and see if they work! R might not understand all the colors or shapes, but you can experiment and see which ones work or look it up online or check out [this linked pdf](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) to see the colors that can be specified by name.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
-#Type your code here
+# Type your code here
 
 
 ```
 
-Many of the par functions can be used as arguments in the plot function. Simply place them after the x and y arguments and separate them with commas. For example, `plot(data$heart_rate,data$RQ,col='red')` would generate our original plot, but with red points.
+## Hint 
 
-#### Point Color
+Use the same code that you used in the code chunk just before this (you can just copy and paste!). Then add color, shape, and size specifications inside the parentheses of `geom_point()`. 
 
-Try generating the original plot with blue points. Be sure to put quotes around the color name.
+Don't forget to use quotation marks around your color and shape! Do NOT use quotation marks around the size. 
 
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-type col="blue" following the y argument.
-:::
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=heart_rate, y=RQ)) +
+  geom_point(color="______", shape="_______", size=________)
+```
 
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
 ```{r}
 #| eval: false
-plot(data$heart_rate,data$RQ,col='blue')
+ggplot(data, mapping=aes(x=heart_rate, y=RQ)) +
+  geom_point(color="blue", shape="triangle", size=2)
 ```
+
 :::
 
-R can generate figures with virtually any color. Check out [this linked pdf](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) to see the colors that can be specified by name.
+#### Axis limits
 
-#### Type of point
+You can also adjust the axis limits by chaining on the functions: `xlim(minLimit, maxLimit)` and `ylim(minLimit, maxLimit)`. 
 
-We can also use graphical parameters to adjust the type of point that is plotted on our graph. We use the `pch=` argument for this.
+For example: 
 
-Generate the original plot with blue points and pch=16. This will plot closed circles.
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=_____, y=_____)) +
+  geom_point() + 
+  xlim(____, ____) +
+  ylim(____, _____)
+```
+
+Let's put everything together now! Create a scatterplot displaying the relationship between `heart_rate` (on the x axis) and `RQ` (on the y axis). Choose a color, size and shape for the points. Add reasonable x and y limits. And finally, add x and y axes labels and a title to your plot.
+
+(Feel free to copy and paste your code from previous code chunks)
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
-#Type your code here
+# Type your code here
 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
+## Hint 
+
+Check that you have quotation marks and parentheses in the right spots. 
+
+Did you chain all the different functions together with a `+`? 
+
+Did you spell all your variable names correctly? 
+
 ## Hint
 
-Try `plot(data$heart_rate,data$RQ,col='blue',pch=16)`
-:::
-
-Type the command to look at the help page for `pch` to see all of the possible symbols and their associated codes.
-
-```{webr-r}
-#Type your code here
-
-
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=______, y=______)) +
+  geom_point(color="______", shape="_______", size=________) +
+  xlim(____, ____) +
+  ylim(____, ____) +
+  labs(x="_____", y="_____", title="_____")
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Type `?pch`.
-:::
-
-#### Point Size
-
-Our points are looking a little small. Let's make them larger with the `cex=` argument, which expands the character by a factor you can specify. As a default, they are set to `cex=1`.
-
-Re-generate the original figure with blue, closed points and cex=1.5, i.e. points that are 1.5 times as large as before.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
 ```{r}
 #| eval: false
-plot(data$heart_rate,data$RQ,col="blue",pch=16,cex=1.5)
-```
-:::
-
-### Axis labels
-
-Our axis labels aren't particularly clear or useful as is. Let's change them using the `xlab=''` and `ylab=''` arguments. Because the labels are character strings, we need to enclose them in quotes.
-
-Re-generate the original figure with "Heart Rate" as the x-axis label and "RQ" as the y-axis label and all of the other updated graphical parameters. Specify the x-axis label before the y-axis label.
-
-```{webr-r}
-#Type your code here
-
-
+ggplot(data, mapping=aes(x=heart_rate, y=RQ)) +
+  geom_point(color="blue", shape="triangle", size=2) +
+  xlim(40, 90) +
+  ylim(0.7, 1.1) +
+  labs(x="Heart Rate", y="Respiratory Quotient", title="Relationship between Heart Rate and Respiratory Quotient")
 ```
 
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$heart_rate,data$RQ,col='blue',pch=16,cex=1.5,xlab='Heart Rate',ylab='RQ')
-```
 :::
 
 Now you've learned the basics of creating a scatterplot when both the x and y variables are continuous. You know how to alter many aspects of your figure's appearance to make it clearer.
 
 ### Scatterplots with a categorical variable
 
-Next, we'll look at making scatterplots when the independent (x) variable is categorical. When data are in the form of numbers, R can treat them either as continuous (numeric variables, in R language) or as categorical (factor variables, in R language).
+Next, we'll look at making scatterplots when the independent (x) variable is categorical.
 
-In `data` the different measurements are categorized as having been made under either exercise (1) or resting (2) conditions."
+Suppose you wanted to create a graph that compared the respiratory quotients (RQ) under the two conditions: exercise and resting. Remember that the `Condition` variable is **categorical** because it sorts the data values into two categories. 
 
-Suppose you wanted to create a graph that compared the respiratory quotients (RQ) under these two conditions. To make sure that R will create a scatterplot from these data, rather than a boxplot, we need to make sure that it considers the Condition variable to be numeric. We can do that with this command: `data$variable<-as.numeric(data$variable)`.
+First, let's tell R that we `Condition` is a factor (categorical) variable. We already did this when we made a boxplot, so skip this step if you already did it and haven't refreshed the page since. 
 
-Make sure that `data$Condition` is a numeric variable. Be sure to substitute the actual variable name for the placeholder.
+Do you remember the code to change a variable to a factor variable? 
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
 
 
+
 ```
 
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
-```{r}
-#| eval: false
-data$Condition<-as.numeric(data$Condition)
+```{webr-r}
+data$Condition <- as.factor(data$Condition)
 ```
+
 :::
 
-Use the plot function to graph the RQs of the two groups, exercise and resting.
+Now, create a scatterplot the `RQ`s of the two `Condition` groups, exercise and resting. 
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -339,32 +453,30 @@ Use the plot function to graph the RQs of the two groups, exercise and resting.
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Remember that variable names are case-sensitive.
-:::
+Your x variable is `Condition` and your y variable is `heart_rate`
 
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
 ```{r}
 #| eval: false
-plot(data$Condition, data$RQ)
+ggplot(data, mapping=aes(x=Condition, y=RQ))+
+  geom_point()
 ```
 :::
 
 Notice that a scatterplot (rather than a boxplot) is only a good option for a categorical x-variable if there are only a few data values, as in this example.
 
+
+
 #### Axis labels on categorical scatterplot
 
-However, this scatterplot is not very easy to read. For one, the axis labels are not very clear. We can change the plotting parameters to improve the appearance of the figure.
+Let's add labels to our plot. You know how to add axes labels and a title, but how can we change the unhelpful labels "1" and "2"? We will use the same command we used in when making a boxplot. Refer back to your code when you made a boxplot, and see if you can add labels to your scatterplot. Add some color too! 
 
-The axis labels should be self-explanatory. We can change them by adding the `xlab='___'` and `ylab='____'` arguments to the plot command. Because these labels are character strings (i.e. lists of letters), we need to enclose them in quotation marks.
+::: panel-tabset
 
-You can do this by adding axis label arguments to the plot command, within the parentheses, as you did when making box plots. For example, you might write: `plot(data$x, data$y, xlab='my x-axis label', ylab='my y-axis label')`.
-
-Try it yourself, with 'Condition' as the x-axis label, and 'RQ' as the y-axis label.
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -372,107 +484,33 @@ Try it yourself, with 'Condition' as the x-axis label, and 'RQ' as the y-axis la
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Remember that text is case-sensitive.
-:::
+The command you need to add is `scale_x_discrete(labels(c("________", "_________")))`.
 
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$Condition, data$RQ, xlab="Condition", ylab="RQ")
-```
-:::
-
-This is better, but still not clear enough. The values '1' and '2' represent the two categories, but values like 1.4 do not make sense. And the two groups of points should be centered on the x-axis.
-
-#### Axis limits
-
-To center the points better, we can increase the limits of the x-axis, e.g. so that they range from 0.5 to 2.5.
-
-You can do this by inserting `xlim=c(0.5, 2.5)` into the plot command: `plot(data$x, data$y, xlim=c(0.5,2.5))`.
-
-Try it now, adding new xlimits to the plot you have already created with axis labels.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Remember to put all text expressions in quotes.
-:::
+```{r}
+#| eval: false
+ggplot(data, mapping=aes(x=______, y=______))+
+  geom_point(color="red")+
+  labs(x="_______", y="_______", title="_______")
+  scale_x_discrete(labels(c("________", "_________")))
+```
 
-::: {.callout-note collapse="true" icon="false"}
+
 ## Answer
 
 ```{r}
 #| eval: false
-plot(data$Condition, data$RQ, xlab="Condition", ylab="RQ", xlim=c(0.5,2.5))
+ggplot(data, mapping=aes(x=Condition, y=RQ))+
+  geom_point(color="red")+
+  labs(x="Condition", y="Respiratory Quotient", title="Respiratory Quotient at Rest or while Exercising")+
+   scale_x_discrete(labels=c("Exercise", "Resting"))
 ```
 :::
 
-#### Adjust numeric labels
-
-We also want to replace the existing numeric labels with the words 'exercise' and 'resting', centered under each cluster of points.
-
-To do this, we first suppress the xaxis numbers, using the argument `xaxt='n'` in the plot command's parentheses. This command means that the x axis text should be 'null', i.e. missing."
-
-Modify the plot command to suppress the x-axis text.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$Condition, data$RQ, xlab="Condition", ylab="RQ",xlim=c(0.5,2.5), xaxt='n')
-```
-:::
-
-Now you have created a plot that has no numerical labels on the x-axis. We can now use the axis command to specify what our new x-axis should look like. This is a separate command that you execute after you have made your graph.
-
-The syntax of this command is: `axis(side, at=1:2,labels=c('category1name', 'category2name', etc.))`. `side` indicates which axis of the graph to modify; `at` shows where along the x-axis the labels should be placed. Even though you have removed the old labels 1 and 2, R still knows where these positions are, and you can use them to place your labels under the clusters of points.
-
-Add a new x-axis to your plot that labels the former '1' category as 'exercise' and the former '2' category as 'resting'. For `side`, use a 1, which represents the bottom axis of the figure. First, you will need to recreate your plot and then execute this new command to create the labels.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-First, you'll need to make your plot again by using the command from the previous code chunk.
-
-Then, on a new line, execute the `axis()` command to create labels on each cluster of points.
-:::
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$Condition, data$RQ, xlab="Condition", ylab="RQ",xlim=c(0.5,2.5), xaxt='n')
-
-axis(1,at=1:2, labels=c("exercise","resting"))
-
-```
-:::
 
 ## Congratulations
 
-That's it! Now you're an expert in making scatterplots. In lesson six, you'll learn how to make two kinds of bar graphs.
+That's it! Now you're an expert in making boxplots and scatterplots. In lesson six, you'll learn how to make two kinds of bar graphs.
