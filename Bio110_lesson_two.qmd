@@ -286,7 +286,7 @@ Let's break down what is happening:
 
 The pipe will be very helpful to string together functions!
 
-### Summarizing data with `group_by()` and `summarize()`
+### Summarizing data with `group_by()` and `summarize()` {#sec-groupby-sum}
 
 We use the functions `group_by()` and `summarize()` to generate summary statistics (mean, median, etc) for specific groups in our data set.
 

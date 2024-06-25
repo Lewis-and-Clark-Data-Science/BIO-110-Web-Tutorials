@@ -50,7 +50,7 @@ ggplot(data, mapping = aes()) +
   geom_boxplot()
 ```
 
-### Specifying the type of variable
+### Specifying the type of variable {#sec-var-type}
 
 Before we create a boxplot, we need to tell R what kind of variables we are inputting. 
 
