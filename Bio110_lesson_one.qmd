@@ -29,7 +29,7 @@ First, let's try using R. In the code chunk right below this, try typing in a ba
 
 ```
 
-The rest of this tutorial will teach you how to work with data in R. It is interactive, so you'll be able to write your own code in code chunks like the one above throughout the tutorial. See [the home page](index.qmd) for more details on using the tutorials and for troubleshooting tips!
+The rest of this tutorial will teach you how to work with data in R. It is interactive, so you'll be able to write your own code in code chunks like the one above throughout the tutorial. See [the home page](index.qmd){target="_blank"} for more details on using the tutorials and for troubleshooting tips!
 
 There are also hints and answers for most code chunks. Try to do each problem on your own, but feel free to use the hints and answers if you get stuck and to check your work!
 

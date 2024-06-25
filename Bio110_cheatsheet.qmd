@@ -1,2 +1,13 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+  - naquiz
+title: "Bio110 Cheatsheet"
+---
+
+## Basic R Commands
+
 
 ## GGPlot {#sec-ggplot}

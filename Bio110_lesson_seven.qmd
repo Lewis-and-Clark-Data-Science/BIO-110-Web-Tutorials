@@ -28,13 +28,13 @@ When testing scientific hypotheses, we are trying to decide whether the pattern 
 
 But some apparent patterns can be due to chance alone. Statistical inference gives us a way to compute the likelihood that an apparent pattern in our data could be due merely to chance.
 
-### Statistical Significance 
+### Statistical Significance
 
 Most scientists only accept a pattern as supporting a hypothesis if it is very unlikely that the pattern could be due to chance. We define an event as 'very unlikely' if it has a probability of .05 (5%) or less.
 
 Statistical inference involves using the data to compute the probability -- the **p-value** -- that a pattern could have arisen by chance. If the p-value associated with a test is less than or equal to 0.05, we conclude that the pattern is *statistically significant*. In other words, the pattern is highly unlikely to have arisen by chance.
 
-## Dataset 
+## Dataset
 
 In this tutorial you will work with a sample dataset called `sampledata` that has already been imported into the tutorial.
 
@@ -97,7 +97,7 @@ sampledata$diet<-as.factor(sampledata$diet)
 ```
 :::
 
-## Statistical Analysis with Continuous Variables 
+## Statistical Analysis with Continuous Variables
 
 Let's start by thinking about situations where both the independent and dependent variables are continuous. You are interested in knowing if there is an association or a relationship between the values of the two variables. Does the value of one predict the value of the other?
 
@@ -148,7 +148,7 @@ plot(sampledata$length, sampledata$weight)
 ```
 :::
 
-### Regression Analysis 
+### Regression Analysis
 
 We can carry out a regression analysis to find the equation for the best-fit line through the points. The command: `model<-lm(sampledata$weight~sampledata$length)` performs a regression of `weight` (the y-variable) on `length` (the x-variable) and stores it in a variable called `model`. `lm` stands for 'linear model.'
 
@@ -202,7 +202,7 @@ You named your regression variable `weightreg`
 
 The output shows the values of the line's y-intercept (-5.1502) and its slope (0.8149).
 
-#### Is it statistically significant? 
+#### Is it statistically significant?
 
 The points fit the line quite well. It seems unlikely that this association could have happened just by accident, though it *IS* possible. We would like to know the probability that there is actually no relationship between these two variables, that the slope of the true line through them is actually zero (a flat line).
 
@@ -311,13 +311,13 @@ The output shows a p-value (in this case, 0.2308) for the probability that a dif
 
 Sometimes the data for the two groups we would like to compare with a t-test are in two different variables of our data table.
 
-When that is the case, we use this command: `t.test(varA, varB)`.  If we wished, we could use the subset command to create two separate variables from `sampledata$weight`, but this would be an unnecessary extra step. If we did this, though, we would get the same result.
+When that is the case, we use this command: `t.test(varA, varB)`. If we wished, we could use the subset command to create two separate variables from `sampledata$weight`, but this would be an unnecessary extra step. If we did this, though, we would get the same result.
 
-It is important to remember, though, that t-tests are designed for data values with a *normal distribution*. Sometimes data are very non-normal. For example, go back and look at the variable    `repro`.
+It is important to remember, though, that t-tests are designed for data values with a *normal distribution*. Sometimes data are very non-normal. For example, go back and look at the variable `repro`.
 
 You can see that there are a very large number of zeroes. This is often a good indication that the mean is not the center of the data distribution.
 
-### Wilcoxon test 
+### Wilcoxon test
 
 There is an alternative to the t-test that does not require the data to have a normal distribution. It is called a **Wilcoxon test** (also sometimes a Mann-Whitney Test).
 
@@ -353,8 +353,7 @@ Once again, the medians differ, but the data values for the two groups overlap.
 To carry out a Wilcoxon test, use the command: `wilcox.test(data$depvar~data$catvar)`.
 
 Write the command to perform a Wilcoxon test to determine whether values of `repro` differ for the two temp conditions.
- 
- 
+
 ```{webr-r}
 #Type your code here
 
@@ -366,8 +365,8 @@ Write the command to perform a Wilcoxon test to determine whether values of `rep
 
 try `wilcox.test(sampledata$repro~sampledata$temp)`
 :::
- 
-It's fine to ignore the warning values that you see whenever the data contain duplicate values. 
+
+It's fine to ignore the warning values that you see whenever the data contain duplicate values.
 
 You can see that the p-value (.076) tells you that the differences are NOT statistically significant, though they are nearly so.
 
@@ -519,7 +518,7 @@ boxplot(sampledata$length~sampledata$diet*sampledata$temp)
 ```
 :::
 
-#### Two-way ANOVA 
+#### Two-way ANOVA
 
 We can assess the effect of both temperature and diet on length with a **two-way ANOVA**. The two-way refers to having two different independent variables, temp and diet in this case.
 
@@ -536,7 +535,7 @@ Write a command to perform a two-way ANOVA on the effect of `temp` and `diet` on
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-try ` length2way<-aov(sampledata$length~sampledata$temp*sampledata$diet)`
+try `length2way<-aov(sampledata$length~sampledata$temp*sampledata$diet)`
 :::
 
 Type a command to look at the output from your new two-way ANOVA.
@@ -550,17 +549,15 @@ Type a command to look at the output from your new two-way ANOVA.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-try ` summary(length2way)`
+try `summary(length2way)`
 :::
 
 The table of output gives the probability that the differences in length between the two temperatures could be due to chance alone, and the probability that the differences in length among the three diets could be due to chance alone. The interaction term assesses whether the effect of temperature depends on which diet type the organism received.
 
-In this example, temperature did **NOT** have a significant effect on length (p=.205761), diet **DID** have a significant effect on length (p=.000124), and there was no interaction between temperature and diet (p=.154474)). 
+In this example, temperature did **NOT** have a significant effect on length (p=.205761), diet **DID** have a significant effect on length (p=.000124), and there was no interaction between temperature and diet (p=.154474)).
 
 In other words, the effect of temperature was the same for all diets, and the effect of diet was the same for both temperatures.
 
-## Congratulations! 
+## Congratulations!
 
 Now you are familiar with some of the most basic and widely-used tests of statistical inference. To learn more about statistical inference in general, consider taking Math 255. To learn more about carrying out statistical analyses in R, there are many online resources that can be easily found by Googling your specific situation.
-
-

@@ -21,7 +21,7 @@ data<- read.csv("physiology_data.csv")
 
 ## Introduction
 
-Welcome. In this lesson, you will learn about central tendency. See [the home page](index.qmd) for more details on how to use this tutorial and for troubleshooting tips!
+Welcome. In this lesson, you will learn about central tendency. See [the home page](index.qmd){target="_blank"} for more details on how to use this tutorial and for troubleshooting tips!
 
 ## Analyzing Central Tendency
 
@@ -81,8 +81,7 @@ mean(mydata)
 
 #### Arguments in a function {#sec-arguments}
 
-When you use functions like `mean()` in R, the thing you put in the parentheses is called an **argument**. In this case, our argument for the mean function is `mydata`. Sometimes, functions will require multiple different arguments. 
-
+When you use functions like `mean()` in R, the thing you put in the parentheses is called an **argument**. In this case, our argument for the mean function is `mydata`. Sometimes, functions will require multiple different arguments.
 
 For some data sets, the mean is not a very good measure of the data's central tendency. For example, what if your data values were 2, 2, 2, 3, 1, 3, 12?
 
@@ -157,7 +156,7 @@ median(data_two)
 
 Notice that the median is not unduly influenced by the single large data value, and so is a more accurate measure of the center of these data values.
 
-If you are unsure whether to use mean or median to describe the center of data values, a **histogram** can be very helpful. In [lesson 4](Bio110_lesson_four.qmd), you will learn how to create a histogram but for now it is worth noting that a histogram can help you see how data is distributed. When a histogram's peak is not near the center, and/or its two tails are quite asymetrical, it's best to use the *median*, not the *mean*, to summarize the central tendency.
+If you are unsure whether to use mean or median to describe the center of data values, a **histogram** can be very helpful. In [lesson 4](Bio110_lesson_four.qmd){target="_blank"}, you will learn how to create a histogram but for now it is worth noting that a histogram can help you see how data is distributed. When a histogram's peak is not near the center, and/or its two tails are quite asymetrical, it's best to use the *median*, not the *mean*, to summarize the central tendency.
 
 #### Basic Arithmetic with mean/median
 
@@ -182,12 +181,11 @@ mean(data_two)-median(data_two)
 
 #### Finding mean and median in a dataset
 
-In [lesson 1](Bio110_lesson_one.qmd#sec-our-data), we used a dataframe called `data` with the variables `RQ`, `Condition`, `heart_rate`, `Individual`. 
+In [lesson 1](Bio110_lesson_one.qmd#sec-our-data){target="_blank"}, we used a dataframe called `data` with the variables `RQ`, `Condition`, `heart_rate`, `Individual`.
 
-Type `data` to recall what it contains. 
+Type `data` to recall what it contains.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -201,7 +199,6 @@ Type `data` to recall what it contains.
 ```{webr-r}
 data
 ```
-
 :::
 
 Now, try to find the mean of the `heart_rate` column in `data`.
@@ -217,7 +214,7 @@ Now, try to find the mean of the `heart_rate` column in `data`.
 
 ## Hint
 
-Use the syntax `yourDataName$columnName` to refer to a specific column. You can type your column name directly in the parentheses in the `mean()` function. 
+Use the syntax `yourDataName$columnName` to refer to a specific column. You can type your column name directly in the parentheses in the `mean()` function.
 
 ## Answer
 
@@ -325,10 +322,9 @@ Let's break down how this works:
 
 We use the pipe `|>` to string all these functions together.
 
-Now you try! Find the mean and median for the `RQ` (respiratory quotiont), and find separate values for each condition (resting or exercise). 
+Now you try! Find the mean and median for the `RQ` (respiratory quotiont), and find separate values for each condition (resting or exercise).
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -337,37 +333,33 @@ Now you try! Find the mean and median for the `RQ` (respiratory quotiont), and f
 
 ```
 
-## Check your work 
+## Check your work
 
 ::: question
-
-**What is the mean of the RQ for condition 1?** 
+**What is the mean of the RQ for condition 1?**
 
 ::: choices
-
 ::: {.choice .correct-choice}
-
 0.876
-
 :::
+
 ::: choice
 0.87
 :::
+
 ::: choice
 0.973
 :::
-
 :::
 :::
 
+## Hint
+
+Use the pipe to string together your functions.
 
 ## Hint
 
-Use the pipe to string together your functions. 
-
-## Hint
-
-Here's how you set up the `summarize()` function: 
+Here's how you set up the `summarize()` function:
 
 ```{r}
 #| eval: false
@@ -376,6 +368,7 @@ summarize(averageRQ = mean(________, na.rm=TRUE),
 ```
 
 ## Hint
+
 ```{r}
 #| eval: false
 data |>
@@ -393,12 +386,10 @@ data |>
   summarize(averageRQ = mean(RQ, na.rm=TRUE), 
             medianRQ = median(RQ, na.rm=TRUE))
 ```
-
 :::
 
-## Congratulations! 
+## Congratulations!
 
-You have finished this tutorial. You learned how to calculate the mean and median of data and how to use `group_by()` and `summarize()` to calculate the mean and median of specific groups within a column. 
-
+You have finished this tutorial. You learned how to calculate the mean and median of data and how to use `group_by()` and `summarize()` to calculate the mean and median of specific groups within a column.
 
 Another important kind of descriptive statistic is variability; that's the topic of lesson three.

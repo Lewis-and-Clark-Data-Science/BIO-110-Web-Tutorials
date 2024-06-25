@@ -23,9 +23,9 @@ data<- read.csv("physiology_data.csv")
 
 ## Introduction
 
-Welcome! In this lesson you will learn about measures of variability. You'll learn how to find the standard deviation, variance, standard error, and confidence intervals. You'll also practice subsetting data with the `group_by()` and `filter()` functions. 
+Welcome! In this lesson you will learn about measures of variability. You'll learn how to find the standard deviation, variance, standard error, and confidence intervals. You'll also practice subsetting data with the `group_by()` and `filter()` functions.
 
-See [the home page](index.qmd) for more details on how to use this tutorial and for troubleshooting tips!
+See [the home page](index.qmd){target="_blank"} for more details on how to use this tutorial and for troubleshooting tips!
 
 ## Variation Around a Central Tendency
 
@@ -57,10 +57,9 @@ data
 
 The dataset contains physiological data for a sample of individuals.
 
-You can determine how many entries are in the dataframe by using the command `nrow(data)`. Try that now. 
+You can determine how many entries are in the dataframe by using the command `nrow(data)`. Try that now.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr}
@@ -94,7 +93,6 @@ nrow(data)
 :::
 :::
 :::
-
 
 ### Variance
 
@@ -224,7 +222,7 @@ One reason to compute the variability in a data set is to get an idea of how acc
 
 This is because both standard error and confidence intervals become smaller as the sample size (or number of data values) gets larger -- which reflects our increased certainty that our sample mean represents the true population mean.
 
-### Standard Error 
+### Standard Error
 
 To compute the standard error of a set of data in R, a package called `plotrix` is required. In this tutorial, `plotrix` has already been installed for you.
 
@@ -304,7 +302,6 @@ The command for the t-test is `t.test(data$variableName)`
 Let's compute the 95% confidence interval of the variable `heart_rate`.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -319,7 +316,6 @@ Let's compute the 95% confidence interval of the variable `heart_rate`.
 #| eval: false
 t.test(data$heart_rate)
 ```
-
 :::
 
 In the output, you should see the name of your variable, followed by two lines of information that are not relevant if you are only interested in knowing the 95% confidence interval. The 95% confidence interval is on the following line, followed by a computation of the sample mean.
@@ -334,32 +330,32 @@ We will use the `filter()` function to extract data with a specific condition.
 
 The syntax is: `filter(data, columnName == "some value")`
 
--   [Arguments](Bio110_lesson_two.qmd#sec-arguments) used:
+-   [Arguments](Bio110_lesson_two.qmd#sec-arguments){target="_blank"} used:
     -   `data`: Input your original data set
+
     -   `columnName == "some value"` Choose a column you'd like to filter (`columnName`) and then replace `some value` with whatever condition you would like to specify.
 
     -   You can also replace the `==` with other operators including:
-    
+
         -   `>` (greater than)
         -   `<` (less than)
         -   `<=` (less than or equal to)
         -   `>=` (greater than or equal to)
         -   `==` (equal to)
         -   `!=` (not equal to)
-        
-Let's see how this works with an example: 
+
+Let's see how this works with an example:
 
 ```{webr-r}
 #| read-only:true
 filter(data, Condition == "1")
 ```
 
-If you run this example, you should see `data`, but it will only show rows where the condition is "1". 
+If you run this example, you should see `data`, but it will only show rows where the condition is "1".
 
-Now, let's save this data as a new variable. Recall you can use `<-` to [assign data](Bio110_lesson_one.qmd#sec-assign-variable) to a new variable. Try creating a new variable that includes all the rows for which the `Condition` is equal to "1". Call your new variable `exerciseData`. 
+Now, let's save this data as a new variable. Recall you can use `<-` to [assign data](Bio110_lesson_one.qmd#sec-assign-variable){target="_blank"} to a new variable. Try creating a new variable that includes all the rows for which the `Condition` is equal to "1". Call your new variable `exerciseData`.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -378,7 +374,6 @@ Use the same code in the example: `filter(data, Condition == "1")` but assign it
 #| eval: false
 exerciseData <- filter(data, Condition == "1")
 ```
-
 :::
 
 Now that you've created your variable, type `exerciseData` to see if it worked!
@@ -389,12 +384,11 @@ Now that you've created your variable, type `exerciseData` to see if it worked!
 
 ```
 
-Finally, let's find the 95% confidence interval for the RQ values measured under Condition 1. 
+Finally, let's find the 95% confidence interval for the RQ values measured under Condition 1.
 
 Perform a t.test on your new dataset `exerciseData`, on the RQ column.
 
 ::: panel-tabset
-
 ## Code editor
 
 ```{webr-r}
@@ -413,13 +407,12 @@ Try something like `t.test(______$______)`
 #| eval: false
 t.test(exerciseData$RQ)
 ```
-
 :::
 
 So for these data, the (rounded) sample mean is 0.876, and the 95% confidence interval ranges from a minimum value of 0.834 to a maximum of 0.917.
 
 ### Congratulations!
 
-You've completed lesson three, in which you learned how to compute several measures of **variability**: variance, standard deviation, standard error, and confidence intervals. You also learned ways to **subset a data set** using `group_by()` and `filter()`. 
+You've completed lesson three, in which you learned how to compute several measures of **variability**: variance, standard deviation, standard error, and confidence intervals. You also learned ways to **subset a data set** using `group_by()` and `filter()`.
 
 In lesson four you will learn how to make plots. You'll start with a box plot and histogram, which are a basic ways of graphically displaying the central tendency and the variability of any data set.

@@ -23,13 +23,15 @@ library(gplots)
 
 ## Introduction
 
-Welcome. In this lesson, you will learn how to create simple bar graphs and clustered bar graphs, and to add error bars to both types of graphs.
+Welcome. In this lesson, you will learn how to create simple bar graphs and clustered bar graphs, and how to add error bars to both types of graphs.
 
-We'll continue to use ggplot to make a bar graph, which was introduced in [lesson 4](Bio110_lesson_four.qmd).
+We'll continue to use ggplot, which was introduced in [lesson 4](Bio110_lesson_four.qmd){target="_blank"}.
+
+See [the home page](index.qmd){target="_blank"} for more details on how to use this tutorial and for troubleshooting tips!
 
 ## Dataset
 
-A dataset called `bargraphdata` has been included in this tutorial.
+A dataset called `bargraphdata` has been loaded into this tutorial.
 
 Type its name so that you can see what it contains.
 
@@ -71,10 +73,11 @@ Suppose you want to make a bar graph that compares the means of `var1` for each 
 
 The first thing you need to do is to identify the data that will be used to make each bar. Right now all of the data values for both bars are part of the same variable, `var1`. So we'll need to sort our data into groups (treatment A and B) and then calculate the mean for each group.
 
+::: {.border .p-3}
 ::: question
 **Which functions do you think we could use to group our data and then calculate the mean for each group?**
 
-Hint: You learned about it in [lesson two](Bio110_lesson_two.qmd).
+Hint: You learned about it in [lesson two](Bio110_lesson_two.qmd){target="_blank"}.
 
 ::: choices
 ::: choice
@@ -90,8 +93,9 @@ Hint: You learned about it in [lesson two](Bio110_lesson_two.qmd).
 :::
 :::
 :::
+:::
 
-If you weren't sure which function to choose or what these functions do, review [lesson 2](Bio110_lesson_two.qmd#sec-groupby-sum).
+If you weren't sure which function to choose or what these functions do, review [lesson 2](Bio110_lesson_two.qmd#sec-groupby-sum){target="_blank"}.
 
 First, we'll use `group_by()` to group our data by different treatment groups. Then we use `summarize()` to calculate the mean of each group. Try this now:
 
@@ -157,7 +161,7 @@ tmtsummary <- bargraphdata |>
 ```
 :::
 
-Now we can graph! We'll use the same structure we did to create a histogram, boxplot and scatterplot, but we'll use the geometry `geom_col()` to make our graph. Chain it onto the main `ggplot()` function using a `+` and use `tmtmean` as your data.
+Now we can graph! We'll use the same structure we did to create a histogram, boxplot and scatterplot, but we'll use the geometry `geom_col()` to make our graph. Chain it onto the main `ggplot()` function using a `+` and use `tmtsummary` as your data.
 
 Your x variable will be `treatment` and your y variable will be the name that you created for the mean of variable 1. In my answer example, it is called `avgVar1`, but you can use any name, as long as you defined it in the code chunk above.
 
@@ -193,7 +197,7 @@ ggplot(tmtsummary, mapping = aes(x=treatment, y=avgVar1))+
 
 ### Labels and color
 
-Now let's learn how to add color to the graph. We can color the bars by treatment, so that each treatment is a different color. Simply type `fill=treatment` into the `aes()` command, after the x and y variables. Use a comma to separate the fill color from the x and y variables.
+Now let's learn how to add color to the graph. We can color the bars by `treatment`, so that each treatment is a different color. Use your same code as before and type `fill=treatment` into the `aes()` command, after the x and y variables. Use a comma to separate the fill color from the x and y variables.
 
 Give it a try now! Also add labels to your graph.
 
@@ -260,6 +264,15 @@ summarize(avgVar1 = mean(var1),
 
 All the other code will be the same as when you first defined `tmtsummary`
 
+## Hint
+```{r}
+#| eval: false
+tmtsummary <- ________ |> 
+  group_by(______)|>
+  summarize(avgVar1 = mean(var1),
+            _____ = sd(_____))
+```
+
 ## Answer
 
 ```{r}
@@ -273,15 +286,19 @@ tmtsummary <- bargraphdata |>
 
 Now we have our standard deviation data and we can use that to create error bars. The geom function for error bars is `geom_errorbar()`. We'll add an aesthetics argument to specify the max and min for the error bar.
 
-Note that we want the minimum error bar value to be the 'mean of var1 - sd of var1' and the maximum error bar value is the 'mean of var1 + sd of var1'.
+Here's how the error bar code will look: 
+
+::: {.indent .p-.5}
 
 ```{r}
 #| eval: false
-geom_errorbar(mapping=aes(ymin = avgVar1-sdVar1,
-                          ymax = avgVar1+sdVar1))
+geom_errorbar(mapping=aes(ymin = _______,
+                          ymax = _______))
 ```
 
-Try adding this command to your bar graph.
+:::   
+
+Try adding this command to your bar graph. Fill in the ymin and the ymax. Note that: the minimum error bar value is the 'mean of var1 - sd of var1' and the maximum error bar value is the 'mean of var1 + sd of var1'.
 
 ::: panel-tabset
 ## Code editor
@@ -295,6 +312,15 @@ Try adding this command to your bar graph.
 ## Hint
 
 Copy and paste your code from the previous graph and chain on the `geom_errorbar()` function.
+
+## Hint
+
+Your `geom_errorbar()` function should look like: 
+```{r}
+#| eval: false
+geom_errorbar(mapping=aes(ymin = avgVar1-sdVar1,
+                          ymax = avgVar1+sdVar1))
+```
 
 ## Hint
 
@@ -429,7 +455,7 @@ Try copying and pasting the code for the clustered bar graph to see what it does
 ```
 :::
 
-Here are the edits we made:
+Here are the edits made for the clustered bar graph:
 
 -   Line 2: `group_by(treatment, year)`: We're now interested in displaying treatment **and** year, so we want to group by both of those variables
 -   Line 11: `facet_wrap(~year)`: Tells R to cluster the bar graphs by year.
@@ -438,13 +464,13 @@ Here are the edits we made:
 
 What if you wanted your bar graph to be clustered by `treatment` instead of `year`?
 
-Give it a try! It's not quite as simple as changing the `facet_wrap()` to `treatment`... there's a couple other edits you have to make. Mess around a bit and see if you can figure it out. Feel free to then use the hints to help you figure out what else you need to edit in your code.
+Give it a try! It's not quite as simple as changing the `facet_wrap()` to `treatment`... there's a couple other edits you have to make. Mess around a bit and see if you can figure it out. After you try it yourself, use the hints to help you figure out what else you need to edit in your code.
 
 ::: panel-tabset
 ## Code editor
 
 ```{webr-r}
-# Type your code here
+
 
 
 ```
@@ -480,9 +506,9 @@ ggplot(tmtsummary, mapping = aes(x=year, y=avgVar1, fill=year))+
 
 ## Bonus - improve the legend
 
-You may notice that the legend looks a little odd - it is continuous and doesn't show 3 separate values. This is because R thinks the `year` data is numerical, but it should be categorical (factor).
+You may notice that the legend looks a little odd - it is continuous and doesn't show 3 separate values. This is because R thinks the `year` data is numerical, but we are treating it as a categorical (factor) variable.
 
-Try changing the year data to factor data and then rerunning the code to fix the legend. If you need a refresher on how to do that, check out [lesson 5](Bio110_lesson_five.qmd#sec-var-type).
+Try changing the year data to factor data and then rerunning the code to fix the legend. If you need a refresher on how to do switch a variable to a factor variable, check out [lesson 5](Bio110_lesson_five.qmd#sec-var-type){target="_blank"}.
 
 ```{webr-r}
 # Type your code here
@@ -493,4 +519,6 @@ Try changing the year data to factor data and then rerunning the code to fix the
 
 ## Congratulations
 
-That's it! Now you know how to use bar graphs to display your data. Remember that if the distribution of data values is highly non-normal, boxplots are a more appropriate form of graphical display than bar graphs.
+That's it! Now you know how to use bar graphs to display your data, including adding error bars and creating clustered bar graphs. Remember that if the distribution of data values is highly non-normal, boxplots are a more appropriate form of graphical display than bar graphs.
+
+Next lesson, we'll learn some basic statistics. 
