@@ -519,6 +519,6 @@ Try changing the year data to factor data and then rerunning the code to fix the
 
 ## Congratulations
 
-That's it! Now you know how to use bar graphs to display your data, including adding error bars and creating clustered bar graphs. Remember that if the distribution of data values is highly non-normal, boxplots are a more appropriate form of graphical display than bar graphs.
+That's it! Now you know how to use bar graphs to di splay your data, including adding error bars and creating clustered bar graphs. Remember that if the distribution of data values is highly non-normal, boxplots are a more appropriate form of graphical display than bar graphs.
 
 Next lesson, we'll learn some basic statistics. 
