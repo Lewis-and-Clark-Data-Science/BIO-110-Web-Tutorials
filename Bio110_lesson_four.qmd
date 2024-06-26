@@ -23,7 +23,7 @@ data<- read.csv("physiology_data.csv")
 
 ## Introduction
 
-Welcome to lesson four, where you will learn the basics of graphing using a package called `ggplot2`. GGPlot is an excellent resource for creating many types of graphs, including histograms, box plots, scatterplots and more. We'll start by introducing how ggplot works and then try creating some box plots and histograms.
+Welcome to lesson four, where you will learn the basics of graphing using a package called `ggplot2`. GGPlot is an excellent resource for creating many types of graphs, including histograms, box plots, scatterplots and more. We'll start by introducing how ggplot works and then try creating a histogram.
 
 See [the home page](index.qmd){target="_blank"} for more details on how to use this tutorial and for troubleshooting tips!
 
@@ -81,11 +81,11 @@ ggplot(data, mapping=aes(x=heart_rate)) +
   geom_histogram(bins=5)
 ```
 
--   Specify the `data` right after the first parenthesis
+-   `ggplot(data ...)`: Specify the `data` right after the first parenthesis
 
--   Specify the x variable (independent variable) and y variable (dependent variable) in the `aes()` argument. A histogram only requires an independent variable, so we did not specify the y variable.
+-   `aes(x = heart_rate)`: Specify the x variable (independent variable) and y variable (dependent variable) in the `aes()` argument. A histogram only requires an independent variable, so we did not specify the y variable.
 
--   Specify histogram as your chosen `geom`. You can also decide how many bins you'd like with the `bins=5` argument. Try changing the 5 to a different number and running the code again, see what happens!
+-   `geom_histogram(bins=5)`: Specify histogram as your chosen `geom`. You can also decide how many bins you'd like with the `bins=5` argument. Try changing the 5 to a different number and running the code again, see what happens!
 
 -   Chain together the function `ggplot()` with the geom `geom_histogram()` using a `+`.
 
@@ -146,7 +146,7 @@ ggplot(data, mapping=aes(x=RQ))+
 
     ```{webr-r}
     ggplot(data, mapping=aes(x=heart_rate))+
-      geom_histogram(bins=5, color="blue", fill="lightgray")+
+      geom_histogram(bins=5, color="blue", fill="darkmagenta")+
       labs(x="Heart rate", y="Count", title="Histogram of Heart Rate for Physiology Data")
     ```
 
@@ -205,36 +205,7 @@ There are LOTS of resources online where you can learn about making plots with g
 
 -   [Bio110 tutorial cheatsheet - ggplot section](Bio110_cheatsheet.qmd#sec-ggplot){target="_blank"}
 
-#### Adjusting the range of values
-
-You might also want to use a wider range of values on the y-axis so that the figure has a little more elbow room. For example, the current y-axis starts at an RQ value of 0.85 and ends at a value of 1.0. Maybe you'd like it to range from 0.75 to 1.05 instead.
-
-You can do this by inserting the `ylim=c(lowerlimit, upperlimit)` argument into the plot command like this: `plot(data$x, data$y, ylim=c(0.75, 1.05))`.
-
-Try it now, inserting the ylim specification after the commands for category names, axis labels, etc.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Remember to put all text expressions in quotes. And R wants you to use the same case, upper or lower, as the instructions specify.
-:::
-
-::: {.callout-note collapse="true" icon="false"}
-## Answer
-
-```{r}
-#| eval: false
-plot(data$Condition, data$RQ, names=c("exercise","resting"), xlab="Condition", ylab="RQ", ylim=c(0.75,1.05))
-
-```
-:::
 
 ## Congratulations!
 
-Hooray! You have completed lesson four. You have learned how to make and interpret a boxplot and how to modify the axis labels and the x- and y-limits. Lesson five will teach you how to make a scatterplot.
+Hooray! You have completed lesson four. You have learned the basics of creating a plot using GGPlot. Lesson five will teach you how to make a scatterplot and boxplot.

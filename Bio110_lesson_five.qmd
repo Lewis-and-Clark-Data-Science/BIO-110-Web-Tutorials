@@ -28,7 +28,7 @@ Welcome to lesson five, where you will learn the basics of graphing using boxplo
 
 See [the home page](index.qmd){target="_blank"} for more details on how to use this tutorial and for troubleshooting tips!
 
-In the previous lesson, we introduced GGPlot and made a histogram. In this lesson, we'll continue to use GGPlot, but learn new ways to customize it.
+In the previous lesson, we introduced GGPlot and made a histogram. In this lesson, we'll continue to use GGPlot, but learn new ways to customize plots.
 
 We will work with the physiology dataset, called `data`, that you have already seen. Type the word data to recall what it contains.
 
@@ -54,10 +54,10 @@ ggplot(data, mapping = aes()) +
 
 Before we create a boxplot, we need to tell R what kind of variables we are inputting.
 
-When creating a boxplot, our x variable should be **categorical** (called a **factor** variable in R language), and our y variable is **continuous**.
+When creating a boxplot, our x variable should be **categorical** (called a **factor** variable in R language). A categorical variable has defined categories or groups. 
 
-A categorical variable has defined categories or groups. A continuous variable can take any numerical value.
-
+Our y variable should be **continuous**. A continuous variable can take any numerical value.
+ 
 ::: panel-tabset
 ## Question
 
@@ -84,7 +84,7 @@ Condition
 In `data` the different measurements are categorized as having been made under either exercise (1) or resting (2) conditions. So `Condition` is a categorical variable because it has two different categories (or groups) that the measurements are placed into
 :::
 
-Before we can create a boxplot, we have to tell R that whether our variable is a categorical variable. In R language, a categorical variable is called a "factor" variable. You can use this command to convert a variable to a categorical (or factor variable): `data$variableName <- as.factor(data$variableName)`.
+Before we can create a boxplot, we have to tell R that whether our variable is a categorical variable. In R language, a categorical variable is called a "factor" variable. You can use this command to convert a variable to a categorical (or factor) variable: `data$variableName <- as.factor(data$variableName)`.
 
 Try that now with the categorical variable in `data`.
 
@@ -95,6 +95,14 @@ Try that now with the categorical variable in `data`.
 # Type your code here
 
 
+```
+
+## Check your work
+
+Run the following code to check your work. If the output is "Factor w/ 2 levels....", then you wrote the right code! If not, try again. 
+
+```{webr-r}
+str(data$Condition)
 ```
 
 ## Hint
@@ -109,9 +117,9 @@ data$Condition <- as.factor(data$Condition)
 ```
 :::
 
-Finally, we can create a boxplot! Specify the x variable as the variable `Condition` and use `heart_rate` for the y variable.
+Finally, we can create a boxplot! Specify the x variable as `Condition` and use `heart_rate` for the y variable.
 
-Here's the basic structure again:
+Here's the basic structure for your code again:
 
 ```{r}
 #| eval: false
@@ -144,7 +152,7 @@ Make sure you use the proper capitalization and spelling for the x variable, exa
 
 ## Hint
 
-If you get a weird looking boxplot, return to the previous code chunk and make sure you converted `Condition` to a factor variable!
+If you get a weird looking boxplot, return to the previous code chunk and make sure you converted `Condition` to a factor variable.
 
 ## Answer
 
@@ -161,8 +169,9 @@ If your code worked, you should see a boxplot for each condition, 1 (exercise) a
 
 Here's an image that illustrates how to interpret a boxplot: ![From https://datatab.net/tutorial/box-plot](Boxplot_quartiles.png)
 
+::: {.border .p-3}
 ::: question
-**Looking at the boxplot you created, what is the 1st quartile for condition 2?**
+**Looking at the boxplot you created, what is the 1st quartile for condition 2 (resting)?**
 
 ::: choices
 ::: choice
@@ -175,6 +184,7 @@ Here's an image that illustrates how to interpret a boxplot: ![From https://dat
 
 ::: choice
 73
+:::
 :::
 :::
 :::
@@ -202,7 +212,7 @@ Don't forget to use a `+` to chain on the `labs()` function after `geom_boxplot(
 
 ```{r}
 #| eval: false
-ggplot(data, mapping = aes(x= _______, y= ________)) +
+ggplot(______, mapping = aes(x= _______, y= ________)) +
   geom_boxplot()+
   labs(x="____", y="_____", title="_______")
 ```
@@ -213,7 +223,7 @@ ggplot(data, mapping = aes(x= _______, y= ________)) +
 #| eval: false
 ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
   geom_boxplot()+
-  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise (1) and rest (2)")
+  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise and rest")
 ```
 :::
 
@@ -236,7 +246,7 @@ Give it a try!
 #| eval: false
 ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
   geom_boxplot() +
-  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise (1) and rest (2)") +
+  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise and rest") +
   scale_x_discrete(labels=c("_______", "_______"))
 ```
 
@@ -246,7 +256,7 @@ ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
 #| eval: false
 ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
   geom_boxplot()+
-  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise (1) and rest (2)")+
+  labs(x="Condition", y="Heart Rate", title="Boxplot of heart rate during exercise and rest")+
   scale_x_discrete(labels=c("Exercise", "Resting"))
 ```
 :::
@@ -303,7 +313,7 @@ Just like a boxplot, we can adjust the color, labels, and even the point size an
 
 You can adjust the size, color and shape of the point by adding arguments to the `geom_point()` function.
 
-For example: `geom_point(color="red", size=0.7, shape="circle")`
+For example: `geom_point(color="red", shape="circle", size=1.5)`
 
 Give it a try! Create a scatter plot displaying the relationship between `heart_rate` (on the x-axis) and `RQ` (on the y-axis) and change the color, size and shape of the points.
 
@@ -380,7 +390,7 @@ Did you spell all your variable names correctly?
 
 ```{r}
 #| eval: false
-ggplot(data, mapping=aes(x=______, y=______)) +
+ggplot(_____, mapping=aes(x=______, y=______)) +
   geom_point(color="______", shape="_______", size=________) +
   xlim(____, ____) +
   ylim(____, ____) +
@@ -407,9 +417,11 @@ Next, we'll look at making scatterplots when the independent (x) variable is cat
 
 Suppose you wanted to create a graph that compared the respiratory quotients (RQ) under the two conditions: exercise and resting. Remember that the `Condition` variable is **categorical** because it sorts the data values into two categories.
 
-First, let's tell R that we `Condition` is a factor (categorical) variable. We already did this when we made a boxplot, so skip this step if you already did it and haven't refreshed the page since.
+#### Specifying Type of Variable 
 
-Do you remember the code to change a variable to a factor variable?
+First, let's tell R that `Condition` is a factor (categorical) variable. We already did this when we made a boxplot, so skip this step if you already did it and haven't refreshed the page since.
+
+Do you remember how to change a variable to a factor variable?
 
 ::: panel-tabset
 ## Code editor
@@ -427,6 +439,8 @@ Do you remember the code to change a variable to a factor variable?
 data$Condition <- as.factor(data$Condition)
 ```
 :::
+
+#### Scatterplot
 
 Now, create a scatterplot the `RQ`s of the two `Condition` groups, exercise and resting.
 
@@ -452,11 +466,11 @@ ggplot(data, mapping=aes(x=Condition, y=RQ))+
 ```
 :::
 
-Notice that a scatterplot (rather than a boxplot) is only a good option for a categorical x-variable if there are only a few data values, as in this example.
+When you have one categorical variable and one continous variable, a scatterplot is only a good option if there are only a few data values, as in this example. Otherwise, use a boxplot.
 
 #### Axis labels on categorical scatterplot
 
-Let's add labels to our plot. You know how to add axes labels and a title, but how can we change the unhelpful labels "1" and "2"? We will use the same command we used in when making a boxplot. Refer back to your code when you made a boxplot, and see if you can add labels to your scatterplot. Add some color too!
+Let's add labels to our plot. You know how to add axes labels and a title, but how can we change the unhelpful labels "1" and "2"? We will use the same command we used when making a boxplot. Refer back to your code when you made a boxplot, and see if you can add labels to your scatterplot. Add some color too!
 
 ::: panel-tabset
 ## Code editor
@@ -475,7 +489,7 @@ The command you need to add is `scale_x_discrete(labels(c("________", "_________
 
 ```{r}
 #| eval: false
-ggplot(data, mapping=aes(x=______, y=______))+
+ggplot(____, mapping=aes(x=______, y=______))+
   geom_point(color="red")+
   labs(x="_______", y="_______", title="_______")
   scale_x_discrete(labels(c("________", "_________")))
