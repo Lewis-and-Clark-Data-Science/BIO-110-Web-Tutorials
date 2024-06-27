@@ -208,9 +208,9 @@ str(data)
 
 You can see that the variable `data$Condition` is currently encoded as an integer. But it is actually a category variable.
 
-You can change a variable's property with the assignment arrow, in the following way: `yourDataName$variableName <- as.factor(yourDataName$variableName)`.
+You can change a variable's property with the assignment arrow, in the following way: `yourDataName$variableName <- as.variableType(yourDataName$variableName)`.
 
-For example, to change the property of the `Condition` variable, you can run: `data$Condition <- as.factor(data$Condition)`.
+For example, to change the property of the `Condition` variable to a factor variable, you can run: `data$Condition <- as.factor(data$Condition)`.
 
 Try changing the variable named `Individual` to a factor variable. You will notice that a little prompt box shows up. You can save yourself some typing by choosing the rest of the expression from among the choices in the prompt box.
 
@@ -221,6 +221,14 @@ Try changing the variable named `Individual` to a factor variable. You will noti
 #Type your code here
 
 
+```
+
+## Check your work 
+
+Run the structure command again to see if `Individual` has been changed to a factor variable. 
+
+```{webr-r}
+str(data)
 ```
 
 ## Hint

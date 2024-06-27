@@ -9,5 +9,160 @@ title: "Bio110 Cheatsheet"
 
 ## Basic R Commands
 
+-   Basic arithmetic
+
+    -   Examples: `5*6`, `sqrt(9)`, `abs(-3)`
+
+    -   Type `help(command)` to find information about any command
+
+-   Create variables: Use `<-` or `=` to assign values to a variable.
+
+    -   Example: `x <- 7`
+
+-   Create a vector:
+
+    ```{r}
+    #| output: true
+    vector <- c(1,3,7)
+    vector
+    ```
+
+### Basic Statistics
+
+-   `mean(vector)` : Calculates the mean of a given set of values.
+
+-   `median(vector)` : Calculates the median of a given set of values.
+
+-   `var(vector)`: Calculates the variance of a given set of values. 
+
+-   `sd(vector)` : Calculates the standard deviation of a given set of values.
+
+-   `std.error(vector)`: Calculates the standard error of a given set of values. 
+    
+    **IMPORTANT**: This command is stored in a package `plotrix`, so you must install and load plotrix to find standard error.
+
+-   `t.test(data$variableName)`: Calculates a t-test for a given set of values. Also outputs the **95% confidence interval**.
+
+-   `nrow(data)`: Calculates the total number of rows in a dataset
+
+-   `na.rm = TRUE` : Remove `NA` values. Add this as an argument to any of the statistics calculations. E.g. `mean(vector, na.rm=TRUE)`
+
+## Installing packages
+
+-   `install.packages("package")`: Install a package. IMPORTANT: Only run this once in a single R session. Do not rerun unless you restart R. 
+
+-   `library(package)`: Load a package that has already been installed.
+
+## Working with a data set in the tidyverse
+
+We use the `tidyverse` package to analyze data in these tutorials. See directly above for how to install.
+
+### Uploading and viewing a data set
+
+-   `dataFrame <- read_csv("myCSV.csv")` : Creates a data frame from a file called `myCSV.csv`
+
+-   `data`: View your data - type the name and run code
+
+-   `str(dataFrame)`: Gives the structure of data frame
+
+-   `dataFrame$columnName`: Calls up specific column from a data frame
+
+-   `summary(dataFrame)`: Returns min, max, mean, meadian, 1st/3rd quartiles for all vectors in dataFrame
+
+
+### Grouping and Summarizing data
+
+-   `group_by(.data, column)`: Takes a dataset and groups it by a column/variable
+
+-   `summarize(.data, summaryStat = statistic formula)`: Takes a dataset and outputs summary statistics that you define.
+
+    -   `n()`: Calculates current group size. Can be used in `summarize` and `group_by`
+
+    -   Combine `group_by` and `summarize` using the pipe (`|>`) to see summary statistics for specific groups/variables.
+
+-   **The pipe:** Use `|>` OR `%>%` to string functions and data together. Read as "AND THEN".
+
+    Example:
+
+    ```{r}
+    #| eval: false
+      dataFrame |> 
+        group_by(firstColumn)|> 
+        summarize(mean_of_secondColumn = mean(secondColumn), 
+                  standard_deviation_of_secondColumn = sd(secondColumn))
+    ```
+
+### Filtering data
+
+-   `filter(data, columnName == "some value")`: Extract data with a specific condition, from a given column. 
+
+    -   Use logical operators to combine conditions: `&` (and), `|` (or), `!` (not)
+
+    -   Use comparison operators to describe conditions: `<`, `>`, `==`, `!=`, `<=`, `>=`
+
 
 ## GGPlot {#sec-ggplot}
+
+### Resources:
+
+-   [GGPlot Cheatsheet pdf](https://rstudio.github.io/cheatsheets/data-visualization.pdf)
+
+-   [Posit.cloud ggplot cheatsheet, website version](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+
+### GGPlot Basics:
+
+-   **Basic structure:**
+
+    ```{r}
+    #| eval: false
+    ggplot(data, mapping=aes()) +
+          geom_function()
+    ```
+
+-   Connect different properties using a `+`
+
+-   **Basic Components:**
+
+    -   Data: `data=dataSet`: Define your data set
+
+    -   Aesthetics: `mapping = aes(variables)`: Define the variables. Can also specify color/fill for your graph and geometries.
+
+    -   Geometry: `geom_object()`: Define the type of plot
+
+### Geometries
+
+-   `geom_histogram()`: Creates a histogram
+
+    -   Syntax: `geom_histogram(bins=X)` Specify number of bins
+    
+-   `geom_boxplot()`: Creates a boxplot
+
+    -   Add error bars: `stat_boxplot(geom="errorbar")`
+
+-   `geom_point()`: Creates points (scatterplot) for each data point
+
+    -   Can specify `color = ___`, `shape = ____`, `size = ____`
+
+-   `geom_col()` : Creates a bar graph with pre-aggregated data that you input
+
+      -   Add error bars: `geom_errorbar(mapping=aes(ymin, ymax), width)`
+
+-   `geom_smooth(method="lm", se=FALSE)`: Creates a line of best fit
+
+### Plot Customization
+
+Chain these onto your functions with a `+` to customize your plot:
+
+-   `labs(x="____", y="____", title="______")` : Add a title and axes labels to your graph
+
+-   `scale_x_discrete(labels=c("firstLabel", "secondLabel"))`: Add labels for individual categories on the x axis
+
+-   `xlim(minLimit, maxLimit)` and `ylim(minLimit, maxLimit)`: Specify x and y minimum and maximum values
+
+-   `facet_wrap(~ variable)`: Create separate plots for each aspect of a given variable. Creates a clustered plot.
+
+-   `color="____"` and `fill="_____"`: Change the outline color (color) and filled in color (fill) of your plot. Add these commands in the `geom_object()` parentheses. 
+
+
+-   And lots more!
+
