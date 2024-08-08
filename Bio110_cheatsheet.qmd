@@ -125,7 +125,7 @@ We use the `tidyverse` package to analyze data in these tutorials. See directly 
 
     -   Data: `data=dataSet`: Define your data set
 
-    -   Aesthetics: `mapping = aes(variables)`: Define the variables. Can also specify color/fill for your graph and geometries.
+    -   Aesthetics: `mapping = aes(variables)`: Define the variables. Can also specify color/fill for your graph and geometries. For example: `mapping=aes(x=____, y=_____, color="____")`
 
     -   Geometry: `geom_object()`: Define the type of plot
 
@@ -166,3 +166,36 @@ Chain these onto your functions with a `+` to customize your plot:
 
 -   And lots more!
 
+## Inferential statistics {#sec-infstats}
+
+### Regression Analysis
+
+-   `lm(data$yVariable ~ data$xVariable)`: Create a linear model by performing regression analysis.
+
+-   `summary(model)`: View multiple statistics, including p-values, of a given model.
+
+### 2 Sample t-test
+
+Compare two samples that are normally distributed.
+
+-   `t.test(data$depVar ~ data$indVar)`: two sample t-test, when your 2 groups are listed in the *same* dependent variable. They will be grouped by the independent variable.
+
+-   `t.test(varA, varB)`: two sample t-test, when your 2 groups are in *different* variables/columns
+
+### Wilcoxon test
+
+Compare 2 samples that are not normally distributed.
+
+-   `wilcox.test(data$depVar~data$indVar)`: Wilcoxon test
+
+### ANOVA test and Tukey's test
+
+Compare more than 2 groups
+
+-   `model <- aov(depvar~indvar)`: Perform an ANOVA test for multiple groups and save it to a variable `model`.
+
+-   `summary(model)`: Use this to view the p-value for your ANOVA test.
+
+-   `TukeyHSD(model)`: Perform a Tukey's test on your ANOVA model.
+
+-   `model<-aov(data$depvar ~ data$indVar1*data$indVar2)`: Perform a two way ANOVA test (with 2 independent variables) and save it to a variable `model`. 

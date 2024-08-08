@@ -189,6 +189,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#geometries" id="toc-geometries" class="nav-link" data-scroll-target="#geometries">Geometries</a></li>
   <li><a href="#plot-customization" id="toc-plot-customization" class="nav-link" data-scroll-target="#plot-customization">Plot Customization</a></li>
   </ul></li>
+  <li><a href="#sec-infstats" id="toc-sec-infstats" class="nav-link" data-scroll-target="#sec-infstats">Inferential statistics</a>
+  <ul class="collapse">
+  <li><a href="#regression-analysis" id="toc-regression-analysis" class="nav-link" data-scroll-target="#regression-analysis">Regression Analysis</a></li>
+  <li><a href="#sample-t-test" id="toc-sample-t-test" class="nav-link" data-scroll-target="#sample-t-test">2 Sample t-test</a></li>
+  <li><a href="#wilcoxon-test" id="toc-wilcoxon-test" class="nav-link" data-scroll-target="#wilcoxon-test">Wilcoxon test</a></li>
+  <li><a href="#anova-test-and-tukeys-test" id="toc-anova-test-and-tukeys-test" class="nav-link" data-scroll-target="#anova-test-and-tukeys-test">ANOVA test and Tukey’s test</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -321,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Basic Components:</strong></p>
 <ul>
 <li><p>Data: <code>data=dataSet</code>: Define your data set</p></li>
-<li><p>Aesthetics: <code>mapping = aes(variables)</code>: Define the variables. Can also specify color/fill for your graph and geometries.</p></li>
+<li><p>Aesthetics: <code>mapping = aes(variables)</code>: Define the variables. Can also specify color/fill for your graph and geometries. For example: <code>mapping=aes(x=____, y=_____, color="____")</code></p></li>
 <li><p>Geometry: <code>geom_object()</code>: Define the type of plot</p></li>
 </ul></li>
 </ul>
@@ -358,6 +365,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>facet_wrap(~ variable)</code>: Create separate plots for each aspect of a given variable. Creates a clustered plot.</p></li>
 <li><p><code>color="____"</code> and <code>fill="_____"</code>: Change the outline color (color) and filled in color (fill) of your plot. Add these commands in the <code>geom_object()</code> parentheses.</p></li>
 <li><p>And lots more!</p></li>
+</ul>
+</section>
+</section>
+<section id="sec-infstats" class="level2">
+<h2 class="anchored" data-anchor-id="sec-infstats">Inferential statistics</h2>
+<section id="regression-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="regression-analysis">Regression Analysis</h3>
+<ul>
+<li><p><code>lm(data$yVariable ~ data$xVariable)</code>: Create a linear model by performing regression analysis.</p></li>
+<li><p><code>summary(model)</code>: View multiple statistics, including p-values, of a given model.</p></li>
+</ul>
+</section>
+<section id="sample-t-test" class="level3">
+<h3 class="anchored" data-anchor-id="sample-t-test">2 Sample t-test</h3>
+<p>Compare two samples that are normally distributed.</p>
+<ul>
+<li><p><code>t.test(data$depVar ~ data$indVar)</code>: two sample t-test, when your 2 groups are listed in the <em>same</em> dependent variable. They will be grouped by the independent variable.</p></li>
+<li><p><code>t.test(varA, varB)</code>: two sample t-test, when your 2 groups are in <em>different</em> variables/columns</p></li>
+</ul>
+</section>
+<section id="wilcoxon-test" class="level3">
+<h3 class="anchored" data-anchor-id="wilcoxon-test">Wilcoxon test</h3>
+<p>Compare 2 samples that are not normally distributed.</p>
+<ul>
+<li><code>wilcox.test(data$depVar~data$indVar)</code>: Wilcoxon test</li>
+</ul>
+</section>
+<section id="anova-test-and-tukeys-test" class="level3">
+<h3 class="anchored" data-anchor-id="anova-test-and-tukeys-test">ANOVA test and Tukey’s test</h3>
+<p>Compare more than 2 groups</p>
+<ul>
+<li><p><code>model &lt;- aov(depvar~indvar)</code>: Perform an ANOVA test for multiple groups and save it to a variable <code>model</code>.</p></li>
+<li><p><code>summary(model)</code>: Use this to view the p-value for your ANOVA test.</p></li>
+<li><p><code>TukeyHSD(model)</code>: Perform a Tukey’s test on your ANOVA model.</p></li>
+<li><p><code>model&lt;-aov(data$depvar ~ data$indVar1*data$indVar2)</code>: Perform a two way ANOVA test (with 2 independent variables) and save it to a variable <code>model</code>.</p></li>
 </ul>
 
 

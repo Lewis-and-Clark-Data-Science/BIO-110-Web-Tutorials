@@ -233,7 +233,7 @@ ggplot(tmtsummary, mapping = aes(x=treatment, y=avgVar1, fill=treatment))+
 ```
 :::
 
-### Adding error bars
+### Adding error bars {#sec-errorbars}
 
 In lesson three, you learned about the importance of describing the variability in the data as well as its central tendency. This bar graph does not show the variability in `var1`. You can do that by adding error bars to the bars. The error bars can represent whatever measure of variability you choose: standard deviation, standard error, or 95% confidence limits.
 
@@ -392,7 +392,7 @@ bargraphdata |>
 
 If you would rather show standard error bars and you have loaded `plotrix`, you can substitute `std.error` for `sd` and get a bargraph with standard error bars.
 
-## Clustered bar graph
+## Clustered bar graph {#sec-cluster}
 
 Suppose you were interested in a bar graph that not only compared the treatments, but also displayed if and how the years differed from each other. You can do this with what is called a clustered bar graph.
 
@@ -400,33 +400,19 @@ In this case, a clustered bar graph would have six different bars, one for each 
 
 ### Specifying data and variables
 
-To create a clustered bar graph, we'll chain on the command `facet_wrap(~variableName)` to our chain of ggplot functions.
+To create a clustered bar graph, we'll chain on the command `facet_wrap(~variableName)` to our chain of ggplot functions. We can copy all our previous code, with just a few edits. 
 
-For the most part, we can copy all our previous code, with just a few edits. Here's the code we used to create our graph. Yours may look slightly different, but that's ok!
+-   Below you'll see the code we used to create our non-clustered graph in the previous step. (Yours may look slightly different, but that's ok!)
 
-We've also included code to make a clustered bar graph, clustered by `year`. Take a look at what's different.
+-   You'll also see code to make a clustered bar graph, clustered by `year`. What's different from the non-clustered graph code? 
 
-Finally, run the clustered bar graph code in the code editor!
+-   Finally, run the clustered bar graph code in the code editor!
 
 ::: panel-tabset
-## Non-clustered bar graph code
-
-```{r}
-#| eval: false
-#| code-line-numbers: true
-tmtsummary<- bargraphdata |> 
-  group_by(treatment)|>
-  summarize(avgVar1 = mean(var1),
-            sdVar1 = sd(var1)) 
-
-ggplot(tmtsummary, mapping = aes(x=treatment, y=avgVar1, fill=treatment))+
-  geom_col()+
-  labs(x="Treatment", y="Average Variable 1", title = "Bar graph of the Mean of Variable 1 for Treatment A and B")+
-  geom_errorbar(mapping=aes(ymin = avgVar1-sdVar1,
-                            ymax = avgVar1+sdVar1))
-```
 
 ## Clustered bar graph code
+
+Here's the code you'll use to create a clustered bar graph code. Compare it to the code you used to create a bar graph in the previous step. What is different? 
 
 ```{r}
 #| eval: false
@@ -444,9 +430,28 @@ ggplot(tmtsummary, mapping = aes(x=treatment, y=avgVar1, fill=treatment))+
   facet_wrap(~year)
 ```
 
+## Non-clustered bar graph code
+
+Here's our code for the bar graph created in the [previous step](#sec-errorbars). Compare this code to the clustered bar graph code. What is different? 
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+tmtsummary<- bargraphdata |> 
+  group_by(treatment)|>
+  summarize(avgVar1 = mean(var1),
+            sdVar1 = sd(var1)) 
+
+ggplot(tmtsummary, mapping = aes(x=treatment, y=avgVar1, fill=treatment))+
+  geom_col()+
+  labs(x="Treatment", y="Average Variable 1", title = "Bar graph of the Mean of Variable 1 for Treatment A and B")+
+  geom_errorbar(mapping=aes(ymin = avgVar1-sdVar1,
+                            ymax = avgVar1+sdVar1))
+```
+
 ## Code editor
 
-Try copying and pasting the code for the clustered bar graph to see what it does!
+Copy and paste the code for the clustered bar graph to see what it does!
 
 ```{webr-r}
 # Type your code here

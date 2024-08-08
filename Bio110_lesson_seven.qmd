@@ -38,7 +38,11 @@ Statistical inference involves using the data to compute the probability -- the 
 
 In this tutorial you will work with a sample dataset called `sampledata` that has already been imported into the tutorial.
 
-Write the command for looking at the structure of `sampledata` so you can see what it contains.
+Write the command for looking at the **structure** of `sampledata` so you can see what it contains.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -46,21 +50,31 @@ Write the command for looking at the structure of `sampledata` so you can see wh
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
 The structure function is `str(datafilename)`.
+
+## Answer
+
+```{r}
+#| eval: false
+str(sampledata)
+```
+
 :::
 
 You should also look at the values in the table. Write the command to display the data file.
 
+::: panel-tabset
+
+## Code editor
+
 ```{webr-r}
 #Type your code here
 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
 Just type the name of the file
@@ -74,7 +88,13 @@ You can see that sampledata contains 30 different observations (rows) and 5 vari
 
 -   Diet is an integer variable, but in this data set, we will want to use it as a factor variable: the experimental organisms were fed one of three possible types of diet.
 
+#### **Factor variable** {#sec-factorvar}
+
 Write a command that will convert diet to a factor variable.
+
+::: panel-tabset
+
+## Code editor 
 
 ```{webr-r}
 #Type your code here
@@ -82,13 +102,16 @@ Write a command that will convert diet to a factor variable.
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-You will need to use the as.factor() function.
-:::
+You will need to use the `as.factor()` function.
 
-::: {.callout-note collapse="true" icon="false"}
+## Hint
+
+Don't forget to first reference your data set and then your variable, separating them with a `$`. 
+
+The basic structure is `_____$_____ <- as.factor(_____$______)`
+
 ## Answer
 
 ```{r}
@@ -125,7 +148,11 @@ boxplot
 :::
 :::
 
-Write a command to plot the relationship between weight and length. Put length on the x-axis.
+Use ggplot to write some code to plot the relationship between weight and length. Put length on the x-axis. If you need a review on using ggplot, refer to the [cheatsheet](Bio110_cheatsheet.qmd#sec-ggplot){target="_blank"} or [lesson 5](Bio110_lesson_five.qmd){target="_blank"}.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -133,44 +160,40 @@ Write a command to plot the relationship between weight and length. Put length o
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Did you remember to use the dollar sign to specify the data file, and that the x-variable goes first in the plot command?
-:::
+Recall the basic structure of ggplot: 
 
-::: {.callout-note collapse="true" icon="false"}
+```{r}
+#| eval: false
+ggplot(_____, mapping=aes(x=______, y=______))+
+  geom_point()
+```
+
 ## Answer
 
 ```{r}
 #| eval: false
-plot(sampledata$length, sampledata$weight)
+ggplot(sampledata, mapping=aes(x=length, y=weight))+
+  geom_point()
 ```
 :::
 
 ### Regression Analysis
 
-We can carry out a regression analysis to find the equation for the best-fit line through the points. The command: `model<-lm(sampledata$weight~sampledata$length)` performs a regression of `weight` (the y-variable) on `length` (the x-variable) and stores it in a variable called `model`. `lm` stands for 'linear model.'
+We can carry out a regression analysis to find the equation for the best-fit line through the points. 
 
-It is important to notice that in this command, the positions of the x- and y-variables are reversed from what they are in the plot command, and they are separated by a tilde (`~`) rather than a comma.
+The following command performs a regression of the `y-variable` on the `x-variable` and stores it in a variable called `model`. `lm` stands for 'linear model.'
+
+`model<-lm(sampledata$yVariable~sampledata$xVariable)` 
+
+-   Notice that we put the **y variable first** and the **x variable second**, separated by a tilde `~`. The tilde `~` means "explained by": i.e. the y variable (weight) is *explained by* the x variable (length). 
 
 Write the command to perform a linear regression of weight on length for `sampledata`, and store it in a variable called `weightreg`.
 
-```{webr-r}
-#Type your code here
+::: panel-tabset
 
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-Try `weightreg<-lm(sampledata$weight~sampledata$length)`
-:::
-
-To see the line superimposed on your graph, you can give the command `abline(model)`.
-
-Write the command to add a regression line to your scatterplot. Don't forget to substitute `weightreg` for `model`.
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -178,37 +201,53 @@ Write the command to add a regression line to your scatterplot. Don't forget to 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Try `abline(weightreg)`
+`weightreg<-lm(_____$______ ~ ______$______)`
+
+## Answer
+
+```{r}
+#| eval: false
+
+weightreg<-lm(sampledata$weight~sampledata$length)
+```
+
 :::
 
-You can find the slope of the line and the y-intercept (the values m and b in the equation y = mx + b) by typing the name of the variable you created from your regression.
+You can find the **slope of the line** and the **y-intercept** (the values m and b in the equation y = mx + b) by typing the name of the variable you created from your regression.
 
 Write the code to find the slope and y-intercept of the best-fit line.
 
+::: panel-tabset
+
+## Code editor
+
 ```{webr-r}
 #Type your code here
 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-You named your regression variable `weightreg`
+You named your regression variable `weightreg`. Just type that in.
+
 :::
 
 The output shows the values of the line's y-intercept (-5.1502) and its slope (0.8149).
 
-#### Is it statistically significant?
+#### **Add a regression line to your graph**
 
-The points fit the line quite well. It seems unlikely that this association could have happened just by accident, though it *IS* possible. We would like to know the probability that there is actually no relationship between these two variables, that the slope of the true line through them is actually zero (a flat line).
+To see the line superimposed on your graph, you can chain on the command: 
 
-We can find the p-value by using the command `summary(model)`.
+`geom_smooth(method="lm", se=FALSE)`
 
-Write the command to find the probability that the true slope of the line is zero. Don't forget to use the name you gave your model variable.
+Add the regression line command to your scatterplot.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -216,10 +255,53 @@ Write the command to find the probability that the true slope of the line is zer
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-The command is `summary(weightreg)`
+Start with: 
+
+```{r}
+#| eval: false
+ggplot(sampledata, mapping=aes(x=length, y=weight))+
+  geom_point()
+```
+
+and then chain on the regression command with a `+`. 
+
+## Answer
+
+```{r}
+#| eval: false
+ggplot(sampledata, mapping=aes(x=length, y=weight))+
+  geom_point()+
+  geom_smooth(method="lm", se=FALSE)
+```
+:::
+
+#### **Is it statistically significant?**
+
+The points fit the line quite well. It seems unlikely that this association could have happened just by accident, though it *IS* possible. We would like to know the probability that there is actually no relationship between these two variables, that the slope of the true line through them is actually zero (a flat line).
+
+We can find the p-value by using the command `summary(modelName)`.
+
+Write the command to find the probability that the true slope of the line is zero. Don't forget to use the name you gave your model variable.
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+## Answer
+
+```{r}
+#| eval: false
+summary(weightreg)
+```
+
 :::
 
 In the 'coefficients' table, the line for `sampledata$length` shows a p-value, 4.7 x 10\^-8, that is much smaller than 0.05. This means that you can conclude that the effect of length on weight in this sample is **highly statistically significant**.
@@ -233,6 +315,10 @@ Again using `sampledata`, consider the categorical variable temp. Suppose we wan
 ### Visualize data
 
 First it is a good idea to look at the data visually. We can most easily do this with a boxplot.
+
+::: panel-tabset
+
+## Question
 
 ::: question
 **To create a boxplot that compares weights for the two different temp categories, what variable should go on the x-axis?**
@@ -252,17 +338,18 @@ temp
 :::
 :::
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
 Use the variable that defines the categories.
 :::
 
-In lesson 3, you used the plot function to make both boxplots and scatterplots, depending on the nature of the independent variable (categorical or continuous). There is another boxplot command, creatively named boxplot.
+In [lesson 4](Bio110_lesson_four){target="_blank"}, you used ggplot to make both boxplots and scatterplots.
 
-In the boxplot command, any independent variable that is numeric is treated as a factor variable automatically. Its syntax is: `boxplot(depvar ~ indepvar)`. Notice that, unlike the plot command, the dependent variable is listed first in the boxplot command, and the two variables are separated by a tilde (`~`). It is easy to get these two commands mixed up!
+Write code to make a boxplot of weights for the two temp categories. 
 
-Using the boxplot function, write the command to make a boxplot of weights for the two temp categories
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -270,18 +357,22 @@ Using the boxplot function, write the command to make a boxplot of weights for t
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-In the parentheses, the dependent variable goes first, followed by the squiggle, and then the independent variable.
-:::
+The general structure is: 
 
-::: {.callout-note collapse="true" icon="false"}
+```{r}
+#| eval: false
+ggplot(______, aes(x=_____, y=_____))+
+  geom_boxplot()
+```
+
 ## Answer
 
 ```{r}
 #| eval: false
-boxplot(sampledata$weight~sampledata$temp)
+ggplot(sampledata, aes(x=temp, y=weight))+
+  geom_boxplot()
 ```
 :::
 
@@ -291,9 +382,15 @@ You can see that the medians for the two sets of data values are different, but 
 
 We can find out by performing a t-test. You used a t-test in lesson 3 to calculate the confidence interval for a single variable; this is called a one-sample t-test. This time you will do a **two-sample t-test**, which is a way of finding out whether two groups of data differ significantly.
 
-There are two ways of writing the t-test command. If the data are in one variable, and the classification categories are in another, as they are in this case, we would write: `t.test(data$depvar ~ data$catvar)`, using real file and variable names in place of these placeholders.
+There are two ways of writing the t-test command. 
 
-Write the command to perform a t-test to determine if weights for the different temperatures are significantly different.
+-   If the data are in one variable, and the classification categories are in another, as they are in this case, we would write: `t.test(data$dependentVar ~ data$categoricalVar)`, using real file and variable names in place of these placeholders.
+
+Write the command to perform a t-test to determine if weights for the different temperatures (temp A and temp B) are significantly different.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -301,17 +398,24 @@ Write the command to perform a t-test to determine if weights for the different 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
+## Answer
 
-try `t.test(sampledata$weight~sampledata$temp)`
+```{r}
+#| eval: false
+t.test(sampledata$weight~sampledata$temp)
+```
+
 :::
 
 The output shows a p-value (in this case, 0.2308) for the probability that a difference this large could be due to chance alone. Since p is **greater** than 0.05, we should conclude that the differences in weights are **NOT statistically significant**. The two groups might really have similar weights, but just by chance, we sampled heavier individuals in one group than in the other.
 
 Sometimes the data for the two groups we would like to compare with a t-test are in two different variables of our data table.
 
-When that is the case, we use this command: `t.test(varA, varB)`. If we wished, we could use the subset command to create two separate variables from `sampledata$weight`, but this would be an unnecessary extra step. If we did this, though, we would get the same result.
+-   When that is the case, we use this command: `t.test(varA, varB)`. 
+
+    -   For example, if we had two seperate variables for `weight`, based on the temperature group (instead of all of them listed in one variable "weight"), then we could use this command.
+
+#### **t-tests used only with a normal distribution**
 
 It is important to remember, though, that t-tests are designed for data values with a *normal distribution*. Sometimes data are very non-normal. For example, go back and look at the variable `repro`.
 
@@ -321,9 +425,13 @@ You can see that there are a very large number of zeroes. This is often a good i
 
 There is an alternative to the t-test that does not require the data to have a normal distribution. It is called a **Wilcoxon test** (also sometimes a Mann-Whitney Test).
 
-#### Visualize data
+#### **Visualize data**
 
 Before doing a statistical test, though, write some code to make a boxplot showing how the values of `repro` differ for the two temperatures.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -331,28 +439,40 @@ Before doing a statistical test, though, write some code to make a boxplot showi
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-Put the y-variable first, followed by the squiggle, and then the x-variable.
-:::
+The structure should be: 
 
-::: {.callout-note collapse="true" icon="false"}
+```{r}
+#| eval: false
+ggplot(_____, mapping=aes(x=_____, y=_____))+
+  geom_boxplot()
+
+```
+
 ## Answer
 
 ```{r}
 #| eval: false
-boxplot(sampledata$repro~sampledata$temp)
+ggplot(sampledata, mapping=aes(x=temp, y=repro))+
+  geom_boxplot()
+
 ```
 :::
 
 Once again, the medians differ, but the data values for the two groups overlap.
 
-#### Wilcoxon test
+#### **Wilcoxon test**
 
-To carry out a Wilcoxon test, use the command: `wilcox.test(data$depvar~data$catvar)`.
+To carry out a Wilcoxon test, use the command:
+
+`wilcox.test(data$depvar~data$catvar)`.
 
 Write the command to perform a Wilcoxon test to determine whether values of `repro` differ for the two temp conditions.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -360,10 +480,17 @@ Write the command to perform a Wilcoxon test to determine whether values of `rep
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-try `wilcox.test(sampledata$repro~sampledata$temp)`
+Your dependent variable should be `repro` and your categorical variable should be `temp`. 
+
+## Answer
+
+```{r}
+#| eval: false
+wilcox.test(sampledata$repro~sampledata$temp)
+```
+
 :::
 
 It's fine to ignore the warning values that you see whenever the data contain duplicate values.
@@ -376,9 +503,13 @@ Another data analysis situation you might encounter is the need to compare more 
 
 Suppose we wanted to know whether diet had an effect on the length of the organisms in our sample. Notice that there are 3 diet categories.
 
-#### Visualize data
+#### **Visualize data**
 
 Write a command to create a boxplot for length as a function of diet category.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -386,28 +517,32 @@ Write a command to create a boxplot for length as a function of diet category.
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
 Length is the dependent variable, diet is the independent variable.
-:::
 
-::: {.callout-note collapse="true" icon="false"}
 ## Answer
 
 ```{r}
 #| eval: false
-boxplot(sampledata$length~sampledata$diet)
+ggplot(sampledata, mapping=aes(x=diet, y=length))+
+  geom_boxplot()
 ```
 :::
 
 We can see that length is quite different between diets 1 and 2, but not nearly as different between diets 2 and 3. Are these differences statistically significant?
 
-#### ANOVA test
+#### **ANOVA test**
 
-The command to perform an ANOVA is: `model<-aov(depvar~indvar)`. This syntax `(dependent variable, tilde, independent variable)` should be feeling familiar by now.
+The command to perform an ANOVA is: `model<-aov(depvar~indvar)`. 
+
+-   This syntax `(dependent variable ~ independent variable)` should be feeling familiar by now.
 
 Write a command to perform an ANOVA on length as a function of diet, and assign the result to a variable called `dietaov`.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -415,41 +550,66 @@ Write a command to perform an ANOVA on length as a function of diet, and assign 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
 
-try `dietaov<-aov(sampledata$length~sampledata$diet)`
+The syntax is `dietaov <- aov(_____$_____~____$_diet____)`
+
+## Answer
+
+```{r}
+#| eval: false
+dietaov<-aov(sampledata$length~sampledata$diet)
+```
+
 :::
 
 To see the output from the ANOVA, you can use the command `summary(model)`, replacing the placeholder with your own model's name.
 
 Write a command to look at the output from your ANOVA.
 
+::: panel-tabset
+
+## Code editor
+
 ```{webr-r}
 #Type your code here
 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
+## Answer
+```{r}
+#| eval: false
+summary(dietaov)
+```
 
-try `summary(dietaov)`
 :::
 
-The output is a table of numbers. The important line is the one labelled `sampledata$diet`. This reports the probability that the differences in length among the diets could be merely due to chance. The p-value is very small, .00011, so the effect of diet on length is **highly statistically significant**.
+The output is a table of numbers. 
+
+-   The important line is the one labelled `sampledata$diet`. This reports the probability that the differences in length among the diets could be merely due to chance. 
+
+-   The p-value is very small, 0.00011, so the effect of diet on length is **highly statistically significant**.
 
 However, recall that you are comparing 3 groups, and that the differences between diet groups 1 and 2 were larger than the differences between diet groups 2 and 3. Are ALL these differences statistically significant?
 
-Not necessarily. A significant p-value in an ANOVA only means that at least one of the groups is different from the rest, not that ALL the groups are different from one another.
+-   Not necessarily. A significant p-value in an ANOVA only means that **at least one of the groups** is different from the rest, not that ALL the groups are different from one another.
 
 ### Tukey's test
 
 So to probe the situation more deeply, we should follow up this significant ANOVA with a Tukey's test. A **Tukey's test** looks at all the pairwise comparisons of groups, and gives a separate p-value for each comparison.
 
-The command to perform a Tukey's test is `TukeyHSD(model)`, HSD stands for 'honestly significant difference.'
+The command to perform a Tukey's test is `TukeyHSD(model)`. 
+    
+-   HSD stands for 'honestly significant difference.'
 
-Write the command to perform a Tukey's test on your model.
+Write the command to perform a Tukey's test on your model. 
+
+**Note**: Tukey's test will only run if your categorical data is a "factor" variable. Earlier in this tutorial, you should have converted `diet` to a factor variable, but if you skipped [that step](#sec-factorvar), convert `diet` to a factor variable and rerun your ANOVA test.
+
+::: panel-tabset
+
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -457,10 +617,23 @@ Write the command to perform a Tukey's test on your model.
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
+## Answer
+```{r}
+#| eval: false
+TukeyHSD(dietaov)
+```
 
-try `TukeyHSD(dietaov)`
+Note: if you get an error, it might be because your diet data is not factor data. 
+You'll need to convert the diet variable to factor data first. Then, rerun the anova test command: 
+```{r}
+#| eval: false
+sampledata$diet<- as.factor(sampledata$diet)
+
+dietaov<-aov(sampledata$length~sampledata$diet)
+```
+
+And finally, you can run Tukey's test.
+
 :::
 
 The output is in the form of a table that compares each of the 3 groups to the others, with the p-value for that particular comparison as the final column.
@@ -471,31 +644,27 @@ We can see that diet group 1 differs significantly from group 2, and that group 
 
 ANOVA is a very versatile data analysis tool. For example, an ANOVA can be used to explore data from experiments that have more than one independent variable.
 
-In our `sampledata`, there are two categorical variables, `temp` and `diet`. In the study that generated these data, individuals were reared under one of two different temperature regimes, and were raised on one of three different diets. We'd like to know how temp influenced body weight, how diet influenced body weight, and whether there was an interaction between the effects of temp and diet.
+In our `sampledata`, there are two categorical variables, `temp` and `diet`. 
 
-#### Visualize data
+-   In the study that generated these data, individuals were reared under one of two different temperature regimes, and were raised on one of three different diets. 
+
+-   We'd like to know how temp influenced body weight, how diet influenced body weight, and whether there was an interaction between the effects of temp and diet.
+
+#### **Visualize data**
 
 Let's start, as always, by looking at a graph. In this case, we want to see a clustered boxplot that shows all 6 combinations of diet and temperature as separate bars.
 
-To create a boxplot for a situation where there are two different independent variables, you can use this code: `boxplot(depvar ~ indvar1*indvar2)`, replacing these placeholders with the appropriate file and variable names.
+-   We'll use `ggplot()` to create a boxplot of length, with `temp` as the independent variable. 
 
-Write the code to create a boxplot of length, using temp for the first independent variable and diet for the second.
+-   Then we can use the command `facet_wrap(~diet)` to separate the temperatures into the three different `diet` categories. This creates a **clustered boxplot**.
 
-```{webr-r}
-#Type your code here
+-   You did something very similar with bar graphs in [lesson 6](Bio110_lesson_six.qmd#sec-cluster){target="_blank"}. Refer to that for more information.
 
+Write the code to create a boxplot of length, using temp for the independent variable and diet for the cluster variable.
 
-```
+::: panel-tabset
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-try `boxplot(sampledata$length~sampledata$temp*sampledata$diet)`
-:::
-
-Notice that on the x-axis, there are 3 diet groups (1,2,and 3); within each group, the data for the two temps (A and B) are shown side-by-side. If instead you wanted two temp groups, with the 3 diets shown side-by-side within them, you would reverse the order of the two independent variables in the boxplot command.
-
-Try it now. Write a boxplot command to create a length boxplot that has two temperature groups with the three diet types shown side-by-side.
+## Code editor
 
 ```{webr-r}
 #Type your code here
@@ -503,53 +672,111 @@ Try it now. Write a boxplot command to create a length boxplot that has two temp
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
 ## Hint
+The general structure is: 
 
-Just reverse the positions of temp and diet in the code you just wrote.
+```{r}
+#| eval: false
+ggplot(_____, mapping=aes(x=_____, y=_____))+
+  geom_boxplot()+
+  facet_wrap(~______)
+```
+
+## Answer
+```{r}
+#| eval: false
+ggplot(sampledata, mapping=aes(x=temp, y=length))+
+  geom_boxplot()+
+  facet_wrap(~diet)
+```
 :::
 
-::: {.callout-note collapse="true" icon="false"}
+Notice there are 3 separated diet groups (1,2,and 3), and within each group, the data for the two temps (A and B) are shown side-by-side. If instead you wanted two temp groups, with the 3 diets shown side-by-side within them, you would switch which variable is the *x variable* and which is the *facet* variable.
+
+Try it now. Write a command to create a length boxplot that has two temperature groups with the three diet types shown side-by-side.
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Type your code here
+
+
+```
+
+## Hint
+Use the same code as the previous graph, just switch `diet` and `temp`. 
+
+The general structure is: 
+```{r}
+#| eval: false
+ggplot(sampledata, mapping=aes(x=_____, y=length))+
+  geom_boxplot()+
+  facet_wrap(~______)
+```
+
+## Answer
+```{r}
+#| eval: false
+ggplot(sampledata, mapping=aes(x=diet, y=length))+
+  geom_boxplot()+
+  facet_wrap(~temp)
+```
+
+Note: If this doesn't work, it's probably because `diet` is not a factor variable. Make sure you convert it to a factor variable before graphing. Use this command: `sampledata$diet<- as.factor(sampledata$diet)`.
+
+:::
+
+#### **Two-way ANOVA**
+
+We can assess the effect of both temperature and diet on length with a **two-way ANOVA**. The two-way refers to having two different independent variables, `temp` and `diet` in this case.
+
+The command for performing a two-way ANOVA is:
+
+`model<-aov(data$depvar ~ data$cat1*data$cat2)`
+
+-   `cat1` and `cat2` are placeholders that represent the 2 independent variables.
+
+Write a command to perform a two-way ANOVA on the effect of `temp` and `diet` on `length`, and store the result in a variable named `length2way`. Put `temp` in front of the `*`, and `diet` behind.
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+#Type your code here
+
+
+```
+
 ## Answer
 
 ```{r}
 #| eval: false
-boxplot(sampledata$length~sampledata$diet*sampledata$temp)
+length2way<-aov(sampledata$length~sampledata$temp*sampledata$diet)
 ```
-:::
-
-#### Two-way ANOVA
-
-We can assess the effect of both temperature and diet on length with a **two-way ANOVA**. The two-way refers to having two different independent variables, temp and diet in this case.
-
-The command for performing a two-way ANOVA is `model<-aov(data$depvar ~ data$cat1*data$cat2)`. `cat1` and `cat2` are placeholders that represent the 2 independent variables.
-
-Write a command to perform a two-way ANOVA on the effect of `temp` and `diet` on `length`, and store the result in a variable named `length2way`. Put `temp` in front of the `*`, and `diet` behind.
-
-```{webr-r}
-#Type your code here
-
-
-```
-
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
-
-try `length2way<-aov(sampledata$length~sampledata$temp*sampledata$diet)`
 :::
 
 Type a command to look at the output from your new two-way ANOVA.
 
+::: panel-tabset
+
+## Code editor
+
 ```{webr-r}
 #Type your code here
 
 
 ```
 
-::: {.callout-tip collapse="true" icon="false"}
-## Hint
+## Answer
 
-try `summary(length2way)`
+```{r}
+#| eval: false
+summary(length2way)
+```
+
 :::
 
 The table of output gives the probability that the differences in length between the two temperatures could be due to chance alone, and the probability that the differences in length among the three diets could be due to chance alone. The interaction term assesses whether the effect of temperature depends on which diet type the organism received.
@@ -561,3 +788,5 @@ In other words, the effect of temperature was the same for all diets, and the ef
 ## Congratulations!
 
 Now you are familiar with some of the most basic and widely-used tests of statistical inference. To learn more about statistical inference in general, consider taking Math 255. To learn more about carrying out statistical analyses in R, there are many online resources that can be easily found by Googling your specific situation.
+
+You've also finished all the Bio 110 online tutorials! Excellent work! Hopefully you have a grasp of how to use R in biology classes. If you want a quick reference to what you've learned, check out the [Bio110 Cheatsheet](Bio110_cheatsheet.qmd){target="_blank"}.
