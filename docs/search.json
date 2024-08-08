@@ -210,6 +210,13 @@
     "text": "How to use these tutorials\nHere’s a quick introduction for how to use the tutorials:\n\nUse the bar at the top of the website to navigate between tutorials.\nThe tutorials sometimes take a little time to load, wait until there is a green circle that says Ready! under “WEBR STATUS” at the top of the page.\nThere are interactive code editors throughout the tutorials. Click the green “run code” button to run them.\n\nSometimes, there is an option to see a hint, check your work or see the answer. You are encouraged to try writing the code yourself before looking at a hint or the answer. You can also click the “Check your work” button if you want a way to see if you did it right without giving away the answer.\nWithin a code editor, everything is considered code and will run when you click “run code”. You can tell R to IGNORE a line by using a # in front of the line. This is called commenting.\n\n\n\nTrouble Shooting\n\nSometimes, code chunks use the output from previous code chunks to run. So, it’s important to go through each tutorial sequentially. If you get an error message that says “Error: object not found”, it is probably because you didn’t run the previous code chunks, or because you typed the code wrong.\n\nYou can do separate tutorials out of order, as they do not rely on each other to run. For example, it’s fine to do lesson 4 before lesson 2.\n\nYou can refresh the page to restart, but this will delete any code you’ve already completed.\nError: If you get an error message, check that you included all the parenthesis, quotation marks and capitalization (R is case sensitive).\n\nIf that still doesn’t work, try copying and pasting the given answer and running the code. If that doesn’t work, you probably forgot to run a previous code chunk or properly define a variable."
   },
   {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Bio 110 Tutorials",
+    "section": "Credits",
+    "text": "Credits\nBiological icons created by wanicon - Flaticon"
+  },
+  {
     "objectID": "Bio110_lesson_three.html#introduction",
     "href": "Bio110_lesson_three.html#introduction",
     "title": "Lesson 3: Variability",

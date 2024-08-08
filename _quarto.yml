@@ -9,6 +9,8 @@ project:
   
 webr: 
   packages: ['tidyverse', 'plotrix']
+
+favicon: https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/bioicon.png
   
 website:
   title: "BIO 110 Web Tutorials"

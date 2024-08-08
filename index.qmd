@@ -31,3 +31,9 @@ Here's a quick introduction for how to use the tutorials:
 -   [Error]{style="color:red"}: If you get an error message, check that you included all the parenthesis, quotation marks and capitalization (R is case sensitive).
 
     -   If that still doesn't work, try copying and pasting the given answer and running the code. If that doesn't work, you probably forgot to run a previous code chunk or properly define a variable.
+    
+    
+    
+## Credits
+
+<a href="https://www.flaticon.com/free-icons/biological" title="biological icons">Biological icons created by wanicon - Flaticon</a>
