@@ -35,6 +35,8 @@ A dataset called `bargraphdata` has been loaded into this tutorial.
 
 Type its name so that you can see what it contains.
 
+**Exercise 6.1**
+
 ```{webr-r}
 #Type your code here
 
@@ -42,6 +44,8 @@ Type its name so that you can see what it contains.
 ```
 
 It would also be good to understand the structure of the different variables. Type the command that allows you to see the structure of `bargraphdata`.
+
+**Exercise 6.2**
 
 ::: panel-tabset
 ## Code editor
@@ -74,6 +78,8 @@ Suppose you want to make a bar graph that compares the means of `var1` for each 
 The first thing you need to do is to identify the data that will be used to make each bar. Right now all of the data values for both bars are part of the same variable, `var1`. So we'll need to sort our data into groups (treatment A and B) and then calculate the mean for each group.
 
 ::: {.border .p-3}
+**Question 6.3**
+
 ::: question
 **Which functions do you think we could use to group our data and then calculate the mean for each group?**
 
@@ -98,6 +104,8 @@ Hint: You learned about it in [lesson two](Bio110_lesson_two.qmd){target="_blank
 If you weren't sure which function to choose or what these functions do, review [lesson 2](Bio110_lesson_two.qmd#sec-groupby-sum){target="_blank"}.
 
 First, we'll use `group_by()` to group our data by different treatment groups. Then we use `summarize()` to calculate the mean of each group. Try this now:
+
+**Exercise 6.4**
 
 ::: panel-tabset
 ## Code editor
@@ -139,6 +147,8 @@ You should get a chart displaying the means of each treatment group. But, we nee
 
 Copy and paste your code from the previous exercise and save it to a new variable called `tmtsummary`.
 
+**Exercise 6.5**
+
 ::: panel-tabset
 ## Code editor
 
@@ -164,6 +174,8 @@ tmtsummary <- bargraphdata |>
 Now we can graph! We'll use the same structure we did to create a histogram, boxplot and scatterplot, but we'll use the geometry `geom_col()` to make our graph. Chain it onto the main `ggplot()` function using a `+` and use `tmtsummary` as your data.
 
 Your x variable will be `treatment` and your y variable will be the name that you created for the mean of variable 1. In my answer example, it is called `avgVar1`, but you can use any name, as long as you defined it in the code chunk above.
+
+**Exercise 6.6**
 
 ::: panel-tabset
 ## Code editor
@@ -200,6 +212,8 @@ ggplot(tmtsummary, mapping = aes(x=treatment, y=avgVar1))+
 Now let's learn how to add color to the graph. We can color the bars by `treatment`, so that each treatment is a different color. Use your same code as before and type `fill=treatment` into the `aes()` command, after the x and y variables. Use a comma to separate the fill color from the x and y variables.
 
 Give it a try now! Also add labels to your graph.
+
+**Exercise 6.7**
 
 ::: panel-tabset
 ## Code editor
@@ -242,6 +256,8 @@ In lesson three, you learned about the importance of describing the variability 
 To add error bars to your graph, you first need to compute the values for the measure of variability you have chosen to use. In this example, let's use the standard deviation.
 
 We'll return to our `group_by()` and `summarize()` functions. Use the exact same code you used to create `tmtsummary` and add a calculation for standard deviation in `summarize()`. Save this summarized data to the same variable name `tmtsummary`. Give it at try!
+
+**Exercise 6.8**
 
 ::: panel-tabset
 ## Code editor
@@ -299,6 +315,8 @@ geom_errorbar(mapping=aes(ymin = _______,
 :::   
 
 Try adding this command to your bar graph. Fill in the ymin and the ymax. Note that: the minimum error bar value is the 'mean of var1 - sd of var1' and the maximum error bar value is the 'mean of var1 + sd of var1'.
+
+**Exercise 6.9**
 
 ::: panel-tabset
 ## Code editor
@@ -408,6 +426,8 @@ To create a clustered bar graph, we'll chain on the command `facet_wrap(~variabl
 
 -   Finally, run the clustered bar graph code in the code editor!
 
+**Exercise 6.10**
+
 ::: panel-tabset
 
 ## Clustered bar graph code
@@ -471,6 +491,8 @@ What if you wanted your bar graph to be clustered by `treatment` instead of `yea
 
 Give it a try! It's not quite as simple as changing the `facet_wrap()` to `treatment`... there's a couple other edits you have to make. Mess around a bit and see if you can figure it out. After you try it yourself, use the hints to help you figure out what else you need to edit in your code.
 
+**Exercise 6.11**
+
 ::: panel-tabset
 ## Code editor
 
@@ -514,6 +536,8 @@ ggplot(tmtsummary, mapping = aes(x=year, y=avgVar1, fill=year))+
 You may notice that the legend looks a little odd - it is continuous and doesn't show 3 separate values. This is because R thinks the `year` data is numerical, but we are treating it as a categorical (factor) variable.
 
 Try changing the year data to factor data and then rerunning the code to fix the legend. If you need a refresher on how to do switch a variable to a factor variable, check out [lesson 5](Bio110_lesson_five.qmd#sec-var-type){target="_blank"}.
+
+**Exercise 6.12**
 
 ```{webr-r}
 # Type your code here

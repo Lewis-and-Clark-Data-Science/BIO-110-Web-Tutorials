@@ -39,6 +39,8 @@ This lesson contains a dataset that you will work with, named `data`. You have a
 
 Type the word data to recall what it contains.
 
+**Exercise 3.1**
+
 ::: panel-tabset
 ## Code editor
 
@@ -58,6 +60,8 @@ data
 The dataset contains physiological data for a sample of individuals.
 
 You can determine how many entries are in the dataframe by using the command `nrow(data)`. Try that now.
+
+**Exercise 3.2**
 
 ::: panel-tabset
 ## Code editor
@@ -101,6 +105,8 @@ One common measure of variability is the variance. The variance is the square of
 You can compute the variance of a variable with the `var()` function.
 
 Use `var()` to compute the variance of the `RQ` for the two conditions exercise (1) and resting (2), found in the `Condition` column.
+
+**Exercise 3.3**
 
 ::: panel-tabset
 ## Code editor
@@ -161,6 +167,8 @@ data |>
 Another common measure of variance is the standard deviation, which is simply the square root of the variance. The function for standard deviation is `sd()`.
 
 Compute the standard deviation of `RQ` for each of the two conditions.
+
+**Exercise 3.4**
 
 ::: panel-tabset
 ## Code editor
@@ -229,6 +237,8 @@ To compute the standard error of a set of data in R, a package called `plotrix` 
 The function for computing the standard error is `std.error()`.
 
 Compute the standard error of RQ for each of the two conditions.
+
+**Exercise 3.5**
 
 ::: panel-tabset
 ## Code editor
@@ -301,6 +311,8 @@ The command for the t-test is `t.test(data$variableName)`
 
 Let's compute the 95% confidence interval of the variable `heart_rate`.
 
+**Exercise 3.6**
+
 ::: panel-tabset
 ## Code editor
 
@@ -355,6 +367,8 @@ If you run this example, you should see `data`, but it will only show rows where
 
 Now, let's save this data as a new variable. Recall you can use `<-` to [assign data](Bio110_lesson_one.qmd#sec-assign-variable){target="_blank"} to a new variable. Try creating a new variable that includes all the rows for which the `Condition` is equal to "1". Call your new variable `exerciseData`.
 
+**Exercise 3.7**
+
 ::: panel-tabset
 ## Code editor
 
@@ -378,6 +392,8 @@ exerciseData <- filter(data, Condition == "1")
 
 Now that you've created your variable, type `exerciseData` to see if it worked!
 
+**Exercise 3.8**
+
 ```{webr-r}
 # Your code here
 
@@ -387,6 +403,8 @@ Now that you've created your variable, type `exerciseData` to see if it worked!
 Finally, let's find the 95% confidence interval for the RQ values measured under Condition 1.
 
 Perform a t.test on your new dataset `exerciseData`, on the RQ column.
+
+**Exercise 3.9**
 
 ::: panel-tabset
 ## Code editor

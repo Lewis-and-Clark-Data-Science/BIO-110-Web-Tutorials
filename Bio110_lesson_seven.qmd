@@ -40,6 +40,8 @@ In this tutorial you will work with a sample dataset called `sampledata` that ha
 
 Write the command for looking at the **structure** of `sampledata` so you can see what it contains.
 
+**Exercise 7.1**
+
 ::: panel-tabset
 
 ## Code editor
@@ -64,6 +66,8 @@ str(sampledata)
 :::
 
 You should also look at the values in the table. Write the command to display the data file.
+
+**Exercise 7.2**
 
 ::: panel-tabset
 
@@ -91,6 +95,8 @@ You can see that sampledata contains 30 different observations (rows) and 5 vari
 #### **Factor variable** {#sec-factorvar}
 
 Write a command that will convert diet to a factor variable.
+
+**Exercise 7.3**
 
 ::: panel-tabset
 
@@ -126,6 +132,8 @@ Let's start by thinking about situations where both the independent and dependen
 
 We will work with the variables for `weight` and for `length`.
 
+**Question 7.4**
+
 ::: question
 **What is the most appropriate kind of plot for looking at the possible relationship between two continuous variables?**
 
@@ -149,6 +157,8 @@ boxplot
 :::
 
 Use ggplot to write some code to plot the relationship between weight and length. Put length on the x-axis. If you need a review on using ggplot, refer to the [cheatsheet](Bio110_cheatsheet.qmd#sec-ggplot){target="_blank"} or [lesson 5](Bio110_lesson_five.qmd){target="_blank"}.
+
+**Exercise 7.5**
 
 ::: panel-tabset
 
@@ -191,6 +201,8 @@ The following command performs a regression of the `y-variable` on the `x-variab
 
 Write the command to perform a linear regression of weight on length for `sampledata`, and store it in a variable called `weightreg`.
 
+**Exercise 7.6**
+
 ::: panel-tabset
 
 ## Code editor
@@ -219,6 +231,8 @@ You can find the **slope of the line** and the **y-intercept** (the values m and
 
 Write the code to find the slope and y-intercept of the best-fit line.
 
+**Exercise 7.7**
+
 ::: panel-tabset
 
 ## Code editor
@@ -244,6 +258,8 @@ To see the line superimposed on your graph, you can chain on the command:
 `geom_smooth(method="lm", se=FALSE)`
 
 Add the regression line command to your scatterplot.
+
+**Exercise 7.8**
 
 ::: panel-tabset
 
@@ -285,6 +301,8 @@ We can find the p-value by using the command `summary(modelName)`.
 
 Write the command to find the probability that the true slope of the line is zero. Don't forget to use the name you gave your model variable.
 
+**Exercise 7.9**
+
 ::: panel-tabset
 
 ## Code editor
@@ -318,7 +336,7 @@ First it is a good idea to look at the data visually. We can most easily do this
 
 ::: panel-tabset
 
-## Question
+## Question 7.10
 
 ::: question
 **To create a boxplot that compares weights for the two different temp categories, what variable should go on the x-axis?**
@@ -346,6 +364,8 @@ Use the variable that defines the categories.
 In [lesson 4](Bio110_lesson_four){target="_blank"}, you used ggplot to make both boxplots and scatterplots.
 
 Write code to make a boxplot of weights for the two temp categories. 
+
+**Exercise 7.11**
 
 ::: panel-tabset
 
@@ -388,6 +408,8 @@ There are two ways of writing the t-test command.
 
 Write the command to perform a t-test to determine if weights for the different temperatures (temp A and temp B) are significantly different.
 
+**Exercise 7.12**
+
 ::: panel-tabset
 
 ## Code editor
@@ -428,6 +450,8 @@ There is an alternative to the t-test that does not require the data to have a n
 #### **Visualize data**
 
 Before doing a statistical test, though, write some code to make a boxplot showing how the values of `repro` differ for the two temperatures.
+
+**Exercise 7.13**
 
 ::: panel-tabset
 
@@ -470,6 +494,8 @@ To carry out a Wilcoxon test, use the command:
 
 Write the command to perform a Wilcoxon test to determine whether values of `repro` differ for the two temp conditions.
 
+**Exercise 7.14**
+
 ::: panel-tabset
 
 ## Code editor
@@ -507,6 +533,8 @@ Suppose we wanted to know whether diet had an effect on the length of the organi
 
 Write a command to create a boxplot for length as a function of diet category.
 
+**Exercise 7.15**
+
 ::: panel-tabset
 
 ## Code editor
@@ -540,6 +568,8 @@ The command to perform an ANOVA is: `model<-aov(depvar~indvar)`.
 
 Write a command to perform an ANOVA on length as a function of diet, and assign the result to a variable called `dietaov`.
 
+**Exercise 7.16**
+
 ::: panel-tabset
 
 ## Code editor
@@ -566,6 +596,8 @@ dietaov<-aov(sampledata$length~sampledata$diet)
 To see the output from the ANOVA, you can use the command `summary(model)`, replacing the placeholder with your own model's name.
 
 Write a command to look at the output from your ANOVA.
+
+**Exercise 7.17**
 
 ::: panel-tabset
 
@@ -606,6 +638,8 @@ The command to perform a Tukey's test is `TukeyHSD(model)`.
 Write the command to perform a Tukey's test on your model. 
 
 **Note**: Tukey's test will only run if your categorical data is a "factor" variable. Earlier in this tutorial, you should have converted `diet` to a factor variable, but if you skipped [that step](#sec-factorvar), convert `diet` to a factor variable and rerun your ANOVA test.
+
+**Exercise 7.18**
 
 ::: panel-tabset
 
@@ -662,6 +696,8 @@ Let's start, as always, by looking at a graph. In this case, we want to see a cl
 
 Write the code to create a boxplot of length, using temp for the independent variable and diet for the cluster variable.
 
+**Exercise 7.19**
+
 ::: panel-tabset
 
 ## Code editor
@@ -694,6 +730,8 @@ ggplot(sampledata, mapping=aes(x=temp, y=length))+
 Notice there are 3 separated diet groups (1,2,and 3), and within each group, the data for the two temps (A and B) are shown side-by-side. If instead you wanted two temp groups, with the 3 diets shown side-by-side within them, you would switch which variable is the *x variable* and which is the *facet* variable.
 
 Try it now. Write a command to create a length boxplot that has two temperature groups with the three diet types shown side-by-side.
+
+**Exercise 7.20**
 
 ::: panel-tabset
 
@@ -740,7 +778,9 @@ The command for performing a two-way ANOVA is:
 
 Write a command to perform a two-way ANOVA on the effect of `temp` and `diet` on `length`, and store the result in a variable named `length2way`. Put `temp` in front of the `*`, and `diet` behind.
 
-::: panel-tabset
+**Exercise 7.20**
+
+:::panel-tabset
 
 ## Code editor
 
