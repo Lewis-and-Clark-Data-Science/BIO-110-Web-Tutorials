@@ -1,11 +1,12 @@
 ---
 format: html
-editor: visual
 filters: 
   - webr
   - naquiz
 title: "Practice with your own data"
 ---
+
+## Introduction
 
 In this tutorial, you'll have the chance to practice the commands you learned using your own data. Below, there are code chunks you can use to practice. See [the home page](index.qmd){target="_blank"} for more details on using the tutorials and for troubleshooting tips!
 
