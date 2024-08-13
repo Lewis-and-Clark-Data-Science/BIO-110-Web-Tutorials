@@ -32,8 +32,6 @@ In the previous lesson, we introduced GGPlot and made a histogram. In this lesso
 
 We will work with the physiology dataset, called `data`, that you have already seen. Type the word data to recall what it contains.
 
-**Exercise 5.1**
-
 ```{webr-r}
 #Type your code here
 
@@ -90,8 +88,6 @@ Before we can create a boxplot, we have to tell R that whether our variable is a
 
 Try that now with the categorical variable in `data`.
 
-**Exercise 5.3**
-
 ::: panel-tabset
 ## Code editor
 
@@ -132,8 +128,6 @@ ggplot(data, mapping = aes()) +
 ```
 
 Add the x and y variables to create a boxplot. As an extra bonus, add labels and color!
-
-**Exercise 5.4**
 
 ::: panel-tabset
 ## Code editor
@@ -177,7 +171,6 @@ Here's an image that illustrates how to interpret a boxplot: ![From https://dat
 
 ::: {.border .p-3}
 
-**Question 5.5**
 ::: question
 **Looking at the boxplot you created, what is the 1st quartile for condition 2 (resting)?**
 
@@ -202,8 +195,6 @@ Here's an image that illustrates how to interpret a boxplot: ![From https://dat
 #### Adding labels
 
 Now, try adding labels to your boxplot. We'll use the same function we used in lesson 4: `labs(x="_____", y="______", title="_________")`. Try it now!
-
-**Exercise 5.6**
 
 ::: panel-tabset
 ## Code editor
@@ -240,8 +231,6 @@ ggplot(data, mapping = aes(x= Condition, y= heart_rate)) +
 But these labels do not specify whether "1" and "2" refer to resting or exercise conditions. We can add the following function to change the labels on the x axis: `scale_x_discrete(labels=c("firstLabel", "secondLabel"))`
 
 Give it a try!
-
-**Exercise 5.7**
 
 ::: panel-tabset
 ## Code editor
@@ -280,8 +269,6 @@ Suppose we wanted to look at a scatterplot of the relationship between heart rat
 We can create a scatter plot by adding the geom `geom_point()` to the main `ggplot()` function. This will create a point for every data value.
 
 Follow the same overall structure that you used to create a boxplot and histogram. Try to create a scatterplot displaying the relationship between `heart_rate` (on the x-axis) and `RQ` (on the y-axis).
-
-**Exercise 5.8**
 
 ::: panel-tabset
 ## Code editor
@@ -333,8 +320,6 @@ Give it a try! Create a scatter plot displaying the relationship between `heart_
 
 Try different shapes and colors - just type in their name and see if they work! R might not understand all the colors or shapes, but you can experiment and see which ones work or look it up online or check out [this linked pdf](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf){target="_blank"} to see the colors that can be specified by name.
 
-**Exercise 5.9**
-
 ::: panel-tabset
 ## Code editor
 
@@ -384,8 +369,6 @@ ggplot(data, mapping=aes(x=_____, y=_____)) +
 Let's put everything together now! Create a scatterplot displaying the relationship between `heart_rate` (on the x axis) and `RQ` (on the y axis). Choose a color, size and shape for the points. Add reasonable x and y limits. And finally, add x and y axes labels and a title to your plot.
 
 (Feel free to copy and paste your code from previous code chunks)
-
-**Exercise 5.10**
 
 ::: panel-tabset
 ## Code editor
@@ -441,8 +424,6 @@ First, let's tell R that `Condition` is a factor (categorical) variable. We alre
 
 Do you remember how to change a variable to a factor variable?
 
-**Exercise 5.11**
-
 ::: panel-tabset
 ## Code editor
 
@@ -491,8 +472,6 @@ When you have one categorical variable and one continous variable, a scatterplot
 #### Axis labels on categorical scatterplot
 
 Let's add labels to our plot. You know how to add axes labels and a title, but how can we change the unhelpful labels "1" and "2"? We will use the same command we used when making a boxplot. Refer back to your code when you made a boxplot, and see if you can add labels to your scatterplot. Add some color too!
-
-**Exercise 5.12**
 
 ::: panel-tabset
 ## Code editor

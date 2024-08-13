@@ -33,8 +33,6 @@ We will work with the physiology dataset, called `data`, that you have already s
 
 Type the word data to recall what it contains.
 
-**Exercise 4.1**
-
 ```{webr-r}
 #Type your code here
 
@@ -94,8 +92,6 @@ ggplot(data, mapping=aes(x=heart_rate)) +
 #### Try it out
 
 Your turn to give it a try! Make a histogram of the `RQ` values for our `data`.
-
-**Exercise 4.2**
 
 ::: panel-tabset
 ## Code editor
@@ -157,8 +153,6 @@ ggplot(data, mapping=aes(x=RQ))+
 ### Try it out
 
 Your turn to give it a try! Make a histogram of the `RQ` values for our `data`. As an extra challenge, add color and labels to your graph.
-
-**Exercise 4.3**
 
 ::: panel-tabset
 ## Code editor

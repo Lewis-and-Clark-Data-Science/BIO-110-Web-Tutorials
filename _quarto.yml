@@ -10,7 +10,7 @@ project:
   
 webr: 
   packages: ['tidyverse', 'plotrix']
-
+number-sections: true
   
 website:
   title: "BIO 110 Web Tutorials"

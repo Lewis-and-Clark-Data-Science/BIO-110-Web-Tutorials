@@ -307,7 +307,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"message":"true","output":"true","fig-height":5,"autorun":"true","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-1","context":"setup","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/bargraphdata.csv\"\n# Note: must include bargraphdata.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"bargraphdata.csv\" at the end after the slash \n\ndownload.file(url, \"bargraphdata.csv\")\n\nbargraphdata <- read.csv(\"bargraphdata.csv\")\nlibrary(tidyverse)\nlibrary(plotrix)\nlibrary(gplots)"},{"id":2,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-2","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"#Type your code here\n"},{"id":3,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-3","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"#Type your code here\n"},{"id":4,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-4","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":5,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-5","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":6,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-6","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"tmtsummary <- bargraphdata |> \n  group_by(treatment) |>\n  summarize(avgVar1 = mean(var1))"},{"id":7,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-7","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":8,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-8","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":9,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-9","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":10,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-10","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":11,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-11","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":12,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-12","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"\nbargraphdata |> \n  group_by(treatment)|>\n  summarize(avgVar1 = mean(var1),\n            sdVar1 = sd(var1)) |>\n\n  ggplot(mapping = aes(x=treatment, y=avgVar1, fill=treatment))+\n    geom_col()+\n    labs(x=\"Treatment\", y=\"Average Variable 1\", title = \"Bar graph of the Mean of Variable 1 for Treatment A and B\")+\n    geom_errorbar(mapping=aes(ymin = avgVar1-sdVar1,\n                          ymax = avgVar1+sdVar1))"},{"id":13,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-13","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"},{"id":14,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-14","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"\n"},{"id":15,"options":{"message":"true","output":"true","fig-height":5,"autorun":"false","fig-width":7,"editor-max-height":"","fig-cap":"","editor-quick-suggestions":"false","label":"unnamed-chunk-15","context":"interactive","warning":"true","comment":"","out-width":"700px","out-height":"","results":"markup","dpi":72,"read-only":"false","editor-font-scale":1,"classes":""},"code":"# Type your code here\n"}];
+globalThis.qwebrCellDetails = [{"id":1,"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/bargraphdata.csv\"\n# Note: must include bargraphdata.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"bargraphdata.csv\" at the end after the slash \n\ndownload.file(url, \"bargraphdata.csv\")\n\nbargraphdata <- read.csv(\"bargraphdata.csv\")\nlibrary(tidyverse)\nlibrary(plotrix)\nlibrary(gplots)","options":{"out-width":"700px","context":"setup","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"true","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-1","warning":"true","comment":"","dpi":72}},{"id":2,"code":"#Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-2","warning":"true","comment":"","dpi":72}},{"id":3,"code":"#Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-3","warning":"true","comment":"","dpi":72}},{"id":4,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-4","warning":"true","comment":"","dpi":72}},{"id":5,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-5","warning":"true","comment":"","dpi":72}},{"id":6,"code":"tmtsummary <- bargraphdata |> \n  group_by(treatment) |>\n  summarize(avgVar1 = mean(var1))","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-6","warning":"true","comment":"","dpi":72}},{"id":7,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-7","warning":"true","comment":"","dpi":72}},{"id":8,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-8","warning":"true","comment":"","dpi":72}},{"id":9,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-9","warning":"true","comment":"","dpi":72}},{"id":10,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-10","warning":"true","comment":"","dpi":72}},{"id":11,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-11","warning":"true","comment":"","dpi":72}},{"id":12,"code":"\nbargraphdata |> \n  group_by(treatment)|>\n  summarize(avgVar1 = mean(var1),\n            sdVar1 = sd(var1)) |>\n\n  ggplot(mapping = aes(x=treatment, y=avgVar1, fill=treatment))+\n    geom_col()+\n    labs(x=\"Treatment\", y=\"Average Variable 1\", title = \"Bar graph of the Mean of Variable 1 for Treatment A and B\")+\n    geom_errorbar(mapping=aes(ymin = avgVar1-sdVar1,\n                          ymax = avgVar1+sdVar1))","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-12","warning":"true","comment":"","dpi":72}},{"id":13,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-13","warning":"true","comment":"","dpi":72}},{"id":14,"code":"\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-14","warning":"true","comment":"","dpi":72}},{"id":15,"code":"# Type your code here\n","options":{"out-width":"700px","context":"interactive","fig-height":5,"message":"true","out-height":"","fig-cap":"","editor-quick-suggestions":"false","autorun":"false","results":"markup","output":"true","fig-width":7,"read-only":"false","classes":"","editor-font-scale":1,"editor-max-height":"","label":"unnamed-chunk-15","warning":"true","comment":"","dpi":72}}];
 
 </script>
 <script type="module">
@@ -1217,19 +1217,19 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
-  <li><a href="#bar-graphs" id="toc-bar-graphs" class="nav-link" data-scroll-target="#bar-graphs">Bar Graphs</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">2</span> Dataset</a></li>
+  <li><a href="#bar-graphs" id="toc-bar-graphs" class="nav-link" data-scroll-target="#bar-graphs"><span class="header-section-number">3</span> Bar Graphs</a>
   <ul class="collapse">
-  <li><a href="#identify-data" id="toc-identify-data" class="nav-link" data-scroll-target="#identify-data">Identify data</a></li>
-  <li><a href="#labels-and-color" id="toc-labels-and-color" class="nav-link" data-scroll-target="#labels-and-color">Labels and color</a></li>
-  <li><a href="#sec-errorbars" id="toc-sec-errorbars" class="nav-link" data-scroll-target="#sec-errorbars">Adding error bars</a></li>
+  <li><a href="#identify-data" id="toc-identify-data" class="nav-link" data-scroll-target="#identify-data"><span class="header-section-number">3.1</span> Identify data</a></li>
+  <li><a href="#labels-and-color" id="toc-labels-and-color" class="nav-link" data-scroll-target="#labels-and-color"><span class="header-section-number">3.2</span> Labels and color</a></li>
+  <li><a href="#sec-errorbars" id="toc-sec-errorbars" class="nav-link" data-scroll-target="#sec-errorbars"><span class="header-section-number">3.3</span> Adding error bars</a></li>
   </ul></li>
-  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster">Clustered bar graph</a>
+  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">4</span> Clustered bar graph</a>
   <ul class="collapse">
-  <li><a href="#specifying-data-and-variables" id="toc-specifying-data-and-variables" class="nav-link" data-scroll-target="#specifying-data-and-variables">Specifying data and variables</a></li>
+  <li><a href="#specifying-data-and-variables" id="toc-specifying-data-and-variables" class="nav-link" data-scroll-target="#specifying-data-and-variables"><span class="header-section-number">4.1</span> Specifying data and variables</a></li>
   </ul></li>
-  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations">Congratulations</a></li>
+  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations"><span class="header-section-number">5</span> Congratulations</a></li>
   </ul>
 </nav>
     </div>
@@ -1484,21 +1484,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Welcome. In this lesson, you will learn how to create simple bar graphs and clustered bar graphs, and how to add error bars to both types of graphs.</p>
 <p>We’ll continue to use ggplot, which was introduced in <a href="./Bio110_lesson_four.html" target="_blank">lesson 4</a>.</p>
 <p>See <a href="./index.html" target="_blank">the home page</a> for more details on how to use this tutorial and for troubleshooting tips!</p>
 </section>
-<section id="dataset" class="level2">
-<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<section id="dataset" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="dataset"><span class="header-section-number">2</span> Dataset</h2>
 <p>A dataset called <code>bargraphdata</code> has been loaded into this tutorial.</p>
 <p>Type its name so that you can see what it contains.</p>
-<p><strong>Exercise 6.1</strong></p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>It would also be good to understand the structure of the different variables. Type the command that allows you to see the structure of <code>bargraphdata</code>.</p>
-<p><strong>Exercise 6.2</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1518,14 +1516,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><p>The third variable, <code>year</code>, refers to the year in which the measurement was made.</p></li>
 </ul>
 </section>
-<section id="bar-graphs" class="level2">
-<h2 class="anchored" data-anchor-id="bar-graphs">Bar Graphs</h2>
+<section id="bar-graphs" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="bar-graphs"><span class="header-section-number">3</span> Bar Graphs</h2>
 <p>Suppose you want to make a bar graph that compares the means of <code>var1</code> for each of the two treatments. For now, imagine that you do not care about the year the measurement was made.</p>
-<section id="identify-data" class="level3">
-<h3 class="anchored" data-anchor-id="identify-data">Identify data</h3>
+<section id="identify-data" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="identify-data"><span class="header-section-number">3.1</span> Identify data</h3>
 <p>The first thing you need to do is to identify the data that will be used to make each bar. Right now all of the data values for both bars are part of the same variable, <code>var1</code>. So we’ll need to sort our data into groups (treatment A and B) and then calculate the mean for each group.</p>
 <div class="border p-3">
-<p><strong>Question 6.3</strong></p>
 <div class="question">
 <p><strong>Which functions do you think we could use to group our data and then calculate the mean for each group?</strong></p>
 <p>Hint: You learned about it in <a href="./Bio110_lesson_two.html" target="_blank">lesson two</a>.</p>
@@ -1548,7 +1545,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <p>If you weren’t sure which function to choose or what these functions do, review <a href="./Bio110_lesson_two.html#sec-groupby-sum" target="_blank">lesson 2</a>.</p>
 <p>First, we’ll use <code>group_by()</code> to group our data by different treatment groups. Then we use <code>summarize()</code> to calculate the mean of each group. Try this now:</p>
-<p><strong>Exercise 6.4</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1578,7 +1574,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <p>You should get a chart displaying the means of each treatment group. But, we need to be able to input that data into our graph, so we’ll save it as a new variable.</p>
 <p>Copy and paste your code from the previous exercise and save it to a new variable called <code>tmtsummary</code>.</p>
-<p><strong>Exercise 6.5</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1597,7 +1592,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <p>Now we can graph! We’ll use the same structure we did to create a histogram, boxplot and scatterplot, but we’ll use the geometry <code>geom_col()</code> to make our graph. Chain it onto the main <code>ggplot()</code> function using a <code>+</code> and use <code>tmtsummary</code> as your data.</p>
 <p>Your x variable will be <code>treatment</code> and your y variable will be the name that you created for the mean of variable 1. In my answer example, it is called <code>avgVar1</code>, but you can use any name, as long as you defined it in the code chunk above.</p>
-<p><strong>Exercise 6.6</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1621,11 +1615,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 </section>
-<section id="labels-and-color" class="level3">
-<h3 class="anchored" data-anchor-id="labels-and-color">Labels and color</h3>
+<section id="labels-and-color" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="labels-and-color"><span class="header-section-number">3.2</span> Labels and color</h3>
 <p>Now let’s learn how to add color to the graph. We can color the bars by <code>treatment</code>, so that each treatment is a different color. Use your same code as before and type <code>fill=treatment</code> into the <code>aes()</code> command, after the x and y variables. Use a comma to separate the fill color from the x and y variables.</p>
 <p>Give it a try now! Also add labels to your graph.</p>
-<p><strong>Exercise 6.7</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1651,14 +1644,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 </section>
-<section id="sec-errorbars" class="level3">
-<h3 class="anchored" data-anchor-id="sec-errorbars">Adding error bars</h3>
+<section id="sec-errorbars" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="sec-errorbars"><span class="header-section-number">3.3</span> Adding error bars</h3>
 <p>In lesson three, you learned about the importance of describing the variability in the data as well as its central tendency. This bar graph does not show the variability in <code>var1</code>. You can do that by adding error bars to the bars. The error bars can represent whatever measure of variability you choose: standard deviation, standard error, or 95% confidence limits.</p>
-<section id="compute-measure-of-variability" class="level4">
-<h4 class="anchored" data-anchor-id="compute-measure-of-variability">Compute measure of variability</h4>
+<section id="compute-measure-of-variability" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored" data-anchor-id="compute-measure-of-variability"><span class="header-section-number">3.3.1</span> Compute measure of variability</h4>
 <p>To add error bars to your graph, you first need to compute the values for the measure of variability you have chosen to use. In this example, let’s use the standard deviation.</p>
 <p>We’ll return to our <code>group_by()</code> and <code>summarize()</code> functions. Use the exact same code you used to create <code>tmtsummary</code> and add a calculation for standard deviation in <code>summarize()</code>. Save this summarized data to the same variable name <code>tmtsummary</code>. Give it at try!</p>
-<p><strong>Exercise 6.8</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1701,7 +1693,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p>Try adding this command to your bar graph. Fill in the ymin and the ymax. Note that: the minimum error bar value is the ‘mean of var1 - sd of var1’ and the maximum error bar value is the ‘mean of var1 + sd of var1’.</p>
-<p><strong>Exercise 6.9</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-4" role="tab" aria-controls="tabset-7-4" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-5" role="tab" aria-controls="tabset-7-5" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1780,19 +1771,18 @@ Bonus challenge question
 </section>
 </section>
 </section>
-<section id="sec-cluster" class="level2">
-<h2 class="anchored" data-anchor-id="sec-cluster">Clustered bar graph</h2>
+<section id="sec-cluster" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sec-cluster"><span class="header-section-number">4</span> Clustered bar graph</h2>
 <p>Suppose you were interested in a bar graph that not only compared the treatments, but also displayed if and how the years differed from each other. You can do this with what is called a clustered bar graph.</p>
 <p>In this case, a clustered bar graph would have six different bars, one for each combination of treatment (A and B) and year (1, 2, and 3).</p>
-<section id="specifying-data-and-variables" class="level3">
-<h3 class="anchored" data-anchor-id="specifying-data-and-variables">Specifying data and variables</h3>
+<section id="specifying-data-and-variables" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="specifying-data-and-variables"><span class="header-section-number">4.1</span> Specifying data and variables</h3>
 <p>To create a clustered bar graph, we’ll chain on the command <code>facet_wrap(~variableName)</code> to our chain of ggplot functions. We can copy all our previous code, with just a few edits.</p>
 <ul>
 <li><p>Below you’ll see the code we used to create our non-clustered graph in the previous step. (Yours may look slightly different, but that’s ok!)</p></li>
 <li><p>You’ll also see code to make a clustered bar graph, clustered by <code>year</code>. What’s different from the non-clustered graph code?</p></li>
 <li><p>Finally, run the clustered bar graph code in the code editor!</p></li>
 </ul>
-<p><strong>Exercise 6.10</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Clustered bar graph code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Non-clustered bar graph code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-3" role="tab" aria-controls="tabset-9-3" aria-selected="false">Code editor</a></li></ul>
 <div class="tab-content">
@@ -1839,11 +1829,10 @@ Bonus challenge question
 <li>Line 2: <code>group_by(treatment, year)</code>: We’re now interested in displaying treatment <strong>and</strong> year, so we want to group by both of those variables</li>
 <li>Line 11: <code>facet_wrap(~year)</code>: Tells R to cluster the bar graphs by year.</li>
 </ul>
-<section id="changing-the-cluster-variable" class="level4">
-<h4 class="anchored" data-anchor-id="changing-the-cluster-variable">Changing the cluster variable</h4>
+<section id="changing-the-cluster-variable" class="level4" data-number="4.1.1">
+<h4 data-number="4.1.1" class="anchored" data-anchor-id="changing-the-cluster-variable"><span class="header-section-number">4.1.1</span> Changing the cluster variable</h4>
 <p>What if you wanted your bar graph to be clustered by <code>treatment</code> instead of <code>year</code>?</p>
 <p>Give it a try! It’s not quite as simple as changing the <code>facet_wrap()</code> to <code>treatment</code>… there’s a couple other edits you have to make. Mess around a bit and see if you can figure it out. After you try it yourself, use the hints to help you figure out what else you need to edit in your code.</p>
-<p><strong>Exercise 6.11</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-3" role="tab" aria-controls="tabset-10-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-4" role="tab" aria-controls="tabset-10-4" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-5" role="tab" aria-controls="tabset-10-5" aria-selected="false">Answer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-6" role="tab" aria-controls="tabset-10-6" aria-selected="false">Bonus - improve the legend</a></li></ul>
 <div class="tab-content">
@@ -1878,7 +1867,6 @@ Bonus challenge question
 <div id="tabset-10-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-6-tab">
 <p>You may notice that the legend looks a little odd - it is continuous and doesn’t show 3 separate values. This is because R thinks the <code>year</code> data is numerical, but we are treating it as a categorical (factor) variable.</p>
 <p>Try changing the year data to factor data and then rerunning the code to fix the legend. If you need a refresher on how to do switch a variable to a factor variable, check out <a href="./Bio110_lesson_five.html#sec-var-type" target="_blank">lesson 5</a>.</p>
-<p><strong>Exercise 6.12</strong></p>
 <div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
@@ -1887,8 +1875,8 @@ Bonus challenge question
 </section>
 </section>
 </section>
-<section id="congratulations" class="level2">
-<h2 class="anchored" data-anchor-id="congratulations">Congratulations</h2>
+<section id="congratulations" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="congratulations"><span class="header-section-number">5</span> Congratulations</h2>
 <p>That’s it! Now you know how to use bar graphs to di splay your data, including adding error bars and creating clustered bar graphs. Remember that if the distribution of data values is highly non-normal, boxplots are a more appropriate form of graphical display than bar graphs.</p>
 <p>Next lesson, we’ll learn some basic statistics.</p>
 

@@ -4,6 +4,7 @@ editor: visual
 filters: 
   - webr
 title: "Lesson 1: R Introduction, Working with Datasets"
+
 ---
 
 ```{webr-r}
@@ -22,8 +23,6 @@ download.file(url, "physiology_data.csv")
 Welcome to this introduction to R. You will learn how to enter data and to perform some basic operations. R is a programming language that is used to work with data. It can do lots of things, including basic arithmetic.
 
 First, let's try using R. In the code chunk right below this, try typing in a basic math problem, like `35*10`. Click the green `run code` button and see what happens.
-
-**Exercise 1.1**
 
 ```{webr-r}
 #Type your code here!
@@ -56,8 +55,6 @@ This command creates a variable called 'diam' that contains our example data val
 `diam <- c(4, 3.5, 6.1, 2.2, 4.7, 3, 5.2, 4.6)`
 
 Now you try creating the `diam` variable using these same data. In the code chunk below, type in a command to create `diam`.
-
-**Exercise 1.2**
 
 ::: panel-tabset
 ## Code editor
@@ -99,8 +96,6 @@ The command we'll use is: `myDataFrame <- read.csv("myCSVFile.csv")`.
 
 We have pre-loaded a CSV file into this tutorial. It is called "physiology_data.csv". Let's try converting the CSV file into a dataframe in the code chunk below. We'll name the dataframe `data`.
 
-**Exercise 1.3**
-
 ::: panel-tabset
 ## Code editor
 
@@ -129,8 +124,6 @@ data <- read.csv("physiology_data.csv")
 ### Our data {#sec-our-data}
 
 Now, let's check if you did it right. In R, you can type the name of a dataframe to see it displayed. Try typing `data` into the code chunk below.
-
-**Exercise 1.4**
 
 ::: panel-tabset
 ## Code editor {#view_data}
@@ -170,8 +163,6 @@ The syntax is: `yourDataName$variableName`
 
 What would you type to see a list of the `heart_rate` data values in this file?
 
-**Exercise 1.5**
-
 ::: panel-tabset
 ## Code editor
 
@@ -196,8 +187,6 @@ In R, each variable is encoded as either numeric (a number), integer (a whole nu
 A data file's 'structure' refers to the properties of its variables. To find out the properties of all the variables in a data set, you would use the command `str(yourDataName)`, using the name of your data file in place of the placeholder here.
 
 Write a command that will allow you to see the structure of `data`.
-
-**Exercise 1.6**
 
 ::: panel-tabset
 ## Code editor
@@ -225,8 +214,6 @@ You can change a variable's property with the assignment arrow, in the following
 For example, to change the property of the `Condition` variable to a factor variable, you can run: `data$Condition <- as.factor(data$Condition)`.
 
 Try changing the variable named `Individual` to a factor variable. You will notice that a little prompt box shows up. You can save yourself some typing by choosing the rest of the expression from among the choices in the prompt box.
-
-**Exercise 1.7**
 
 ::: panel-tabset
 ## Code editor

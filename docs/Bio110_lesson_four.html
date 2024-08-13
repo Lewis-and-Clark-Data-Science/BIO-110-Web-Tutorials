@@ -307,7 +307,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"editor-quick-suggestions":"false","read-only":"false","fig-cap":"","dpi":72,"label":"unnamed-chunk-1","editor-font-scale":1,"editor-max-height":"","results":"markup","warning":"true","comment":"","fig-height":5,"message":"true","autorun":"true","output":"true","classes":"","context":"setup","out-width":"700px","fig-width":7,"out-height":""},"code":"library(tidyverse)\n\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\ndata<- read.csv(\"physiology_data.csv\")"},{"id":2,"options":{"editor-quick-suggestions":"false","read-only":"false","fig-cap":"","dpi":72,"label":"unnamed-chunk-2","editor-font-scale":1,"editor-max-height":"","results":"markup","warning":"true","comment":"","fig-height":5,"message":"true","autorun":"false","output":"true","classes":"","context":"interactive","out-width":"700px","fig-width":7,"out-height":""},"code":"#Type your code here\n"},{"id":3,"options":{"editor-quick-suggestions":"false","read-only":"true","fig-cap":"","dpi":72,"label":"unnamed-chunk-3","editor-font-scale":1,"editor-max-height":"","results":"markup","warning":"true","comment":"","fig-height":5,"message":"true","autorun":"false","output":"true","classes":"","context":"interactive","out-width":"700px","fig-width":7,"out-height":""},"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5)"},{"id":4,"options":{"editor-quick-suggestions":"false","read-only":"false","fig-cap":"","dpi":72,"label":"unnamed-chunk-4","editor-font-scale":1,"editor-max-height":"","results":"markup","warning":"true","comment":"","fig-height":5,"message":"true","autorun":"false","output":"true","classes":"","context":"interactive","out-width":"700px","fig-width":7,"out-height":""},"code":"# Your code here\n"},{"id":5,"options":{"editor-quick-suggestions":"false","read-only":"false","fig-cap":"","dpi":72,"label":"unnamed-chunk-5","editor-font-scale":1,"editor-max-height":"","results":"markup","warning":"true","comment":"","fig-height":5,"message":"true","autorun":"false","output":"true","classes":"","context":"interactive","out-width":"700px","fig-width":7,"out-height":""},"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"lightyellow\")"},{"id":6,"options":{"editor-quick-suggestions":"false","read-only":"false","fig-cap":"","dpi":72,"label":"unnamed-chunk-6","editor-font-scale":1,"editor-max-height":"","results":"markup","warning":"true","comment":"","fig-height":5,"message":"true","autorun":"false","output":"true","classes":"","context":"interactive","out-width":"700px","fig-width":7,"out-height":""},"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"darkmagenta\")+\n  labs(x=\"Heart rate\", y=\"Count\", title=\"Histogram of Heart Rate for Physiology Data\")"},{"id":7,"options":{"editor-quick-suggestions":"false","read-only":"false","fig-cap":"","dpi":72,"label":"unnamed-chunk-7","editor-font-scale":1,"editor-max-height":"","results":"markup","warning":"true","comment":"","fig-height":5,"message":"true","autorun":"false","output":"true","classes":"","context":"interactive","out-width":"700px","fig-width":7,"out-height":""},"code":"# Your code here\n"}];
+globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\n\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \n\n\ndata<- read.csv(\"physiology_data.csv\")","id":1,"options":{"fig-height":5,"autorun":"true","read-only":"false","editor-max-height":"","message":"true","classes":"","context":"setup","label":"unnamed-chunk-1","results":"markup","dpi":72,"out-width":"700px","editor-font-scale":1,"out-height":"","fig-cap":"","comment":"","fig-width":7,"editor-quick-suggestions":"false","output":"true","warning":"true"}},{"code":"#Type your code here\n","id":2,"options":{"fig-height":5,"autorun":"false","read-only":"false","editor-max-height":"","message":"true","classes":"","context":"interactive","label":"unnamed-chunk-2","results":"markup","dpi":72,"out-width":"700px","editor-font-scale":1,"out-height":"","fig-cap":"","comment":"","fig-width":7,"editor-quick-suggestions":"false","output":"true","warning":"true"}},{"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5)","id":3,"options":{"fig-height":5,"autorun":"false","read-only":"true","editor-max-height":"","message":"true","classes":"","context":"interactive","label":"unnamed-chunk-3","results":"markup","dpi":72,"out-width":"700px","editor-font-scale":1,"out-height":"","fig-cap":"","comment":"","fig-width":7,"editor-quick-suggestions":"false","output":"true","warning":"true"}},{"code":"# Your code here\n","id":4,"options":{"fig-height":5,"autorun":"false","read-only":"false","editor-max-height":"","message":"true","classes":"","context":"interactive","label":"unnamed-chunk-4","results":"markup","dpi":72,"out-width":"700px","editor-font-scale":1,"out-height":"","fig-cap":"","comment":"","fig-width":7,"editor-quick-suggestions":"false","output":"true","warning":"true"}},{"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"lightyellow\")","id":5,"options":{"fig-height":5,"autorun":"false","read-only":"false","editor-max-height":"","message":"true","classes":"","context":"interactive","label":"unnamed-chunk-5","results":"markup","dpi":72,"out-width":"700px","editor-font-scale":1,"out-height":"","fig-cap":"","comment":"","fig-width":7,"editor-quick-suggestions":"false","output":"true","warning":"true"}},{"code":"ggplot(data, mapping=aes(x=heart_rate))+\n  geom_histogram(bins=5, color=\"blue\", fill=\"darkmagenta\")+\n  labs(x=\"Heart rate\", y=\"Count\", title=\"Histogram of Heart Rate for Physiology Data\")","id":6,"options":{"fig-height":5,"autorun":"false","read-only":"false","editor-max-height":"","message":"true","classes":"","context":"interactive","label":"unnamed-chunk-6","results":"markup","dpi":72,"out-width":"700px","editor-font-scale":1,"out-height":"","fig-cap":"","comment":"","fig-width":7,"editor-quick-suggestions":"false","output":"true","warning":"true"}},{"code":"# Your code here\n","id":7,"options":{"fig-height":5,"autorun":"false","read-only":"false","editor-max-height":"","message":"true","classes":"","context":"interactive","label":"unnamed-chunk-7","results":"markup","dpi":72,"out-width":"700px","editor-font-scale":1,"out-height":"","fig-cap":"","comment":"","fig-width":7,"editor-quick-suggestions":"false","output":"true","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1217,18 +1217,18 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">1.1</span> Dataset</a></li>
   </ul></li>
-  <li><a href="#ggplot-graphing" id="toc-ggplot-graphing" class="nav-link" data-scroll-target="#ggplot-graphing">GGPlot graphing</a>
+  <li><a href="#ggplot-graphing" id="toc-ggplot-graphing" class="nav-link" data-scroll-target="#ggplot-graphing"><span class="header-section-number">2</span> GGPlot graphing</a>
   <ul class="collapse">
-  <li><a href="#example-histogram" id="toc-example-histogram" class="nav-link" data-scroll-target="#example-histogram">Example: Histogram</a></li>
-  <li><a href="#customizing-a-plot" id="toc-customizing-a-plot" class="nav-link" data-scroll-target="#customizing-a-plot">Customizing a plot</a></li>
-  <li><a href="#try-it-out-1" id="toc-try-it-out-1" class="nav-link" data-scroll-target="#try-it-out-1">Try it out</a></li>
-  <li><a href="#other-ggplot-resources" id="toc-other-ggplot-resources" class="nav-link" data-scroll-target="#other-ggplot-resources">Other ggplot resources</a></li>
+  <li><a href="#example-histogram" id="toc-example-histogram" class="nav-link" data-scroll-target="#example-histogram"><span class="header-section-number">2.1</span> Example: Histogram</a></li>
+  <li><a href="#customizing-a-plot" id="toc-customizing-a-plot" class="nav-link" data-scroll-target="#customizing-a-plot"><span class="header-section-number">2.2</span> Customizing a plot</a></li>
+  <li><a href="#try-it-out-1" id="toc-try-it-out-1" class="nav-link" data-scroll-target="#try-it-out-1"><span class="header-section-number">2.3</span> Try it out</a></li>
+  <li><a href="#other-ggplot-resources" id="toc-other-ggplot-resources" class="nav-link" data-scroll-target="#other-ggplot-resources"><span class="header-section-number">2.4</span> Other ggplot resources</a></li>
   </ul></li>
-  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations">Congratulations!</a></li>
+  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations"><span class="header-section-number">3</span> Congratulations!</a></li>
   </ul>
 </nav>
     </div>
@@ -1483,22 +1483,21 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Welcome to lesson four, where you will learn the basics of graphing using a package called <code>ggplot2</code>. GGPlot is an excellent resource for creating many types of graphs, including histograms, box plots, scatterplots and more. We’ll start by introducing how ggplot works and then try creating a histogram.</p>
 <p>See <a href="./index.html" target="_blank">the home page</a> for more details on how to use this tutorial and for troubleshooting tips!</p>
-<section id="dataset" class="level3">
-<h3 class="anchored" data-anchor-id="dataset">Dataset</h3>
+<section id="dataset" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">1.1</span> Dataset</h3>
 <p>We will work with the physiology dataset, called <code>data</code>, that you have already seen.</p>
 <p>Type the word data to recall what it contains.</p>
-<p><strong>Exercise 4.1</strong></p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>When you examine the data table, you can see that there are some rows that are missing data for heart rate. In R, missing data are indicated by the letters ‘NA’. R will ignore these missing values when making a graph. Once you collect your own data, this is the way to enter any missing data into your data table.</p>
 </section>
 </section>
-<section id="ggplot-graphing" class="level2">
-<h2 class="anchored" data-anchor-id="ggplot-graphing">GGPlot graphing</h2>
+<section id="ggplot-graphing" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="ggplot-graphing"><span class="header-section-number">2</span> GGPlot graphing</h2>
 <p>There are 3 main components of ggplot:</p>
 <ul>
 <li><p>Data (<code>data</code>): This is your dataset</p></li>
@@ -1510,8 +1509,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="at">mapping=</span><span class="fu">aes</span>()) <span class="sc">+</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_object</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="example-histogram" class="level3">
-<h3 class="anchored" data-anchor-id="example-histogram">Example: Histogram</h3>
+<section id="example-histogram" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="example-histogram"><span class="header-section-number">2.1</span> Example: Histogram</h3>
 <p>Let’s look at an example to see how this works. We’ll start by creating a histogram. A <strong>histogram</strong> shows the distribution of data values.</p>
 <p>Try running the code below.</p>
 <div id="qwebr-insertion-location-3"></div>
@@ -1528,10 +1527,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><p><code>geom_histogram(bins=5)</code>: Specify histogram as your chosen <code>geom</code>. You can also decide how many bins you’d like with the <code>bins=5</code> argument. Try changing the 5 to a different number and running the code again, see what happens!</p></li>
 <li><p>Chain together the function <code>ggplot()</code> with the geom <code>geom_histogram()</code> using a <code>+</code>.</p></li>
 </ul>
-<section id="try-it-out" class="level4">
-<h4 class="anchored" data-anchor-id="try-it-out">Try it out</h4>
+<section id="try-it-out" class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="try-it-out"><span class="header-section-number">2.1.1</span> Try it out</h4>
 <p>Your turn to give it a try! Make a histogram of the <code>RQ</code> values for our <code>data</code>.</p>
-<p><strong>Exercise 4.2</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1565,8 +1563,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </section>
 </section>
-<section id="customizing-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="customizing-a-plot">Customizing a plot</h3>
+<section id="customizing-a-plot" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="customizing-a-plot"><span class="header-section-number">2.2</span> Customizing a plot</h3>
 <ul>
 <li><p>You can change how a plot looks by adding the “color” and “fill” attributes to your <code>geom_object()</code>. <code>color</code> indicates the outline color and <code>fill</code> specifies the background color. Notice that we put the color name inside quotation marks. This is because the colors are character strings (i.e.&nbsp;lists of letters).</p>
 <div id="qwebr-insertion-location-5"></div>
@@ -1576,10 +1574,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript></li>
 </ul>
 </section>
-<section id="try-it-out-1" class="level3">
-<h3 class="anchored" data-anchor-id="try-it-out-1">Try it out</h3>
+<section id="try-it-out-1" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="try-it-out-1"><span class="header-section-number">2.3</span> Try it out</h3>
 <p>Your turn to give it a try! Make a histogram of the <code>RQ</code> values for our <code>data</code>. As an extra challenge, add color and labels to your graph.</p>
-<p><strong>Exercise 4.3</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Answer</a></li></ul>
 <div class="tab-content">
@@ -1613,8 +1610,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <p>Great work!</p>
 </section>
-<section id="other-ggplot-resources" class="level3">
-<h3 class="anchored" data-anchor-id="other-ggplot-resources">Other ggplot resources</h3>
+<section id="other-ggplot-resources" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="other-ggplot-resources"><span class="header-section-number">2.4</span> Other ggplot resources</h3>
 <p>There are LOTS of resources online where you can learn about making plots with ggplot. Here are a few to start with:</p>
 <ul>
 <li><p><a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf" target="_blank">ggplot cheatsheet PDF</a></p></li>
@@ -1623,8 +1620,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ul>
 </section>
 </section>
-<section id="congratulations" class="level2">
-<h2 class="anchored" data-anchor-id="congratulations">Congratulations!</h2>
+<section id="congratulations" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="congratulations"><span class="header-section-number">3</span> Congratulations!</h2>
 <p>Hooray! You have completed lesson four. You have learned the basics of creating a plot using GGPlot. Lesson five will teach you how to make a scatterplot and boxplot.</p>
 
 
