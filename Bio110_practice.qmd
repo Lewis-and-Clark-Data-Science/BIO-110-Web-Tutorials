@@ -1,0 +1,247 @@
+---
+format: html
+editor: visual
+filters: 
+  - webr
+  - naquiz
+title: "Practice with your own data"
+---
+
+In this tutorial, you'll have the chance to practice the commands you learned using your own data. Below, there are code chunks you can use to practice. See [the home page](index.qmd){target="_blank"} for more details on using the tutorials and for troubleshooting tips!
+
+**Important**, there is not a a way to save your work in this tutorial. If you want to save your code, be sure to save it to a seperate document so you can later copy and paste it to reuse it.
+
+## Uploading your own data
+
+There are a couple ways to upload your own data into this tutorial. The first is by creating your own data frame. The second is by using outside packages that come pre-loaded with data. Choose one and follow the instructions below to upload your data.
+
+### Create a data frame
+
+First, you can upload your own data. In [lesson 1](Bio110_lesson_one.qmd#sec-assign-variable){target="_blank"}, you learned how to create a variable and add a string of data to it as a vector. You also learned how to import a .csv file.
+
+But, what if you wanted to createa a dataframe by typing in all the data instead of uploading a csv file? We'll do that now.
+
+Here's the basic structure you can use to create a data frame:
+
+```{r}
+#| eval: false
+myDataFrame <- data.frame(
+              colmnName1 = c(insert data here), 
+              columnName2 = c(insert data here),
+              columnName3 = c(insert data here))
+```
+
+Here's an example:
+
+```{webr-r}
+#| read-only: TRUE
+pet_data <- data.frame(
+                pet_type = c("cat","rabbit","chinchilla","cat","cat"), 
+                name = c("Cassandra", "Sambo", "Leandro", "Bean", "Maki"),
+                age = c(19, 45, 32, 49, 65))
+```
+
+Notice the following:
+
+-   The data is enclosed in parentheses with a "c" in the front and separated by commas. `c(_, _, _, _,)`. This notation creates a vector of data values, so each column is a vector of data.
+
+-   Each data point containing characters (i.e. the `name` and `pet_type` column) is surrounded by quotes `""`. R will automatically convert this to factor data. You can later adjust the type of data in your data frame (see [lesson 1](Bio110_lesson_one.qmd#sec-var-property){target="_blank"}).
+
+-   Use the assignment character `<-` to assign the name (i.e. `pet-Data`) to your data frame.
+
+Now it's your turn!
+
+Create your data frame below.
+
+**Exercise P.1**
+
+```{webr-r}
+
+
+
+```
+
+You can check that you created it correctly by typing the name of your dataframe below: 
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+
+
+
+```
+
+## Example
+```{webr-r}
+pet_data
+
+```
+
+:::
+
+
+### Use Data from Packages
+
+Another option for uploading data is using data from R packages (see [lesson 1](Bio110_lesson_one.qmd#sec-packages) for a refresher on what packages are). Some packages contain pre-loaded data which you can analyze.
+
+You can find packages online with a basic google search and learn what data sets they contain. But to start you out, here's a couple options:
+
+| Package          | Dataset name        | Description                                                                                                                                                           |
+|---------------------------------------|:----------------|:----------------|
+| "palmerpenguins" | penguins            | Data on penguins living in the Palmer Archipelago in Antarctica                                                                                                       |
+| "datasets"       | iris                | Various measurements for 3 plant species                                                                                                                              |
+| "datasets"       | many more datasets! | see [this website](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html){target="_blank"} for a list of datasets stored in the package "datasets" |
+
+#### **Installing your package**
+
+To access your dataset stored in a package, first install the package. Run the following commands and insert the name of your package where it indicates:
+
+**Exercise P.2**
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+install.packages("packageNameHere")
+```
+
+```{webr-r}
+library(packageNameHere)
+```
+
+## Example
+
+```{webr-r}
+install.packages("palmerpenguins")
+```
+
+```{webr-r}
+library(palmerpenguins)
+```
+
+:::
+
+#### **Calling up your dataset**
+
+The dataset in the package should already be formatted as a dataframe, but you can rename it using the assignment character `<-`.
+
+You can also view it by typing its name or using one of the following commands: `head(dataFrame)`, `glimpse(dataFrame)`, `str(dataFrame)`.
+
+
+**Exercise P.3: Rename or view your dataframe below:**
+
+::: panel-tabset
+
+## Code editor
+
+```{webr-r}
+
+
+
+```
+
+
+## Example
+
+```{webr-r}
+my_penguins <- penguins
+
+my_penguins
+```
+:::
+
+## Working with your data
+
+Now that you have data loaded into this tutorial, you can practice running the commands that you learned throughout this tutorial with your new data. Below, there are spaces for you to type and run your own code. 
+
+-   Feel free to type all the code in one code chunk or use different code chunks for different tasks!
+
+-   You can use comments to remind yourself what each line of code does. To type a comment in a code chunk use a `#`. 
+    Example: 
+    
+    ```{webr-r}
+    #| read-only: TRUE
+    # This is my comment. R will ignore all this text because of the # in the front of the line. 
+    # I can use these comments to remind myself what the code is for
+    5+3
+    ```
+
+-   Feel free to refer to previous tutorials or the [cheatsheet](Bio110_cheatsheet.qmd){target="_blank"} to recall which commands you've learned. 
+
+-   **Important** If you navigate to a new page or refresh this page, you'll lose all your progress. So make sure you open any tutorials in a different window or tab. And when you are finished coding for the day, save your work in a separate document. 
+
+### Enjoy coding!!
+
+```{webr-r}
+
+
+
+
+
+````
+
+
+```{webr-r}
+
+
+
+
+
+````
+
+
+```{webr-r}
+
+
+
+
+
+````
+
+
+```{webr-r}
+
+
+
+
+
+````
+
+
+```{webr-r}
+
+
+
+
+
+````
+
+
+```{webr-r}
+
+
+
+
+
+````
+
+
+```{webr-r}
+
+
+
+
+
+````
+
+
+```{webr-r}
+
+
+
+
+
+````

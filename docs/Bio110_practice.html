@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BIO 110 Web Tutorials - Lesson 2: Central Tendency</title>
+<title>BIO 110 Web Tutorials - Practice with your own data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -306,7 +306,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"setup","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-1","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"true"},"code":"\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash \nlibrary(tidyverse)\ndata<- read.csv(\"physiology_data.csv\")"},{"id":2,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-2","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Type your code here\n"},{"id":3,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-3","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Type your code here\n"},{"id":4,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-4","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Type your code here\n"},{"id":5,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-5","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Type your code here\n"},{"id":6,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-6","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Type your code here\n"},{"id":7,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-7","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Type your code here\n"},{"id":8,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-8","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Your code here\n"},{"id":9,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-9","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"data"},{"id":10,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-10","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Your code here\n"},{"id":11,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-11","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Your code here\n"},{"id":12,"options":{"read-only":"TRUE","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-12","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"data$RQ |> \n  mean()"},{"id":13,"options":{"read-only":"true","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-13","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"data |>\n  group_by(Condition) |>\n  summarize(averageHeartRate = mean(heart_rate, na.rm=TRUE),\n            medianHeartRate = median(heart_rate, na.rm=TRUE))"},{"id":14,"options":{"read-only":"false","comment":"","results":"markup","fig-cap":"","editor-max-height":"","editor-font-scale":1,"warning":"true","out-width":"700px","dpi":72,"context":"interactive","fig-height":5,"out-height":"","output":"true","message":"true","label":"unnamed-chunk-14","classes":"","editor-quick-suggestions":"false","fig-width":7,"autorun":"false"},"code":"#Your code here\n"}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"warning":"true","read-only":"TRUE","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-1","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"pet_data <- data.frame(\n                pet_type = c(\"cat\",\"rabbit\",\"chinchilla\",\"cat\",\"cat\"), \n                name = c(\"Cassandra\", \"Sambo\", \"Leandro\", \"Bean\", \"Maki\"),\n                age = c(19, 45, 32, 49, 65))"},{"id":2,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-2","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n"},{"id":3,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-3","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n"},{"id":4,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-4","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"pet_data"},{"id":5,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-5","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"install.packages(\"packageNameHere\")"},{"id":6,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-6","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"library(packageNameHere)"},{"id":7,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-7","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"install.packages(\"palmerpenguins\")"},{"id":8,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-8","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"library(palmerpenguins)"},{"id":9,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-9","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n"},{"id":10,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-10","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"my_penguins <- penguins\n\nmy_penguins"},{"id":11,"options":{"warning":"true","read-only":"TRUE","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-11","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"# This is my comment. R will ignore all this text because of the # in the front of the line. \n# I can use these comments to remind myself what the code is for\n5+3"},{"id":12,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-12","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"},{"id":13,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-13","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"},{"id":14,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-14","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"},{"id":15,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-15","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"},{"id":16,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-16","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"},{"id":17,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-17","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"},{"id":18,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-18","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"},{"id":19,"options":{"warning":"true","read-only":"false","fig-height":5,"fig-cap":"","message":"true","out-width":"700px","editor-font-scale":1,"dpi":72,"results":"markup","editor-max-height":"","comment":"","label":"unnamed-chunk-19","context":"interactive","output":"true","out-height":"","autorun":"false","editor-quick-suggestions":"false","fig-width":7,"classes":""},"code":"\n\n\n"}];
 
 </script>
 <script type="module">
@@ -1169,7 +1169,7 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Lesson 1: R Introduction, Working with Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Bio110_lesson_two.html" aria-current="page"> 
+    <a class="nav-link" href="./Bio110_lesson_two.html"> 
 <span class="menu-text">Lesson 2: Central Tendency</span></a>
   </li>  
   <li class="nav-item">
@@ -1197,7 +1197,7 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Bio110 Cheatsheet</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Bio110_practice.html"> 
+    <a class="nav-link active" href="./Bio110_practice.html" aria-current="page"> 
 <span class="menu-text">Practice with your own data</span></a>
   </li>  
 </ul>
@@ -1216,17 +1216,15 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#analyzing-central-tendency" id="toc-analyzing-central-tendency" class="nav-link" data-scroll-target="#analyzing-central-tendency">Analyzing Central Tendency</a>
+  <li><a href="#uploading-your-own-data" id="toc-uploading-your-own-data" class="nav-link active" data-scroll-target="#uploading-your-own-data">Uploading your own data</a>
   <ul class="collapse">
-  <li><a href="#calculating-mean-and-median" id="toc-calculating-mean-and-median" class="nav-link" data-scroll-target="#calculating-mean-and-median">Calculating Mean and Median</a></li>
+  <li><a href="#create-a-data-frame" id="toc-create-a-data-frame" class="nav-link" data-scroll-target="#create-a-data-frame">Create a data frame</a></li>
+  <li><a href="#use-data-from-packages" id="toc-use-data-from-packages" class="nav-link" data-scroll-target="#use-data-from-packages">Use Data from Packages</a></li>
   </ul></li>
-  <li><a href="#summarizing-central-tendency" id="toc-summarizing-central-tendency" class="nav-link" data-scroll-target="#summarizing-central-tendency">Summarizing central tendency</a>
+  <li><a href="#working-with-your-data" id="toc-working-with-your-data" class="nav-link" data-scroll-target="#working-with-your-data">Working with your data</a>
   <ul class="collapse">
-  <li><a href="#the-pipe" id="toc-the-pipe" class="nav-link" data-scroll-target="#the-pipe">The Pipe</a></li>
-  <li><a href="#sec-groupby-sum" id="toc-sec-groupby-sum" class="nav-link" data-scroll-target="#sec-groupby-sum">Summarizing data with <code>group_by()</code> and <code>summarize()</code></a></li>
+  <li><a href="#enjoy-coding" id="toc-enjoy-coding" class="nav-link" data-scroll-target="#enjoy-coding">Enjoy coding!!</a></li>
   </ul></li>
-  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations">Congratulations!</a></li>
   </ul>
 </nav>
     </div>
@@ -1462,7 +1460,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lesson 2: Central Tendency</h1>
+<h1 class="title">Practice with your own data</h1>
 </div>
 
 
@@ -1479,316 +1477,156 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
+<p>In this tutorial, you’ll have the chance to practice the commands you learned using your own data. Below, there are code chunks you can use to practice. See <a href="./index.html" target="_blank">the home page</a> for more details on using the tutorials and for troubleshooting tips!</p>
+<p><strong>Important</strong>, there is not a a way to save your work in this tutorial. If you want to save your code, be sure to save it to a seperate document so you can later copy and paste it to reuse it.</p>
+<section id="uploading-your-own-data" class="level2">
+<h2 class="anchored" data-anchor-id="uploading-your-own-data">Uploading your own data</h2>
+<p>There are a couple ways to upload your own data into this tutorial. The first is by creating your own data frame. The second is by using outside packages that come pre-loaded with data. Choose one and follow the instructions below to upload your data.</p>
+<section id="create-a-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-data-frame">Create a data frame</h3>
+<p>First, you can upload your own data. In <a href="./Bio110_lesson_one.html#sec-assign-variable" target="_blank">lesson 1</a>, you learned how to create a variable and add a string of data to it as a vector. You also learned how to import a .csv file.</p>
+<p>But, what if you wanted to createa a dataframe by typing in all the data instead of uploading a csv file? We’ll do that now.</p>
+<p>Here’s the basic structure you can use to create a data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myDataFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">colmnName1 =</span> <span class="fu">c</span>(insert data here), </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">columnName2 =</span> <span class="fu">c</span>(insert data here),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">columnName3 =</span> <span class="fu">c</span>(insert data here))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here’s an example:</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome. In this lesson, you will learn about central tendency. See <a href="./index.html" target="_blank">the home page</a> for more details on how to use this tutorial and for troubleshooting tips!</p>
-</section>
-<section id="analyzing-central-tendency" class="level2">
-<h2 class="anchored" data-anchor-id="analyzing-central-tendency">Analyzing Central Tendency</h2>
-<p>When analyzing a set of data values, it is often important to summarize where the numerical ‘center’ of the data values lies.</p>
-<p>Start by creating a variable called <code>mydata</code> that contains the values 4, 4, 2, 6, 3, 0, and 3</p>
-<p><strong>Exercise 2.1</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Notice the following:</p>
+<ul>
+<li><p>The data is enclosed in parentheses with a “c” in the front and separated by commas. <code>c(_, _, _, _,)</code>. This notation creates a vector of data values, so each column is a vector of data.</p></li>
+<li><p>Each data point containing characters (i.e.&nbsp;the <code>name</code> and <code>pet_type</code> column) is surrounded by quotes <code>""</code>. R will automatically convert this to factor data. You can later adjust the type of data in your data frame (see <a href="./Bio110_lesson_one.html#sec-var-property" target="_blank">lesson 1</a>).</p></li>
+<li><p>Use the assignment character <code>&lt;-</code> to assign the name (i.e.&nbsp;<code>pet-Data</code>) to your data frame.</p></li>
+</ul>
+<p>Now it’s your turn!</p>
+<p>Create your data frame below.</p>
+<p><strong>Exercise P.1</strong></p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Did you remember to use the assignment arrow (<code>&lt;-</code>) and the concatenate operator (<code>c</code>)?</p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<section id="calculating-mean-and-median" class="level3">
-<h3 class="anchored" data-anchor-id="calculating-mean-and-median">Calculating Mean and Median</h3>
-<section id="mean" class="level4">
-<h4 class="anchored" data-anchor-id="mean">Mean</h4>
-<p>The <strong>mean</strong> (also known as the average) is a commonly-used measure of the center of a set of values. To compute the mean, you can use the command <code>mean(data)</code>, substituting the name of your variable for the placeholder shown here.</p>
-<p>Find the mean of your <code>mydata</code> variable.</p>
-<p><strong>Exercise 2.2</strong></p>
+<p>You can check that you created it correctly by typing the name of your dataframe below:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Answer</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Put the name of your variable in the parentheses. You don’t need to use quotes.</p>
-</div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-arguments" class="level4">
-<h4 class="anchored" data-anchor-id="sec-arguments">Arguments in a function</h4>
-<p>When you use functions like <code>mean()</code> in R, the thing you put in the parentheses is called an <strong>argument</strong>. In this case, our argument for the mean function is <code>mydata</code>. Sometimes, functions will require multiple different arguments.</p>
-<p>For some data sets, the mean is not a very good measure of the data’s central tendency. For example, what if your data values were 2, 2, 2, 3, 1, 3, 12?</p>
-<p>To analyze this data, create a new variable, <code>data_two</code>, containing these values.</p>
-<p><strong>Exercise 2.3</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>Don’t forget to use the assignment arrow and the concatenate function.</p>
-</div>
-<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_two<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div>
-</div>
-<p>Next, compute the mean of <code>data_two</code>.</p>
-<p><strong>Exercise 2.4</strong></p>
+</section>
+<section id="use-data-from-packages" class="level3">
+<h3 class="anchored" data-anchor-id="use-data-from-packages">Use Data from Packages</h3>
+<p>Another option for uploading data is using data from R packages (see <a href="./Bio110_lesson_one.html#sec-packages">lesson 1</a> for a refresher on what packages are). Some packages contain pre-loaded data which you can analyze.</p>
+<p>You can find packages online with a basic google search and learn what data sets they contain. But to start you out, here’s a couple options:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Package</th>
+<th style="text-align: left;">Dataset name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“palmerpenguins”</td>
+<td style="text-align: left;">penguins</td>
+<td style="text-align: left;">Data on penguins living in the Palmer Archipelago in Antarctica</td>
+</tr>
+<tr class="even">
+<td>“datasets”</td>
+<td style="text-align: left;">iris</td>
+<td style="text-align: left;">Various measurements for 3 plant species</td>
+</tr>
+<tr class="odd">
+<td>“datasets”</td>
+<td style="text-align: left;">many more datasets!</td>
+<td style="text-align: left;">see <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html" target="_blank">this website</a> for a list of datasets stored in the package “datasets”</td>
+</tr>
+</tbody>
+</table>
+<section id="installing-your-package" class="level4">
+<h4 class="anchored" data-anchor-id="installing-your-package"><strong>Installing your package</strong></h4>
+<p>To access your dataset stored in a package, first install the package. Run the following commands and insert the name of your package where it indicates:</p>
+<p><strong>Exercise P.2</strong></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Answer</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Example</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data_two)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<p>Notice that all but one of the data values are lower than the mean, because there is one really high value. For data like these, the median is a better measure of central tendency.</p>
-</section>
-<section id="median" class="level4">
-<h4 class="anchored" data-anchor-id="median">Median</h4>
-<p>The <strong>median</strong> is the middle value when the data are ordered from lowest to highest.</p>
-<p>The function <code>median(dataName)</code> computes the median for a variable.</p>
-<p>Compute the median of data_two.</p>
-<p><strong>Exercise 2.5</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(data_two)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<p>Notice that the median is not unduly influenced by the single large data value, and so is a more accurate measure of the center of these data values.</p>
-<p>If you are unsure whether to use mean or median to describe the center of data values, a <strong>histogram</strong> can be very helpful. In <a href="./Bio110_lesson_four.html" target="_blank">lesson 4</a>, you will learn how to create a histogram but for now it is worth noting that a histogram can help you see how data is distributed. When a histogram’s peak is not near the center, and/or its two tails are quite asymetrical, it’s best to use the <em>median</em>, not the <em>mean</em>, to summarize the central tendency.</p>
-</section>
-<section id="basic-arithmetic-with-meanmedian" class="level4">
-<h4 class="anchored" data-anchor-id="basic-arithmetic-with-meanmedian">Basic Arithmetic with mean/median</h4>
-<p>Next, write an expression for the difference between the mean and the median of <code>data_two</code>. R uses the symbols <code>+</code> for addition, <code>-</code> for subtraction, <code>*</code> for multiplication, and <code>/</code> for division. Subtract the smaller value from the larger value.</p>
-<p><strong>Exercise 2.6</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data_two)<span class="sc">-</span><span class="fu">median</span>(data_two)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="finding-mean-and-median-in-a-dataset" class="level4">
-<h4 class="anchored" data-anchor-id="finding-mean-and-median-in-a-dataset">Finding mean and median in a dataset</h4>
-<p>In <a href="./Bio110_lesson_one.html#sec-our-data" target="_blank">lesson 1</a>, we used a dataframe called <code>data</code> with the variables <code>RQ</code>, <code>Condition</code>, <code>heart_rate</code>, <code>Individual</code>.</p>
-<p>Type <code>data</code> to recall what it contains.</p>
-<p><strong>Exercise 2.7</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
-<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+</div>
+</div>
+</section>
+<section id="calling-up-your-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="calling-up-your-dataset"><strong>Calling up your dataset</strong></h4>
+<p>The dataset in the package should already be formatted as a dataframe, but you can rename it using the assignment character <code>&lt;-</code>.</p>
+<p>You can also view it by typing its name or using one of the following commands: <code>head(dataFrame)</code>, <code>glimpse(dataFrame)</code>, <code>str(dataFrame)</code>.</p>
+<p><strong>Exercise P.3: Rename or view your dataframe below:</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
-</div>
-</div>
-<p>Now, try to find the mean of the <code>heart_rate</code> column in <code>data</code>.</p>
-<p><strong>Exercise 2.8</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
-<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
-<p>Use the syntax <code>yourDataName$columnName</code> to refer to a specific column. You can type your column name directly in the parentheses in the <code>mean()</code> function.</p>
-</div>
-<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>heart_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div>
-</div>
-<p>You should get an answer that says ‘NA’. This is because there are NA values in the heart rate column, which prevent R from calculating the mean. So, we have to add one more thing to our code which tells R to ignore the ‘NA’ values: <code>na.rm=TRUE</code>. We add this in the parentheses in the <code>mean()</code> and <code>median()</code> functions. Use a comma to seperate <code>yourDataName</code> and <code>na.rm=TRUE</code>.</p>
-<p>For example:</p>
+</section>
+</section>
+</section>
+<section id="working-with-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-your-data">Working with your data</h2>
+<p>Now that you have data loaded into this tutorial, you can practice running the commands that you learned throughout this tutorial with your new data. Below, there are spaces for you to type and run your own code.</p>
 <ul>
-<li><p><code>mean(data$heart_rate, na.rm=TRUE)</code></p></li>
-<li><p><code>median(data$heart_rate, na.rm=TRUE)</code></p></li>
-</ul>
-<p>Try finding the mean of the heart rate column again, but add <code>na.rm=TRUE</code> this time.</p>
-<p><strong>Exercise 2.9</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<li><p>Feel free to type all the code in one code chunk or use different code chunks for different tasks!</p></li>
+<li><p>You can use comments to remind yourself what each line of code does. To type a comment in a code chunk use a <code>#</code>. Example:</p>
 <div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>heart_rate, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="summarizing-central-tendency" class="level2">
-<h2 class="anchored" data-anchor-id="summarizing-central-tendency">Summarizing central tendency</h2>
-<p>In this section, we’ll learn how you can easily display the mean and median of multiple different groups in a data set.</p>
-<p>The functions <code>group_by()</code> and <code>summarize()</code> help us do this.</p>
-<p>First, though, we’ll learn about a function called the pipe.</p>
-<section id="the-pipe" class="level3">
-<h3 class="anchored" data-anchor-id="the-pipe">The Pipe</h3>
-<p>A very useful function in the tidyverse (our current set of R packages) is called <strong>the pipe</strong>. It’s a way to string together functions and data. You can read it as “AND THEN”.</p>
-<p>The pipe can be written as <code>%&gt;%</code> or <code>|&gt;</code></p>
-<p>Both do the same thing! Let’s look at an example. Click “run code” below.</p>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript></li>
+<li><p>Feel free to refer to previous tutorials or the <a href="./Bio110_cheatsheet.html" target="_blank">cheatsheet</a> to recall which commands you’ve learned.</p></li>
+<li><p><strong>Important</strong> If you navigate to a new page or refresh this page, you’ll lose all your progress. So make sure you open any tutorials in a different window or tab. And when you are finished coding for the day, save your work in a separate document.</p></li>
+</ul>
+<section id="enjoy-coding" class="level3">
+<h3 class="anchored" data-anchor-id="enjoy-coding">Enjoy coding!!</h3>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Let’s break down what is happening:</p>
-<ul>
-<li><p>First, we call up the data we want with <code>data$RQ</code>.</p></li>
-<li><p>Then we use the pipe (<code>|&gt;</code>) to say “AND THEN”.</p></li>
-<li><p>Finally, we calculate the mean, but we <em>don’t</em> need to input our data because we already did in the first line and used the pipe to string them together.</p></li>
-</ul>
-<p>The pipe will be very helpful to string together functions!</p>
-</section>
-<section id="sec-groupby-sum" class="level3">
-<h3 class="anchored" data-anchor-id="sec-groupby-sum">Summarizing data with <code>group_by()</code> and <code>summarize()</code></h3>
-<p>We use the functions <code>group_by()</code> and <code>summarize()</code> to generate summary statistics (mean, median, etc) for specific groups in our data set.</p>
-<ul>
-<li><p><code>group_by()</code>: a function that takes a data set and groups it by a variable/column</p></li>
-<li><p><code>summarize()</code>: uses the grouped data set from <code>group_by</code>, and lets you define summary statistics columns for that group.</p>
-<ul>
-<li>The syntax is: <code>summarize(yourStatName = formula(columnName, na.RM=TRUE))</code></li>
-</ul></li>
-</ul>
-<p>Let’s see how these work with an example:</p>
-<p>Recall, the Condition variable specifies whether the measurements were made under exercise (1) or resting (2) conditions. Suppose we want to compute the mean and median heart rate for the individuals in our sample, but we want separate values for the exercise and resting conditions.</p>
-<p>We can use <code>group_by()</code> and <code>summarize()</code> to do this.</p>
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You should see a table that displays the average and median heart rate for each condition (1 and 2).</p>
-<p>Let’s break down how this works:</p>
-<ol type="1">
-<li><p>First, we specify our data and pipe to the next function.</p></li>
-<li><p>Then we group by our conditions, listed in the column <code>Condition</code>.</p></li>
-<li><p>Next, use <code>summarize()</code> and specify that we want to find the mean and median. <code>summarize()</code> creates new columns for each statistic we define. We also rename the columns <code>averageHearRate</code> and <code>medianHeartRate</code>.</p>
-<ul>
-<li>Define mean: <code>averageHeartRate = mean(heart_rate, na.rm=TRUE)</code></li>
-<li>Define median: <code>medianHeartRate = median(heart_rate, na.rm=TRUE)</code></li>
-</ul></li>
-</ol>
-<p>We use the pipe <code>|&gt;</code> to string all these functions together.</p>
-<p>Now you try! Find the mean and median for the <code>RQ</code> (respiratory quotiont), and find separate values for each condition (resting or exercise).</p>
-<p><strong>Exercise 2.10</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Code editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Check your work</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-3" role="tab" aria-controls="tabset-10-3" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-4" role="tab" aria-controls="tabset-10-4" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-5" role="tab" aria-controls="tabset-10-5" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-6" role="tab" aria-controls="tabset-10-6" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-<div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
-<div class="question">
-<p><strong>What is the mean of the RQ for condition 1?</strong></p>
-<div class="choices">
-<div x-data="{ answer: '' , clear() { this.answer = '' }}">
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="qwebr-insertion-location-19"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
-<div class="choice correct-choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="correct"> <span id="correct" x-show="answer == $el.id" class="badge">✓</span>0.876</p><p></p>
-</div>
-<div class="choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no2"> <span id="no2" x-show="answer == $el.id" class="badge">✗</span>0.87</p><p></p>
-</div>
-<div class="choice">
-<p></p><p><input class="form-check-input" type="radio" x-model="answer" value="no3"> <span id="no3" x-show="answer == $el.id" class="badge">✗</span>0.973</p><p></p>
-</div>
-</div>
 
-</div>
-</div>
-</div>
-<div id="tabset-10-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-3-tab">
-<p>Use the pipe to string together your functions.</p>
-</div>
-<div id="tabset-10-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-4-tab">
-<p>Here’s how you set up the <code>summarize()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">averageRQ =</span> <span class="fu">mean</span>(________, <span class="at">na.rm=</span><span class="cn">TRUE</span>), </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">medianRQ =</span> <span class="fu">median</span>(_______, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="tabset-10-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-5-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(________) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">averageRQ =</span> <span class="fu">mean</span>(________, <span class="at">na.rm=</span><span class="cn">TRUE</span>), </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">medianRQ =</span> <span class="fu">median</span>(_______, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="tabset-10-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-6-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition) <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">averageRQ =</span> <span class="fu">mean</span>(RQ, <span class="at">na.rm=</span><span class="cn">TRUE</span>), </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">medianRQ =</span> <span class="fu">median</span>(RQ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
 </section>
-</section>
-<section id="congratulations" class="level2">
-<h2 class="anchored" data-anchor-id="congratulations">Congratulations!</h2>
-<p>You have finished this tutorial. You learned how to calculate the mean and median of data and how to use <code>group_by()</code> and <code>summarize()</code> to calculate the mean and median of specific groups within a column.</p>
-<p>Another important kind of descriptive statistic is variability; that’s the topic of lesson three.</p>
-
-
 </section>
 
 </main> <!-- /main -->

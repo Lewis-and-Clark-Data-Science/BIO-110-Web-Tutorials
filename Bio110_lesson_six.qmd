@@ -16,7 +16,7 @@ url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/barg
 download.file(url, "bargraphdata.csv")
 
 bargraphdata <- read.csv("bargraphdata.csv")
-
+library(tidyverse)
 library(plotrix)
 library(gplots)
 ```

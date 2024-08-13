@@ -63,6 +63,8 @@ We use the `tidyverse` package to analyze data in these tutorials. See directly 
 
 -   `data`: View your data - type the name and run code
 
+-   `head(dataFrame)`: View the first few entries in your data
+
 -   `str(dataFrame)`: Gives the structure of data frame
 
 -   `dataFrame$columnName`: Calls up specific column from a data frame

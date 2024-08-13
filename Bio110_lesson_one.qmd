@@ -216,7 +216,7 @@ str(data)
 ```
 :::
 
-#### Changing a variable's property
+#### Changing a variable's property {#sec-var-property}
 
 You can see that the variable `data$Condition` is currently encoded as an integer. But it is actually a category variable.
 
@@ -257,9 +257,9 @@ data$Individual <- as.factor(data$Individual)
 ```
 :::
 
-## R Packages
+## R Packages {#sec-packages}
 
-R has a set of commands that it understands automatically. But, there are other commands that you can teach R. These "extra" commands live in packages that you can install and then use when you code with R.
+R has a set of commands that it understands automatically. But, there are other commands that you can teach R. These "extra" commands live in packages that you can install and then use when you code with R. Essentially, a package contains a set of commands (and sometimes data) someone created that you can use in R, and in order to use the package, you have to install it. 
 
 Throughout this tutorial, we've been using something called the `tidyverse` package to run commands. It contains helpful commands for viewing and rearranging data as well as graphing data (which we'll get to in future tutorials).
 

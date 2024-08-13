@@ -11,7 +11,7 @@ project:
 webr: 
   packages: ['tidyverse', 'plotrix']
 
-favicon: bioicon.png
+favicon: https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/bioicon.png
   
 website:
   title: "BIO 110 Web Tutorials"
@@ -25,6 +25,7 @@ website:
       - Bio110_lesson_six.qmd
       - Bio110_lesson_seven.qmd
       - Bio110_cheatsheet.qmd
+      - Bio110_practice.qmd
   
 
 format:

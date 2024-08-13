@@ -9,7 +9,7 @@ title: "Lesson 5: Boxplots and scatterplots"
 
 ```{webr-r}
 #| context: setup
-
+library(tidyverse)
 url<- "https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv"
 download.file(url, "physiology_data.csv")
 #Pulls data that has been loaded into the Bio 110 github repo. 
