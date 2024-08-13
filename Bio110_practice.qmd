@@ -10,7 +10,7 @@ title: "Practice with your own data"
 
 In this tutorial, you'll have the chance to practice the commands you learned using your own data. Below, there are code chunks you can use to practice. See [the home page](index.qmd){target="_blank"} for more details on using the tutorials and for troubleshooting tips!
 
-**Important**, there is not a a way to save your work in this tutorial. If you want to save your code, be sure to save it to a seperate document so you can later copy and paste it to reuse it.
+**Important**, there is not a way to save your work in this tutorial. If you want to save your code, be sure to save it to a seperate document so you can later copy and paste it to reuse it.
 
 ## Uploading your own data
 
