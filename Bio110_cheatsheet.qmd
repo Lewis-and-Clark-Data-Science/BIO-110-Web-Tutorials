@@ -57,7 +57,7 @@ title: "Bio110 Cheatsheet"
 
 We use the `tidyverse` package to analyze data in these tutorials. See directly above for how to install.
 
-### Uploading and viewing a data set
+### Uploading and Viewing a data set
 
 -   `dataFrame <- read_csv("myCSV.csv")` : Creates a data frame from a file called `myCSV.csv`
 
