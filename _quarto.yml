@@ -26,6 +26,7 @@ website:
       - Bio110_lesson_seven.qmd
       - Bio110_cheatsheet.qmd
       - Bio110_practice.qmd
+#      - Bio110_test.qmd
   
 
 format:

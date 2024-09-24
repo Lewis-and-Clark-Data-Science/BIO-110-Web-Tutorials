@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BIO 110 Web Tutorials - Lesson 1: R Introduction, Working with Datasets</title>
+<title>Lesson 1: R Introduction, Working with Datasets – BIO 110 Web Tutorials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -306,7 +306,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"editor-quick-suggestions":"false","autorun":"true","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-1","comment":"","context":"setup","results":"markup"},"id":1,"code":"\nlibrary(tidyverse)\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash "},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-2","comment":"","context":"interactive","results":"markup"},"id":2,"code":"#Type your code here!\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-3","comment":"","context":"interactive","results":"markup"},"id":3,"code":"#Type your code here\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-4","comment":"","context":"interactive","results":"markup"},"id":4,"code":"diam<- c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-5","comment":"","context":"interactive","results":"markup"},"id":5,"code":"#Type your code here\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-6","comment":"","context":"interactive","results":"markup"},"id":6,"code":"#Type your code here\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-7","comment":"","context":"interactive","results":"markup"},"id":7,"code":"#Type your code here\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-8","comment":"","context":"interactive","results":"markup"},"id":8,"code":"data"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-9","comment":"","context":"interactive","results":"markup"},"id":9,"code":"#Type your code here\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-10","comment":"","context":"interactive","results":"markup"},"id":10,"code":"# Type your code here\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-11","comment":"","context":"interactive","results":"markup"},"id":11,"code":"#Type your code here\n"},{"options":{"editor-quick-suggestions":"false","autorun":"false","warning":"true","dpi":72,"editor-font-scale":1,"editor-max-height":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","fig-height":5,"classes":"","fig-width":7,"fig-cap":"","label":"unnamed-chunk-12","comment":"","context":"interactive","results":"markup"},"id":12,"code":"str(data)"}];
+globalThis.qwebrCellDetails = [{"code":"\nlibrary(tidyverse)\nurl<- \"https://lewis-and-clark-data-science.github.io/BIO-110-Web-Tutorials/physiology_data.csv\"\ndownload.file(url, \"physiology_data.csv\")\n#Pulls data that has been loaded into the Bio 110 github repo. \n# Note: must include physiology_data.csv under resources in the quarto.yml file. Then render and commit to github. then can use the main website url and add \"physiology_data.csv\" at the end after the slash ","id":1,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"true","fig-width":7,"output":"true","context":"setup","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-1","comment":"","classes":"","dpi":72}},{"code":"#Type your code here!\n","id":2,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-2","comment":"","classes":"","dpi":72}},{"code":"#Type your code here\n","id":3,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-3","comment":"","classes":"","dpi":72}},{"code":"diam<- c(4,3.5,6.1,2.2,4.7,3,5.2,4.6)","id":4,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-4","comment":"","classes":"","dpi":72}},{"code":"#Type your code here\n","id":5,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-5","comment":"","classes":"","dpi":72}},{"code":"#Type your code here\n","id":6,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-6","comment":"","classes":"","dpi":72}},{"code":"#Type your code here\n","id":7,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-7","comment":"","classes":"","dpi":72}},{"code":"data","id":8,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-8","comment":"","classes":"","dpi":72}},{"code":"#Type your code here\n","id":9,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-9","comment":"","classes":"","dpi":72}},{"code":"# Type your code here\n","id":10,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-10","comment":"","classes":"","dpi":72}},{"code":"#Type your code here\n","id":11,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-11","comment":"","classes":"","dpi":72}},{"code":"str(data)","id":12,"options":{"fig-height":5,"editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","results":"markup","read-only":"false","autorun":"false","fig-width":7,"output":"true","context":"interactive","message":"true","editor-font-scale":1,"out-height":"","fig-cap":"","warning":"true","label":"unnamed-chunk-12","comment":"","classes":"","dpi":72}}];
 
 </script>
 <script type="module">
@@ -1159,7 +1159,7 @@ globalThis.qwebrExecuteCode = async function (
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -1202,7 +1202,7 @@ globalThis.qwebrExecuteCode = async function (
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -1709,18 +1709,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1752,7 +1741,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1760,7 +1771,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

@@ -1,0 +1,57 @@
+---
+format: 
+  html:
+    include-after-body: 
+      - text: |
+          <script src="progressive_docs.js"></script>
+editor: visual
+filters: 
+  - webr
+  - naquiz
+title: "Ignore - Testing Progressive Reveal Functions"
+---
+
+::: {.tutorial-part style="display: block;"}
+## Introduction
+
+Welcome to **Part 2 of the Air Quality Data Science Tutorials**! If you have not done Part 1 yet, [click here](AQI_tutorial.qmd) to complete that tutorial first - it will provide helpful background info about air quality and the basics of data science.
+
+Part 2 will build off of the graphs created in Part 1 and allow you to customize them with your own locations as well as create different types of graphs.
+
+### Our Data Set
+
+ya
+
+```{webr-r}
+#| label: "input.code-input"
+
+```
+
+
+<div>
+  <label for="input.code-input">Enter your code:</label>
+  <input type="text" id="codeInput" class="code-input" />
+</div>
+
+<button id="continue-button" class="btn btn-primary float-start me-2">
+
+Continue: scatterplot
+
+</button>
+:::
+
+::: {.tutorial-part style="display: none;"}
+## Create a scatter plot of AQI over time {#sec-scatterplot}
+
+First, let's create a scatterplot! We're going to graph the number of **days per year** when the AQI was above a certain threshold.
+
+<button id="continue-button" class="btn btn-primary float-start me-2">
+
+Continue: scatterplot
+
+</button>
+:::
+
+::: {.tutorial-part style="display: none;"}
+hello
+:::
