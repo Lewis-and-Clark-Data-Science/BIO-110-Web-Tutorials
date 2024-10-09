@@ -1,0 +1,17 @@
+---
+format: 
+  html:
+    include-after-body: 
+       - text: |
+          <script src="progressive_docs3.js"></script>
+editor: visual
+filters: 
+  - webr
+  - naquiz
+title: "Ignore 2 - Testing Progressive Reveal Functions"
+---
+
+hello
+
+```{webr-r}
+
