@@ -15,17 +15,18 @@ number-sections: true
 website:
   title: "BIO 110 Web Tutorials"
   favicon: bioicon.png
-  navbar: 
-    left: 
-      - Bio110_lesson_one.qmd
-      - Bio110_lesson_two.qmd
-      - Bio110_lesson_three.qmd 
-      - Bio110_lesson_four.qmd
-      - Bio110_lesson_five.qmd
-      - Bio110_lesson_six.qmd
-      - Bio110_lesson_seven.qmd
-      - Bio110_cheatsheet.qmd
-      - Bio110_practice.qmd
+  sidebar:
+    style: "docked"
+    contents: 
+      - href: Bio110_lesson_one.qmd
+      - href: Bio110_lesson_two.qmd
+      - href: Bio110_lesson_three.qmd 
+      - href: Bio110_lesson_four.qmd
+      - href: Bio110_lesson_five.qmd
+      - href: Bio110_lesson_six.qmd
+      - href: Bio110_lesson_seven.qmd
+      - href: Bio110_cheatsheet.qmd
+      - href: Bio110_practice.qmd
 #      - progressive_tutorial_experimentation/Bio110_test.qmd
 #      - progressive_tutorial_experimentation/Bio110_test2.qmd
   

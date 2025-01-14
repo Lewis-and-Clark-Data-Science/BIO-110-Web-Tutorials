@@ -39,14 +39,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9352c34f585a4e34a299cc6c840ed68c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d7876ccade3f6f99da27567822314b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -73,69 +73,100 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">BIO 110 Web Tutorials</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_lesson_one.html"> 
-<span class="menu-text">Lesson 1: R Introduction, Working with Datasets</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_lesson_two.html"> 
-<span class="menu-text">Lesson 2: Central Tendency</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_lesson_three.html"> 
-<span class="menu-text">Lesson 3: Variability</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_lesson_four.html"> 
-<span class="menu-text">Lesson 4: Introduction to Plots</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_lesson_five.html"> 
-<span class="menu-text">Lesson 5: Boxplots and scatterplots</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_lesson_six.html"> 
-<span class="menu-text">Lesson 6: Bar Graphs</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_lesson_seven.html"> 
-<span class="menu-text">Lesson 7: Inferential stats</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_cheatsheet.html"> 
-<span class="menu-text">Bio110 Cheatsheet</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Bio110_practice.html"> 
-<span class="menu-text">Practice with your own data</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      BIO 110 Web Tutorials
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">BIO 110 Web Tutorials</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_lesson_one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1: R Introduction, Working with Datasets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_lesson_two.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2: Central Tendency</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_lesson_three.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3: Variability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_lesson_four.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4: Introduction to Plots</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_lesson_five.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 5: Boxplots and scatterplots</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_lesson_six.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 6: Bar Graphs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_lesson_seven.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 7: Inferential stats</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bio110 Cheatsheet</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Bio110_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice with your own data</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
@@ -163,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>hello</p>
-<p>```xkfevakx</p>
+<p>```feyzayfp</p>
 
 
 
